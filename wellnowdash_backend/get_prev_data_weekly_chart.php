@@ -227,6 +227,17 @@ if($dashboards == '1' or $dashboards == 1)
 				$c2 = 0;
 				unset($weekly_dates); // $weekly_dates is gone
 				$weekly_dates = array();
+				
+				$wb_tech_other_count = 0;
+				$wb_demo_elig_count = 0;
+				$wb_timely_filing_count = 0;
+				$wb_coding_replies_count = 0;
+				$wb_sup_reviews_count = 0;
+				$wb_nf_corres_count = 0;
+				$wb_wc_corres_count = 0;
+				$waystar_medc_sec_count = 0;
+				$waystar_oob_count = 0;
+				$waystar_fidelis_tf_count = 0;
 			}
 			echo json_encode($dets);
 		}
@@ -585,6 +596,29 @@ else if($dashboards == '2' or $dashboards == 2)
 				$c2 = 0;
 				unset($weekly_dates); // $weekly_dates is gone
 				$weekly_dates = array();
+				
+				$RPQ_print_queue_total_count = 0;
+				$RPQ_num_of_WC_count = 0;
+				$IL_RCM_Ins_count = 0;
+				$IL_RCM_WC_count = 0;
+				$IL_NINS_count = 0;
+				$IL_NNF_count = 0;
+				$IL_NWC_count = 0;
+				$IL_ENL_count = 0;
+				$RA_WS_Prof_count = 0;
+				$RA_WS_Prof_Day_count = 0;
+				$RA_WS_Inst_count = 0;
+				$RA_WS_Inst_Day_count = 0;
+				$RA_Attachments_count = 0;
+				$WBE_NF_Updates_count = 0;
+				$WBE_WC_Updates_count = 0;
+				$WBE_OS_Email_Inbox_count = 0;
+				$Coding_FFS_Total_count = 0;
+				$Coding_FFS_On_hold_count = 0;
+				$Coding_Coding_Queue_count = 0;
+				$Coding_Coding_Queue_Days_count = 0;
+				$Coding_WS_Coding_count = 0;
+				$Coding_FFS_Onhold_Report_count = 0;
 			}
 			echo json_encode($dets);
 		}
@@ -1035,6 +1069,34 @@ else if($dashboards == '3' or $dashboards == 3)
 				$c2 = 0;
 				unset($weekly_dates); // $weekly_dates is gone
 				$weekly_dates = array();
+				
+				$support_sp_count = 0;
+				$support_enl_count = 0;
+				$support_dnu_count = 0;
+				$support_nyucp_count = 0;
+				$support_nom_count = 0;
+				$support_emails_count = 0;
+				$support_deposit_pulls_count = 0;
+				$support_blank_batch_corres_count = 0;
+				$support_correspondence_count = 0;
+				$support_acct_audits_count = 0;
+				$support_inv_correct_count = 0;
+				$support_phone_count = 0;
+				$support_inv_addr_count = 0;
+				$support_collects_count = 0;
+				$suport_medical_records_count = 0;
+				$coding_na_count = 0;
+				$coding_on_holds_count = 0;
+				$coding_coding_queue_count = 0;
+				$coding_onsites_count = 0;
+				$coding_ooa_count = 0;
+				$ar120_count = 0;
+				$ar_120percent_count = 0;
+				$ar_90_count = 0;
+				$ar_voicemails_count = 0;
+				$ar_unapplied_count = 0;
+				$ar_audit_count = 0;
+				$ar_wbs_count = 0;
 			}
 			echo json_encode($dets);
 		}

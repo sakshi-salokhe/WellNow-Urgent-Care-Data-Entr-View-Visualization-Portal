@@ -37,7 +37,6 @@ foreach($period as $date) {
 // $array has all the dates
 if($dashboards == '1' or $dashboards == 1)
 {
-	
 	$sql = "select * from ar_data where when_done between '$startdate' and '$enddate' order by when_done";
 	if($res = mysqli_query($con, $sql))
 	{
@@ -68,7 +67,16 @@ if($dashboards == '1' or $dashboards == 1)
 			$row1 = mysqli_fetch_assoc($res1);
 		
 			
-			
+			$emp[$c]['wb_tech_other_goals'] = $row1['wb_tech_other'];
+			$emp[$c]['wb_demo_elig_goals'] = $row1['wb_demo_elig'];
+			$emp[$c]['wb_timely_filing_goals'] = $row1['wb_timely_filing'];
+			$emp[$c]['wb_coding_replies_goals'] = $row1['wb_coding_replies'];
+			$emp[$c]['wb_sup_reviews_goals'] = $row1['wb_sup_reviews'];
+			$emp[$c]['wb_nf_corres_goals'] = $row1['wb_nf_corres'];
+			$emp[$c]['wb_wc_corres_goals'] = $row1['wb_wc_corres'];
+			$emp[$c]['waystar_medc_sec_goals'] = $row1['waystar_medc_sec'];
+			$emp[$c]['waystar_oob_goals'] = $row1['waystar_oob'];
+			$emp[$c]['waystar_fidelis_tf_goals'] = $row1['waystar_fidelis_tf'];
 			$emp[$c]['mon'] = $mon1;
 			
 			$c++;
@@ -87,6 +95,16 @@ if($dashboards == '1' or $dashboards == 1)
 			$waystar_oob_count = 0;
 			$waystar_fidelis_tf_count = 0;
 			
+			$wb_tech_other_goals = 0;
+			$wb_demo_elig_goals = 0;
+			$wb_timely_filing_goals = 0;
+			$wb_coding_replies_goals = 0;
+			$wb_sup_reviews_goals = 0;
+			$wb_nf_corres_goals = 0;
+			$wb_wc_corres_goals = 0;
+			$waystar_medc_sec_goals = 0;
+			$waystar_oob_goals = 0;
+			$waystar_fidelis_tf_goals = 0;
 			
 			$c = 0;
 			$d = 0;
@@ -198,8 +216,17 @@ if($dashboards == '1' or $dashboards == 1)
 				$dets[$weeknum]['waystar_oob_count'] = round($waystar_oob_count / $c2);
 				$dets[$weeknum]['waystar_fidelis_tf_count'] = round($waystar_fidelis_tf_count / $c2);
 				
-				
-				$dets[$weeknum]['mon'] = $mon1;
+				$dets[$weeknum]['wb_tech_other_goals'] = $wb_tech_other_goals;
+				$dets[$weeknum]['wb_demo_elig_goals'] = $wb_demo_elig_goals;
+				$dets[$weeknum]['wb_timely_filing_goals'] = $wb_timely_filing_goals;
+				$dets[$weeknum]['wb_coding_replies_goals'] = $wb_coding_replies_goals;
+				$dets[$weeknum]['wb_sup_reviews_goals'] = $wb_sup_reviews_goals;
+				$dets[$weeknum]['wb_nf_corres_goals'] = $wb_nf_corres_goals;
+				$dets[$weeknum]['wb_wc_corres_goals'] = $wb_wc_corres_goals;
+				$dets[$weeknum]['waystar_medc_sec_goals'] = $waystar_medc_sec_goals;
+				$dets[$weeknum]['waystar_oob_goals'] = $waystar_oob_goals;
+				$dets[$weeknum]['waystar_fidelis_tf_goals'] = $waystar_fidelis_tf_goals;
+				$dets[$weeknum]['mon'] = 'week ending at '.$dateend;
 				
 				$weeknum++;
 				$c1 = 0;
@@ -207,6 +234,17 @@ if($dashboards == '1' or $dashboards == 1)
 				$c2 = 0;
 				unset($weekly_dates); // $weekly_dates is gone
 				$weekly_dates = array();
+				
+				$wb_tech_other_count = 0;
+				$wb_demo_elig_count = 0;
+				$wb_timely_filing_count = 0;
+				$wb_coding_replies_count = 0;
+				$wb_sup_reviews_count = 0;
+				$wb_nf_corres_count = 0;
+				$wb_wc_corres_count = 0;
+				$waystar_medc_sec_count = 0;
+				$waystar_oob_count = 0;
+				$waystar_fidelis_tf_count = 0;
 			}
 			echo json_encode($dets);
 		}
@@ -228,6 +266,16 @@ if($dashboards == '1' or $dashboards == 1)
 			$emp[$c]['waystar_fidelis_tf'] = 0;
 			
 			
+			$emp[$c]['wb_tech_other_goals'] = 0;
+			$emp[$c]['wb_demo_elig_goals'] = 0;
+			$emp[$c]['wb_timely_filing_goals'] = 0;
+			$emp[$c]['wb_coding_replies_goals'] = 0;
+			$emp[$c]['wb_sup_reviews_goals'] = 0;
+			$emp[$c]['wb_nf_corres_goals'] = 0;
+			$emp[$c]['wb_wc_corres_goals'] = 0;
+			$emp[$c]['waystar_medc_sec_goals'] = 0;
+			$emp[$c]['waystar_oob_goals'] = 0;
+			$emp[$c]['waystar_fidelis_tf_goals'] = 0;
 			$emp[$c]['mon'] = "-";
 			
 			echo json_encode($emp);
@@ -558,6 +606,29 @@ else if($dashboards == '2' or $dashboards == 2)
 				$c2 = 0;
 				unset($weekly_dates); // $weekly_dates is gone
 				$weekly_dates = array();
+				
+				$RPQ_print_queue_total_count = 0;
+				$RPQ_num_of_WC_count = 0;
+				$IL_RCM_Ins_count = 0;
+				$IL_RCM_WC_count = 0;
+				$IL_NINS_count = 0;
+				$IL_NNF_count = 0;
+				$IL_NWC_count = 0;
+				$IL_ENL_count = 0;
+				$RA_WS_Prof_count = 0;
+				$RA_WS_Prof_Day_count = 0;
+				$RA_WS_Inst_count = 0;
+				$RA_WS_Inst_Day_count = 0;
+				$RA_Attachments_count = 0;
+				$WBE_NF_Updates_count = 0;
+				$WBE_WC_Updates_count = 0;
+				$WBE_OS_Email_Inbox_count = 0;
+				$Coding_FFS_Total_count = 0;
+				$Coding_FFS_On_hold_count = 0;
+				$Coding_Coding_Queue_count = 0;
+				$Coding_Coding_Queue_Days_count = 0;
+				$Coding_WS_Coding_count = 0;
+				$Coding_FFS_Onhold_Report_count = 0;
 			}
 			echo json_encode($dets);
 		}
@@ -1011,6 +1082,34 @@ else if($dashboards == '3' or $dashboards == 3)
 				$c2 = 0;
 				unset($weekly_dates); // $weekly_dates is gone
 				$weekly_dates = array();
+				
+				$support_sp_count = 0;
+				$support_enl_count = 0;
+				$support_dnu_count = 0;
+				$support_nyucp_count = 0;
+				$support_nom_count = 0;
+				$support_emails_count = 0;
+				$support_deposit_pulls_count = 0;
+				$support_blank_batch_corres_count = 0;
+				$support_correspondence_count = 0;
+				$support_acct_audits_count = 0;
+				$support_inv_correct_count = 0;
+				$support_phone_count = 0;
+				$support_inv_addr_count = 0;
+				$support_collects_count = 0;
+				$suport_medical_records_count = 0;
+				$coding_na_count = 0;
+				$coding_on_holds_count = 0;
+				$coding_coding_queue_count = 0;
+				$coding_onsites_count = 0;
+				$coding_ooa_count = 0;
+				$ar120_count = 0;
+				$ar_120percent_count = 0;
+				$ar_90_count = 0;
+				$ar_voicemails_count = 0;
+				$ar_unapplied_count = 0;
+				$ar_audit_count = 0;
+				$ar_wbs_count = 0;
 			}
 			echo json_encode($dets);
 		}
