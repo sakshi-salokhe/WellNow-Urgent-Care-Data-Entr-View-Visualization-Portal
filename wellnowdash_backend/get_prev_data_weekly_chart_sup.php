@@ -97,7 +97,7 @@ if($dashboards == '1' or $dashboards == 1)
 			$i = 0;
 			
 			
-			while($i<sizeof($array)-1 or $c < sizeof($emp)){
+			while($i<sizeof($array)-1){
 				while($d < 7)
 				{
 					$currdate = isset($array[$i]) ? $array[$i] : "";
