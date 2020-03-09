@@ -23,7 +23,7 @@ class OS_Dash_Privileges extends Component
 	
 	componentDidMount()
 	{
-		axios.get("http://localhost:81/wellnowdash_backend/get_os_access_sup.php?sup_id="+this.props.data.supervisor_id)
+		axios.get("http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_os_access_sup.php?sup_id="+this.props.data.supervisor_id)
 		.then(resp => {
 			this.setState({ employees: resp.data });
 			console.log(resp.data);

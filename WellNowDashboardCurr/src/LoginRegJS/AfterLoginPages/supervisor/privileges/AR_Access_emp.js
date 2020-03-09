@@ -166,7 +166,7 @@ class AR_Access_emp extends Component
 				};
 		console.log(obj);
 		
-		axios.post('http://localhost:81/wellnowdash_backend/update_ar_access_sup.php', qs.stringify(obj))
+		axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_ar_access_sup.php', qs.stringify(obj))
 		.then(res => 
 		{
 			console.log(res.data);	

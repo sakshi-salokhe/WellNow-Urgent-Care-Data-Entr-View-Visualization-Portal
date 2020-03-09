@@ -29,7 +29,7 @@ class EmpList_emp extends Component
 	
 	delete_user()
 	{
-		axios.get('http://localhost:81/wellnowdash_backend/delete_user.php?userid='+this.props.obj.userid)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/delete_user.php?userid='+this.props.obj.userid)
 		.then(
 			this.setState({ redirect: true })
 		)
@@ -39,7 +39,7 @@ class EmpList_emp extends Component
 	
 	approve_user()
 	{
-		axios.get('http://localhost:81/wellnowdash_backend/approve_finally.php?userid='+this.props.obj.userid)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/approve_finally.php?userid='+this.props.obj.userid)
 		.then(
 			res => {
 				console.log(res.data);
@@ -50,7 +50,7 @@ class EmpList_emp extends Component
 	
 	edit_user()
 	{
-		axios.get('http://localhost:81/wellnowdash_backend/get_details_for_editing.php?userid='+this.props.obj.userid)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_details_for_editing.php?userid='+this.props.obj.userid)
 		.then(
 			res => {
 				ReactDOM.render(<EditInfo_emp userid = {res.data} />, document.getElementById('root'));

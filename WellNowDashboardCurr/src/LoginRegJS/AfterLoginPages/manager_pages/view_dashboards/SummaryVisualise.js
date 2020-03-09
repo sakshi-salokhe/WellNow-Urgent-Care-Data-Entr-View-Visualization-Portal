@@ -55,7 +55,7 @@ class SummaryVisualise extends Component
 		{
 			console.log("dash:", obj.dashboards);
 				
-			axios.get('http://localhost:81/wellnowdash_backend/summary_view_admin.php?dashboards='+obj.dashboards)
+			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/summary_view_admin.php?dashboards='+obj.dashboards)
 			.then(resp => {
 				if(obj.dashboards === 1 || obj.dashboards === '1')
 				{

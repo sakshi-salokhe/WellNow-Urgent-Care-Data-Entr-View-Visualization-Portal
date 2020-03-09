@@ -84,7 +84,7 @@ class Login extends Component
 		}
 		else
 		{
-			axios.post('http://localhost:81/wellnowdash_backend/insert_login.php', qs.stringify(obj))
+			axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/insert_login.php', qs.stringify(obj))
 			.then(res => 
 				{
 					console.log(res.data);

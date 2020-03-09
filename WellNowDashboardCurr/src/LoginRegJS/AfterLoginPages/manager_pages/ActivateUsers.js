@@ -24,7 +24,7 @@ class ActivateUsers extends Component
 	
 	componentDidMount()
 	{
-		axios.get("http://localhost:81/wellnowdash_backend/inactive_emp_list.php")
+		axios.get("http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/inactive_emp_list.php")
 		.then(resp => {
 			this.setState({ employees: resp.data });
 		})

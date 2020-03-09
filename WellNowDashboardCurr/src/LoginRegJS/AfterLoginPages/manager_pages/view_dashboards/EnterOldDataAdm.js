@@ -67,7 +67,7 @@ class EnterOldDataAdm extends Component
 		}
 		if(obj.dashboards == 1 || obj.dashboards == '1')
 		{
-			axios.get('http://localhost:81/wellnowdash_backend/enter_old_data_admin.php?dashboards=1&olddate='+obj.olddate)
+			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_old_data_admin.php?dashboards=1&olddate='+obj.olddate)
 			.then(
 				res => {
 					if(res.data.dashboard == 1 || res.data.dashboard == '1')
@@ -85,7 +85,7 @@ class EnterOldDataAdm extends Component
 		}
 		else if(obj.dashboards == 2 || obj.dashboards == '2')
 		{
-			axios.get('http://localhost:81/wellnowdash_backend/enter_old_data_admin.php?dashboards=2&olddate='+obj.olddate)
+			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_old_data_admin.php?dashboards=2&olddate='+obj.olddate)
 			.then(
 				res => {
 					console.log("res:", res);
@@ -104,7 +104,7 @@ class EnterOldDataAdm extends Component
 		}
 		else if(obj.dashboards == 3 || obj.dashboards == '3')
 		{
-			axios.get('http://localhost:81/wellnowdash_backend/enter_old_data_admin.php?dashboards=3&olddate='+obj.olddate)
+			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_old_data_admin.php?dashboards=3&olddate='+obj.olddate)
 			.then(
 				res => {
 					console.log("res:", res);
@@ -129,7 +129,7 @@ class EnterOldDataAdm extends Component
 	
 	EnterOldDataAR()
 	{
-		axios.get('http://localhost:81/wellnowdash_backend/enter_data_admin.php?dashboards=')
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_data_admin.php?dashboards=')
 		.then(
 			res => {
 				if(res.data.dashboard == 1 || res.data.dashboard == '1')
@@ -153,7 +153,7 @@ class EnterOldDataAdm extends Component
 	
 	EnterOldDataOM()
 	{
-		axios.get('http://localhost:81/wellnowdash_backend/enter_data_admin.php?dashboards=')
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_data_admin.php?dashboards=')
 		.then(
 			res => {
 				if(res.data.dashboard == 3 || res.data.dashboard == '3')

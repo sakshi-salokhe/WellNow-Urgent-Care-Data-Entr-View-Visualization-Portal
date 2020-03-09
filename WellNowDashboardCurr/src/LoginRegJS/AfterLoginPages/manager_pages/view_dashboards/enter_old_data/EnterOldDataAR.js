@@ -242,7 +242,7 @@ class EnterOldDataAR extends Component
 				};
 		console.log(obj);
 		
-		axios.get('http://localhost:81/wellnowdash_backend/check_old_ar.php?date='+obj.date)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/check_old_ar.php?date='+obj.date)
 		.then(
 			res => {
 				//console.log(res.data);
@@ -250,7 +250,7 @@ class EnterOldDataAR extends Component
 				{
 					console.log("we will update");
 					//console.log("obj=",obj);
-					axios.post('http://localhost:81/wellnowdash_backend/update_old_data_ar.php', qs.stringify(obj))
+					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_old_data_ar.php', qs.stringify(obj))
 					.then(res => 
 						{
 							console.log(res.data);
@@ -268,7 +268,7 @@ class EnterOldDataAR extends Component
 				else //data exists already , perform update
 				{
 					console.log("we will insert");
-					axios.post('http://localhost:81/wellnowdash_backend/insert_old_data_ar.php', qs.stringify(obj))
+					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/insert_old_data_ar.php', qs.stringify(obj))
 					.then(res => 
 						{
 							console.log(res.data);

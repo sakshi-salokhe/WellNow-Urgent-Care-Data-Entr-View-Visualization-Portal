@@ -33,7 +33,7 @@ class EditDashboardPrivileges extends Component
 	
 	EnterDataAR()
 	{
-		axios.get('http://localhost:81/wellnowdash_backend/enter_data_admin.php?dashboards=1')
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_data_admin.php?dashboards=1')
 		.then(
 			res => {
 				if(res.data.dashboard == 1 || res.data.dashboard == '1')
@@ -52,7 +52,7 @@ class EditDashboardPrivileges extends Component
 	
 	EnterDataOS()
 	{
-		axios.get('http://localhost:81/wellnowdash_backend/enter_data_admin.php?dashboards=2')
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_data_admin.php?dashboards=2')
 		.then(
 			res => {
 				if(res.data.dashboard == 2 || res.data.dashboard == '2')
@@ -71,7 +71,7 @@ class EditDashboardPrivileges extends Component
 	
 	EnterDataOM()
 	{
-		axios.get('http://localhost:81/wellnowdash_backend/enter_data_admin.php?dashboards=3')
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_data_admin.php?dashboards=3')
 		.then(
 			res => {
 				if(res.data.dashboard == 3 || res.data.dashboard == '3')

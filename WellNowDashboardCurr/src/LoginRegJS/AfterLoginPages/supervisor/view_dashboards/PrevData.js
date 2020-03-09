@@ -66,7 +66,7 @@ class PrevData extends Component
 		}
 		else{
 			//console.log(obj);
-			axios.get('http://localhost:81/wellnowdash_backend/get_prev_data_sup.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&user_id='+this.props.user_id)
+			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data_sup.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&user_id='+this.props.user_id)
 			.then(resp => {
 				console.log(resp.data[0].dashboards);
 				if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')

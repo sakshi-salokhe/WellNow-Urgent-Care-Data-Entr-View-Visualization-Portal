@@ -610,13 +610,13 @@ class EnterEditOldDataOM extends Component
 					ar_wbs_val : this.state.ar_wbs_val,
 				};
 		
-		axios.get('http://localhost:81/wellnowdash_backend/check_old_om.php?date='+obj.date)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/check_old_om.php?date='+obj.date)
 		.then(
 			res => {
 				//console.log(res.data);
 				if(res.data.ans_val == 1)//data exists already , perform update
 				{
-					axios.post('http://localhost:81/wellnowdash_backend/update_old_data_om.php', qs.stringify(obj))
+					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_old_data_om.php', qs.stringify(obj))
 					.then(res => 
 						{
 							if(res.data.entered == 1)
@@ -632,7 +632,7 @@ class EnterEditOldDataOM extends Component
 				}
 				else //data exists already , perform update
 				{
-					axios.post('http://localhost:81/wellnowdash_backend/insert_old_data_om.php', qs.stringify(obj))
+					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/insert_old_data_om.php', qs.stringify(obj))
 					.then(res => 
 						{
 							if(res.data.entered == 1)

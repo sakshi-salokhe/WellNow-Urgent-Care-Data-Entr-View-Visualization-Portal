@@ -23,7 +23,7 @@ class ApproveNewUsers extends Component
 	
 	componentDidMount()
 	{
-		axios.get("http://localhost:81/wellnowdash_backend/approve_new_users.php?user_id="+this.props.user_id)
+		axios.get("http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/approve_new_users.php?user_id="+this.props.user_id)
 		.then(resp => {
 			this.setState({ employees: resp.data });
 			//console.log(resp);

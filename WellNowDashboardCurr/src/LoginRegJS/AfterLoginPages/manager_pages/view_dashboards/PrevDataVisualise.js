@@ -97,7 +97,7 @@ class PrevDataVisualise extends Component
 		{
 			if(obj.pattern == 1 || obj.pattern == '1')
 			{
-				axios.get('http://localhost:81/wellnowdash_backend/get_prev_data_daily_chart.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&dashboards='+obj.dashboards)
+				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data_daily_chart.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&dashboards='+obj.dashboards)
 				.then(resp => {
 					console.log("before going to chart file",resp.data);
 					if(obj.dashboards === 1 || obj.dashboards === '1')
@@ -116,7 +116,7 @@ class PrevDataVisualise extends Component
 			}
 			else if(obj.pattern == 2 || obj.pattern == '2')
 			{
-				axios.get('http://localhost:81/wellnowdash_backend/get_prev_data_weekly_chart.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&dashboards='+obj.dashboards)
+				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data_weekly_chart.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&dashboards='+obj.dashboards)
 				.then(resp => {
 					console.log("before going to chart file",resp.data);
 					if(obj.dashboards === 1 || obj.dashboards === '1')
@@ -136,7 +136,7 @@ class PrevDataVisualise extends Component
 			}
 			else if(obj.pattern == 3 || obj.pattern == '3')
 			{
-				axios.get('http://localhost:81/wellnowdash_backend/get_prev_data_monthly_chart.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&dashboards='+obj.dashboards)
+				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data_monthly_chart.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&dashboards='+obj.dashboards)
 				.then(resp => {
 					if(obj.dashboards === 1 || obj.dashboards === '1')
 					{
@@ -155,7 +155,7 @@ class PrevDataVisualise extends Component
 			}
 			else if(obj.pattern == 4 || obj.pattern == '4')
 			{
-				axios.get('http://localhost:81/wellnowdash_backend/get_prev_data_daily_chart.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&dashboards='+obj.dashboards)
+				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data_daily_chart.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&dashboards='+obj.dashboards)
 				.then(resp => {
 					if(obj.dashboards === 1 || obj.dashboards === '1')
 					{

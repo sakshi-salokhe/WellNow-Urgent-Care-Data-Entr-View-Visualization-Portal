@@ -311,7 +311,7 @@ class EnterGoalOS extends Component
 				};
 		console.log(obj);
 		
-		axios.get('http://localhost:81/wellnowdash_backend/check_os_goals.php')
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/check_os_goals.php')
 		.then(
 			res => {
 				//console.log(res.data);
@@ -319,7 +319,7 @@ class EnterGoalOS extends Component
 				{
 					console.log("we will update");
 					//console.log("obj=",obj);
-					axios.post('http://localhost:81/wellnowdash_backend/update_goals_os.php', qs.stringify(obj))
+					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_goals_os.php', qs.stringify(obj))
 					.then(res => 
 						{
 							console.log(res.data);
@@ -337,7 +337,7 @@ class EnterGoalOS extends Component
 				else //data exists already , perform update
 				{
 					console.log("we will insert");
-					axios.post('http://localhost:81/wellnowdash_backend/insert_goals_os.php', qs.stringify(obj))
+					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/insert_goals_os.php', qs.stringify(obj))
 					.then(res => 
 						{
 							console.log(res.data);

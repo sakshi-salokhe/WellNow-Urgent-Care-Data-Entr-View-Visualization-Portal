@@ -52,7 +52,7 @@ class ViewData extends Component
 	currData(props)
 	{
 		this.user_id = this.props.user_id;
-		axios.get('http://localhost:81/wellnowdash_backend/get_dash_id.php?user_id='+this.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_dash_id.php?user_id='+this.user_id)
 		.then(
 		res => {
 			if(res.data.dashboards == 1 || res.data.dashboards == '1')
@@ -78,7 +78,7 @@ class ViewData extends Component
 	Summary(props)
 	{
 		this.user_id = this.props.user_id;
-		axios.get('http://localhost:81/wellnowdash_backend/get_dash_id.php?user_id='+this.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_dash_id.php?user_id='+this.user_id)
 		.then(
 		res => {
 			if(res.data.dashboards == 1 || res.data.dashboards == '1')

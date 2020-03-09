@@ -349,7 +349,7 @@ class OM_Access_emp extends Component
 				};
 		console.log(obj);
 		
-		axios.post('http://localhost:81/wellnowdash_backend/update_om_access.php', qs.stringify(obj))
+		axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_om_access.php', qs.stringify(obj))
 		.then(res => 
 		{
 			console.log("this: ",res.data);	

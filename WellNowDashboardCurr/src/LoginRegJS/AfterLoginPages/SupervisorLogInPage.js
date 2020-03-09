@@ -70,7 +70,7 @@ class ManagerLogInPage extends Component
 	edit_page()
 	{
 		//ReactDOM.render(<AR_Dash_Privileges  user_id = {this.props.user_id} />, document.getElementById('root'));
-		axios.get('http://localhost:81/wellnowdash_backend/get_supervisor_dashboard.php?user_id='+this.props.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_supervisor_dashboard.php?user_id='+this.props.user_id)
 		.then(resp => {
 			console.log("dash",resp.data);
 			if(resp.data.dashboards === 1 || resp.data.dashboards === '1')

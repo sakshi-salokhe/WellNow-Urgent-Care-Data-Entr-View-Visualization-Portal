@@ -24,7 +24,7 @@ class ActiveEmpList extends Component
 	
 	delete_user()
 	{
-		axios.get('http://localhost:81/wellnowdash_backend/delete_user_permanently.php?userid='+this.props.obj.userid)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/delete_user_permanently.php?userid='+this.props.obj.userid)
 		.then(
 			this.setState({ redirect: true })
 		)
@@ -34,7 +34,7 @@ class ActiveEmpList extends Component
 	
 	make_user_inactive()
 	{
-		axios.get('http://localhost:81/wellnowdash_backend/make_user_inactive.php?userid='+this.props.obj.userid)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/make_user_inactive.php?userid='+this.props.obj.userid)
 		.then(
 			this.setState({ redirect: true })
 		)

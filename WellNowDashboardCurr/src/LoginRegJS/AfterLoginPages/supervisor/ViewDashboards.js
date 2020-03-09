@@ -71,7 +71,7 @@ class ViewDashboards extends Component
 	summary()
 	{
 		this.user_id = this.props.user_id;
-		axios.get('http://localhost:81/wellnowdash_backend/get_dash_id.php?user_id='+this.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_dash_id.php?user_id='+this.user_id)
 		.then(
 		res => {
 			if(res.data.dashboards == 1 || res.data.dashboards == '1')
@@ -92,7 +92,7 @@ class ViewDashboards extends Component
 	currData(event)
 	{
 		//ReactDOM.render(<CurrData user_id = {this.props.user_id} />, document.getElementById('root'));
-		axios.get('http://localhost:81/wellnowdash_backend/get_curr_data_sup.php?user_id='+this.props.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_curr_data_sup.php?user_id='+this.props.user_id)
 		.then(resp => {
 			console.log("data",resp.data);
 			if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')
@@ -118,7 +118,7 @@ class ViewDashboards extends Component
 	currDataChart(event)
 	{
 		//ReactDOM.render(<CurrDataVisualise user_id = {this.props.user_id} />, document.getElementById('root'));
-		axios.get('http://localhost:81/wellnowdash_backend/get_curr_data_chart_sup.php?user_id='+this.props.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_curr_data_chart_sup.php?user_id='+this.props.user_id)
 		.then(resp => {
 			if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')
 			{
@@ -138,7 +138,7 @@ class ViewDashboards extends Component
 	enter_data(props)
 	{
 		this.user_id = this.props.user_id;
-		axios.get('http://localhost:81/wellnowdash_backend/enter_data.php?userid='+this.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_data.php?userid='+this.user_id)
 		.then(
 			res => {
 				if(res.data.dashboard == 1 || res.data.dashboard == '1')
@@ -165,7 +165,7 @@ class ViewDashboards extends Component
 	enter_old_data(props)
 	{
 		this.user_id = this.props.user_id;
-		axios.get('http://localhost:81/wellnowdash_backend/get_dash_id.php?user_id='+this.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_dash_id.php?user_id='+this.user_id)
 		.then(
 			res => {
 				console.log("THIS:",res.data);
@@ -177,7 +177,7 @@ class ViewDashboards extends Component
 	enter_goal(props)
 	{
 		this.user_id = this.props.user_id;
-		axios.get('http://localhost:81/wellnowdash_backend/get_all_goal_sup.php?userid='+this.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_all_goal_sup.php?userid='+this.user_id)
 		.then(
 			res => {
 				if(res.data.dashboard == 1 || res.data.dashboard == '1')
@@ -203,7 +203,7 @@ class ViewDashboards extends Component
 	
 	viewGoals(){
 		//ReactDOM.render(<CurrData user_id = {this.props.user_id} />, document.getElementById('root'));
-		axios.get('http://localhost:81/wellnowdash_backend/view_all_goals_sup.php?user_id='+this.props.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/view_all_goals_sup.php?user_id='+this.props.user_id)
 		.then(resp => {
 			if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')
 			{

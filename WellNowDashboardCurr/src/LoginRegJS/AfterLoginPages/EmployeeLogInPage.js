@@ -55,7 +55,7 @@ class EmployeeLogInPage extends Component
 	enter_data(props)
 	{
 		this.user_id = this.props.user_id;
-		axios.get('http://localhost:81/wellnowdash_backend/enter_data.php?userid='+this.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_data.php?userid='+this.user_id)
 		.then(
 			res => {
 				if(res.data.dashboard == 1 || res.data.dashboard == '1')

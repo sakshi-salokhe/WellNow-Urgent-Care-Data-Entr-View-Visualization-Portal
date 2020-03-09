@@ -313,13 +313,13 @@ class EnterEditOldDataOS extends Component
 					Coding_FFS_Onhold_Report_val : this.state.Coding_FFS_Onhold_Report_val
 				};
 		
-		axios.get('http://localhost:81/wellnowdash_backend/check_old_os.php?date='+obj.date)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/check_old_os.php?date='+obj.date)
 		.then(
 			res => {
 				//console.log(res.data);
 				if(res.data.ans_val == 1)//data exists already , perform update
 				{
-					axios.post('http://localhost:81/wellnowdash_backend/update_old_data_os.php', qs.stringify(obj))
+					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_old_data_os.php', qs.stringify(obj))
 					.then(res => 
 						{
 							if(res.data.entered == 1)
@@ -335,7 +335,7 @@ class EnterEditOldDataOS extends Component
 				}
 				else //data exists already , perform update
 				{
-					axios.post('http://localhost:81/wellnowdash_backend/insert_old_data_os.php', qs.stringify(obj))
+					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/insert_old_data_os.php', qs.stringify(obj))
 					.then(res => 
 						{
 							if(res.data.entered == 1)

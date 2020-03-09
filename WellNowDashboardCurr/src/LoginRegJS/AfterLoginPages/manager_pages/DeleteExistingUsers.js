@@ -24,7 +24,7 @@ class DeleteExistingUsers extends Component
 	
 	componentDidMount()
 	{
-		axios.get("http://localhost:81/wellnowdash_backend/active_emp_list.php")
+		axios.get("http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/active_emp_list.php")
 		.then(resp => {
 			this.setState({ employees: resp.data });
 		})

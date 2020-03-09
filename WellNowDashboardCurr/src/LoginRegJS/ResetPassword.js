@@ -94,7 +94,7 @@ class ResetPassword extends Component
 			}
 			else
 			{
-				axios.post('http://localhost:81/wellnowdash_backend/resetpassword.php', qs.stringify(obj))
+				axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/resetpassword.php', qs.stringify(obj))
 				.then(res => 
 				{
 					console.log(res.data);	

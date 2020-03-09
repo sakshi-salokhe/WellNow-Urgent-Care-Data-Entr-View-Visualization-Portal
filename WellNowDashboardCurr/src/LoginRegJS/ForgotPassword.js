@@ -40,7 +40,7 @@ class ForgotPassword extends Component
 					email : this.state.email,
 				};
 		
-		axios.post('http://localhost:81/wellnowdash_backend/forgotpassword.php', qs.stringify(obj))
+		axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/forgotpassword.php', qs.stringify(obj))
 		.then(res => 
 			{
 				console.log(res.data);

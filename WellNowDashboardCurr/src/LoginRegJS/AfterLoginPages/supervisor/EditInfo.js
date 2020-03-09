@@ -75,7 +75,7 @@ class EditInfo extends Component
 		}
 		else
 		{
-			axios.post('http://localhost:81/wellnowdash_backend/update_after_editing_sup.php', qs.stringify(obj))
+			axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_after_editing_sup.php', qs.stringify(obj))
 			.then(res => 
 			{
 				console.log(res.data);	

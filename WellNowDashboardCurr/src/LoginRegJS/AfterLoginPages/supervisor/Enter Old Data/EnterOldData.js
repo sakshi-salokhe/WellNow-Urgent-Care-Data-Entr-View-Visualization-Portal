@@ -56,7 +56,7 @@ class EnterOldData extends Component
 		}
 		else{
 			//console.log(obj);
-			axios.get('http://localhost:81/wellnowdash_backend/enter_old_data_sup.php?olddate='+obj.olddate+'&userid='+this.props.data.user_id)
+			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_old_data_sup.php?olddate='+obj.olddate+'&userid='+this.props.data.user_id)
 			.then(resp => {
 				console.log("resp.data", resp.data);
 				if(resp.data.dashboard === 1 || resp.data.dashboard === '1')

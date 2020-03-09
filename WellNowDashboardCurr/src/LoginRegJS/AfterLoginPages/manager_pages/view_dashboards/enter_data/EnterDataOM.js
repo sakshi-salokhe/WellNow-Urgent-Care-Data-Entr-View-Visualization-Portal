@@ -608,7 +608,7 @@ class EnterDataOM extends Component
 				};
 		console.log(obj);
 		
-		axios.get('http://localhost:81/wellnowdash_backend/check_om.php')
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/check_om.php')
 		.then(
 			res => {
 				//console.log(res.data);
@@ -616,7 +616,7 @@ class EnterDataOM extends Component
 				{
 					console.log("we will update");
 					//console.log("obj=",obj);
-					axios.post('http://localhost:81/wellnowdash_backend/update_data_om.php', qs.stringify(obj))
+					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_data_om.php', qs.stringify(obj))
 					.then(res => 
 						{
 							console.log(res.data);
@@ -634,7 +634,7 @@ class EnterDataOM extends Component
 				else //data exists already , perform update
 				{
 					console.log("we will insert");
-					axios.post('http://localhost:81/wellnowdash_backend/insert_data_om.php', qs.stringify(obj))
+					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/insert_data_om.php', qs.stringify(obj))
 					.then(res => 
 						{
 							console.log(res.data);

@@ -35,11 +35,11 @@ class CurrDataOM extends Component
 	
 	componentDidMount()
 	{
-		axios.get('http://localhost:81/wellnowdash_backend/get_dash_id.php?user_id='+this.props.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_dash_id.php?user_id='+this.props.user_id)
 		.then(res=>
 			{
 				this.setState({ dash: res.data.dashboards });
-				axios.get('http://localhost:81/wellnowdash_backend/get_curr_data_emp.php?dashboards='+res.data.dashboards+"&user_id="+this.props.user_id)
+				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_curr_data_emp.php?dashboards='+res.data.dashboards+"&user_id="+this.props.user_id)
 					.then(resp => {
 							
 							//ReactDOM.render(<ViewCurrDataAR data = {resp.data}/>, document.getElementById('root'));
