@@ -95,7 +95,8 @@ class RegisterUser extends Component
 					dashboards: this.state.dashboards,
 					isManager: this.state.isManager
 				};
-
+		
+		console.log("reg:", obj);
 		var domain = obj.email.substring(obj.email.lastIndexOf("@") +1);
 		
 		if(obj.fullname.length === 0 || obj.dashboards.length === 0 || obj.email.length === 0 || obj.password1.length === 0 || obj.conf_password.length === 0 || obj.isManager.length == 0)
@@ -119,14 +120,14 @@ class RegisterUser extends Component
 				.then(res => 
 				{
 					console.log(res.data.registered);	
-					if(res.data.registered == true || res.data.registered == 'true')
+					if(res.data.registered == false || res.data.registered == 'false')
 					{
-						alert("Registeration sucessful. Please check your email.");
+						alert("The email id already exists!");
 						ReactDOM.render(<Login />, document.getElementById('root'));
 					}
 					else
 					{
-						alert("The email id already exists!");
+						alert("Registeration sucessful. Please check your email.");
 						ReactDOM.render(<Login />, document.getElementById('root'));
 					}
 				});
