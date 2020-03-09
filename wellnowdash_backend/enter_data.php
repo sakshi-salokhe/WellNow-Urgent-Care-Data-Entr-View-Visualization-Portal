@@ -280,6 +280,58 @@ else if($dashboard == 3 or $dashboard == '3')
 	echo json_encode($emp);
 	
 }
+else if($dashboard == 4 or $dashboard == '4')
+{
+	$sql2 = "select * from pat_sup_access where user_id = '$userid'";
+	$result2 = mysqli_query($con,$sql2);
+	$row2 = mysqli_fetch_array($result2);
+	
+	$sql3 = "select * from pat_sup_data where when_done = '$today'";
+	$result3 = mysqli_query($con,$sql3);
+	$row3 = mysqli_fetch_array($result3);
+	$count = mysqli_num_rows($result3);
+	
+	$emp['userid'] = $userid;
+	$emp['dashboard'] = $dashboard;
+	$emp['wb_tech_other'] = $row2['wb_tech_other'];
+	$emp['wb_demo_elig'] = $row2['wb_demo_elig'];
+	$emp['wb_timely_filing'] = $row2['wb_timely_filing'];
+	$emp['wb_coding_replies'] = $row2['wb_coding_replies'];
+	$emp['wb_sup_reviews'] = $row2['wb_sup_reviews'];
+	$emp['wb_nf_corres'] = $row2['wb_nf_corres'];
+	$emp['wb_wc_corres'] = $row2['wb_wc_corres'];
+	$emp['waystar_medc_sec'] = $row2['waystar_medc_sec'];
+	$emp['waystar_oob'] = $row2['waystar_oob'];
+	$emp['waystar_fidelis_tf'] = $row2['waystar_fidelis_tf'];
+	
+	if($count > 0)
+	{
+		$emp['wb_tech_other_PH'] = $row3['wb_tech_other'];
+		$emp['wb_demo_elig_PH'] = $row3['wb_demo_elig'];
+		$emp['wb_timely_filing_PH'] = $row3['wb_timely_filing'];
+		$emp['wb_coding_replies_PH'] = $row3['wb_coding_replies'];
+		$emp['wb_sup_reviews_PH'] = $row3['wb_sup_reviews'];
+		$emp['wb_nf_corres_PH'] = $row3['wb_nf_corres'];
+		$emp['wb_wc_corres_PH'] = $row3['wb_wc_corres'];
+		$emp['waystar_medc_sec_PH'] = $row3['waystar_medc_sec'];
+		$emp['waystar_oob_PH'] = $row3['waystar_oob'];
+		$emp['waystar_fidelis_tf_PH'] = $row3['waystar_fidelis_tf'];
+	}
+	else{
+		$emp['wb_tech_other_PH'] = NULL;
+		$emp['wb_demo_elig_PH'] = NULL;
+		$emp['wb_timely_filing_PH'] = NULL;
+		$emp['wb_coding_replies_PH'] = NULL;
+		$emp['wb_sup_reviews_PH'] = NULL;
+		$emp['wb_nf_corres_PH'] = NULL;
+		$emp['wb_wc_corres_PH'] = NULL;
+		$emp['waystar_medc_sec_PH'] = NULL;
+		$emp['waystar_oob_PH'] = NULL;
+		$emp['waystar_fidelis_tf_PH'] = NULL;
+	}
+	
+	echo json_encode($emp);
+}
 else
 {
 	http_response_code(422);
