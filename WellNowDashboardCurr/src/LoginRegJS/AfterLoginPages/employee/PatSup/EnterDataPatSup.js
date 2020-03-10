@@ -374,149 +374,149 @@ class EnterDataPatSup extends Component
 				<h3> Enter Data </h3>
 				<form>
 					<table className="table table-striped table-bordered" style={{marginTop: 20}}>
-							<thead>
-								<tr>
-									<th> </th>
-									<th> </th>
-									<th colSpan="2"> Safiyyah </th>
-									<th colSpan="5"> Ashley Standish </th>
-									<th colSpan="3"> Bailea </th>
-									<th colSpan="3"> Justin </th>
-								</tr>
-								<tr>
-									<th> Date</th>
-									<th> </th>
-									<th> MVP </th>
-									<th> Invalid Address (oldest date open) </th>
-									<th> Attachments </th>
-									<th> WC Mailing (yes/no) </th>
-									<th> WC deleted claims to archived (yes/no) </th>
-									<th> Accident Type (WC/NF) (yes/no) </th>
-									<th> Last Address given Worked (last date finished) </th>
-									<th> Indep Health </th>
-									<th> BCBS of WNY </th>
-									<th> Emails </th>
-									<th> NDC Numbers </th>
-									<th> Medicare Facility Location </th>
-									<th> Medicare Secondary to be original </th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td rowspan="2">
-										{this.props.data.when_done}
-									</td>
-									<td>
-										SOD
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.saf_mvp_sod_PH} value = {this.state.saf_mvp_sod_val} name = "saf_mvp_sod_val" onChange = {this.onchange} disabled={this.state.saf_mvp_sod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "date" placeholder = {this.props.data.saf_inval_addr_sod_PH} value = {this.state.saf_inval_addr_sod_val} name = "saf_inval_addr_sod_val" onChange = {this.onchange} disabled={this.state.saf_inval_addr_sod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.ash_attachments_sod_PH} value = {this.state.ash_attachments_sod_val} name = "ash_attachments_sod_val" onChange = {this.onchange} disabled={this.state.ash_attachments_sod === true ? false : true}/>
-									</td>
-									<td>
-										<select className = "form-control" value = {this.state.ash_wc_mailing_sod_val} name = "ash_wc_mailing_sod_val" onChange = {this.onchange} placeholder = {this.props.data.ash_wc_mailing_sod_PH} disabled={this.state.ash_wc_mailing_sod === true ? false : true}>
-											<option value="">--Choose value -- </option>
-											<option value="yes"> Yes </option>
-											<option value="no"> No </option>
-										</select>
-									</td>
-									<td>
-										<select className = "form-control" value = {this.state.ash_wc_deleted_sod_val} name = "ash_wc_deleted_sod_val" onChange = {this.onchange} placeholder = {this.props.data.ash_wc_deleted_sod_PH} disabled={this.state.ash_wc_deleted_sod === true ? false : true}>
-											<option value="">--Choose value -- </option>
-											<option value="yes"> Yes </option>
-											<option value="no"> No </option>
-										</select>
-									</td>
-									<td>
-										<select className = "form-control" value = {this.state.ash_acc_type_sod_val} name = "ash_acc_type_sod_val" onChange = {this.onchange} placeholder = {this.props.data.ash_acc_type_sod_PH} disabled={this.state.ash_acc_type_sod === true ? false : true}>
-											<option value="">--Choose value -- </option>
-											<option value="yes"> Yes </option>
-											<option value="no"> No </option>
-										</select>
-									</td>
-									<td>
-										<input className = "form-control" type = "date" placeholder = {this.props.data.ash_last_addr_sod_PH} value = {this.state.ash_last_addr_sod_val} name = "ash_last_addr_sod_val" onChange = {this.onchange} disabled={this.state.ash_last_addr_sod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_indep_health_sod_PH} value = {this.state.bailey_indep_health_sod_val} name = "bailey_indep_health_sod_val" onChange = {this.onchange} disabled={this.state.bailey_indep_health_sod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_bcbs_sod_PH} value = {this.state.bailey_bcbs_sod_val} name = "bailey_bcbs_sod_val" onChange = {this.onchange} disabled={this.state.bailey_bcbs_sod === true ? false : true}/>
-									</td>	
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_emails_sod_PH} value = {this.state.bailey_emails_sod_val} name = "bailey_emails_sod_val" onChange = {this.onchange} disabled={this.state.bailey_emails_sod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.justin_ndc_num_sod_PH} value = {this.state.justin_ndc_num_sod_val} name = "justin_ndc_num_sod_val" onChange = {this.onchange} disabled={this.state.justin_ndc_num_sod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_loc_sod_PH} value = {this.state.justin_medicare_loc_sod_val} name = "justin_medicare_loc_sod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_loc_sod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_sec_sod_PH} value = {this.state.justin_medicare_sec_sod_val} name = "justin_medicare_sec_sod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_sec_sod === true ? false : true}/>
-									</td>
-								</tr>
-								
-								<tr>
-									<td>
-										EOD
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.saf_mvp_eod_PH} value = {this.state.saf_mvp_eod_val} name = "saf_mvp_eod_val" onChange = {this.onchange} disabled={this.state.saf_mvp_eod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "date" placeholder = {this.props.data.saf_inval_addr_eod_PH} value = {this.state.saf_inval_addr_eod_val} name = "saf_inval_addr_eod_val" onChange = {this.onchange} disabled={this.state.saf_inval_addr_eod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.ash_attachments_eod_PH} value = {this.state.ash_attachments_eod_val} name = "ash_attachments_eod_val" onChange = {this.onchange} disabled={this.state.ash_attachments_eod === true ? false : true}/>
-									</td>
-									<td>
-										
-									</td>
-									<td>
-										
-									</td>
-									<td>
-										
-									</td>
-									<td>
-										
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_indep_health_eod_PH} value = {this.state.bailey_indep_health_eod_val} name = "bailey_indep_health_eod_val" onChange = {this.onchange} disabled={this.state.bailey_indep_health_eod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_bcbs_eod_PH} value = {this.state.bailey_bcbs_eod_val} name = "bailey_bcbs_eod_val" onChange = {this.onchange} disabled={this.state.bailey_bcbs_eod === true ? false : true}/>
-									</td>	
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_emails_eod_PH} value = {this.state.bailey_emails_eod_val} name = "bailey_emails_eod_val" onChange = {this.onchange} disabled={this.state.bailey_emails_eod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.justin_ndc_num_eod_PH} value = {this.state.justin_ndc_num_eod_val} name = "justin_ndc_num_eod_val" onChange = {this.onchange} disabled={this.state.justin_ndc_num_eod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_loc_eod_PH} value = {this.state.justin_medicare_loc_eod_val} name = "justin_medicare_loc_eod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_loc_eod === true ? false : true}/>
-									</td>
-									<td>
-										<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_sec_eod_PH} value = {this.state.justin_medicare_sec_eod_val} name = "justin_medicare_sec_eod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_sec_eod === true ? false : true}/>
-									</td>						
-								</tr>
-							</tbody>
-						</table>
-						<div className="form-group">
-							<div>
-								&nbsp;&nbsp;&nbsp;&nbsp;
-								<button className="btn btn-info" onClick = {this.save}><b> Enter  </b></button>
-								&nbsp;&nbsp;&nbsp;
-								<button className="btn btn-warning" onClick = {this.cancel}> Cancel </button>
-							</div>
+						<thead>
+							<tr>
+								<th> </th>
+								<th> </th>
+								<th colSpan="2"> Safiyyah </th>
+								<th colSpan="5"> Ashley Standish </th>
+								<th colSpan="3"> Bailea </th>
+								<th colSpan="3"> Justin </th>
+							</tr>
+							<tr>
+								<th> Date</th>
+								<th> </th>
+								<th> MVP </th>
+								<th> Invalid Address (oldest date open) </th>
+								<th> Attachments </th>
+								<th> WC Mailing (yes/no) </th>
+								<th> WC deleted claims to archived (yes/no) </th>
+								<th> Accident Type (WC/NF) (yes/no) </th>
+								<th> Last Address given Worked (last date finished) </th>
+								<th> Indep Health </th>
+								<th> BCBS of WNY </th>
+								<th> Emails </th>
+								<th> NDC Numbers </th>
+								<th> Medicare Facility Location </th>
+								<th> Medicare Secondary to be original </th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td rowspan="2">
+									{this.props.data.when_done}
+								</td>
+								<td>
+									SOD
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.saf_mvp_sod_PH} value = {this.state.saf_mvp_sod_val} name = "saf_mvp_sod_val" onChange = {this.onchange} disabled={this.state.saf_mvp_sod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "date" placeholder = {this.props.data.saf_inval_addr_sod_PH} value = {this.state.saf_inval_addr_sod_val} name = "saf_inval_addr_sod_val" onChange = {this.onchange} disabled={this.state.saf_inval_addr_sod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.ash_attachments_sod_PH} value = {this.state.ash_attachments_sod_val} name = "ash_attachments_sod_val" onChange = {this.onchange} disabled={this.state.ash_attachments_sod === true ? false : true}/>
+								</td>
+								<td>
+									<select className = "form-control" value = {this.state.ash_wc_mailing_sod_val} name = "ash_wc_mailing_sod_val" onChange = {this.onchange} placeholder = {this.props.data.ash_wc_mailing_sod_PH} disabled={this.state.ash_wc_mailing_sod === true ? false : true}>
+										<option value="">--Choose value -- </option>
+										<option value="yes"> Yes </option>
+										<option value="no"> No </option>
+									</select>
+								</td>
+								<td>
+									<select className = "form-control" value = {this.state.ash_wc_deleted_sod_val} name = "ash_wc_deleted_sod_val" onChange = {this.onchange} placeholder = {this.props.data.ash_wc_deleted_sod_PH} disabled={this.state.ash_wc_deleted_sod === true ? false : true}>
+										<option value="">--Choose value -- </option>
+										<option value="yes"> Yes </option>
+										<option value="no"> No </option>
+									</select>
+								</td>
+								<td>
+									<select className = "form-control" value = {this.state.ash_acc_type_sod_val} name = "ash_acc_type_sod_val" onChange = {this.onchange} placeholder = {this.props.data.ash_acc_type_sod_PH} disabled={this.state.ash_acc_type_sod === true ? false : true}>
+										<option value="">--Choose value -- </option>
+										<option value="yes"> Yes </option>
+										<option value="no"> No </option>
+									</select>
+								</td>
+								<td>
+									<input className = "form-control" type = "date" placeholder = {this.props.data.ash_last_addr_sod_PH} value = {this.state.ash_last_addr_sod_val} name = "ash_last_addr_sod_val" onChange = {this.onchange} disabled={this.state.ash_last_addr_sod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_indep_health_sod_PH} value = {this.state.bailey_indep_health_sod_val} name = "bailey_indep_health_sod_val" onChange = {this.onchange} disabled={this.state.bailey_indep_health_sod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_bcbs_sod_PH} value = {this.state.bailey_bcbs_sod_val} name = "bailey_bcbs_sod_val" onChange = {this.onchange} disabled={this.state.bailey_bcbs_sod === true ? false : true}/>
+								</td>	
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_emails_sod_PH} value = {this.state.bailey_emails_sod_val} name = "bailey_emails_sod_val" onChange = {this.onchange} disabled={this.state.bailey_emails_sod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.justin_ndc_num_sod_PH} value = {this.state.justin_ndc_num_sod_val} name = "justin_ndc_num_sod_val" onChange = {this.onchange} disabled={this.state.justin_ndc_num_sod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_loc_sod_PH} value = {this.state.justin_medicare_loc_sod_val} name = "justin_medicare_loc_sod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_loc_sod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_sec_sod_PH} value = {this.state.justin_medicare_sec_sod_val} name = "justin_medicare_sec_sod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_sec_sod === true ? false : true}/>
+								</td>
+							</tr>
+							
+							<tr>
+								<td>
+									EOD
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.saf_mvp_eod_PH} value = {this.state.saf_mvp_eod_val} name = "saf_mvp_eod_val" onChange = {this.onchange} disabled={this.state.saf_mvp_eod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "date" placeholder = {this.props.data.saf_inval_addr_eod_PH} value = {this.state.saf_inval_addr_eod_val} name = "saf_inval_addr_eod_val" onChange = {this.onchange} disabled={this.state.saf_inval_addr_eod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.ash_attachments_eod_PH} value = {this.state.ash_attachments_eod_val} name = "ash_attachments_eod_val" onChange = {this.onchange} disabled={this.state.ash_attachments_eod === true ? false : true}/>
+								</td>
+								<td>
+									
+								</td>
+								<td>
+									
+								</td>
+								<td>
+									
+								</td>
+								<td>
+									
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_indep_health_eod_PH} value = {this.state.bailey_indep_health_eod_val} name = "bailey_indep_health_eod_val" onChange = {this.onchange} disabled={this.state.bailey_indep_health_eod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_bcbs_eod_PH} value = {this.state.bailey_bcbs_eod_val} name = "bailey_bcbs_eod_val" onChange = {this.onchange} disabled={this.state.bailey_bcbs_eod === true ? false : true}/>
+								</td>	
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_emails_eod_PH} value = {this.state.bailey_emails_eod_val} name = "bailey_emails_eod_val" onChange = {this.onchange} disabled={this.state.bailey_emails_eod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.justin_ndc_num_eod_PH} value = {this.state.justin_ndc_num_eod_val} name = "justin_ndc_num_eod_val" onChange = {this.onchange} disabled={this.state.justin_ndc_num_eod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_loc_eod_PH} value = {this.state.justin_medicare_loc_eod_val} name = "justin_medicare_loc_eod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_loc_eod === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_sec_eod_PH} value = {this.state.justin_medicare_sec_eod_val} name = "justin_medicare_sec_eod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_sec_eod === true ? false : true}/>
+								</td>						
+							</tr>
+						</tbody>
+					</table>
+					<div className="form-group">
+						<div>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<button className="btn btn-info" onClick = {this.save}><b> Enter  </b></button>
+							&nbsp;&nbsp;&nbsp;
+							<button className="btn btn-warning" onClick = {this.cancel}> Cancel </button>
 						</div>
-					</form>
+					</div>
+				</form>
 			</div>
 		)
 	}

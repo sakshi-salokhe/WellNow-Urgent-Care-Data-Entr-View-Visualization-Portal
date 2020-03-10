@@ -13,6 +13,7 @@ import ViewData from "../ViewData"
 import DataList_AR from "./AR/DataList_AR"
 import DataList_OM from "./OM/DataList_OM"
 import DataList_OS from "./OS/DataList_OS"
+import DataList_PatSup from "./PatSup/DataList_PatSup"
 
 class PrevData extends Component
 {
@@ -85,11 +86,10 @@ class PrevData extends Component
 					{
 						ReactDOM.render(<DataList_OM data = {resp1.data} user_id = {obj.user_id}/>, document.getElementById('root'));
 					}
-					/*
-					else if(resp.data.dashboards == 4 || obj.dashboards === '4')
+					else if(resp.data.dashboards == 4 || resp.data.dashboards === '4')
 					{
-						ReactDOM.render(<DataList_onDateRangePat data = {resp.data}/>, document.getElementById('root'));
-					}*/
+						ReactDOM.render(<DataList_PatSup data = {resp1.data} user_id = {obj.user_id}/>, document.getElementById('root'));
+					}
 				})
 			})
 		}

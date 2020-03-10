@@ -15,6 +15,7 @@ import PrevData from "./view_dashboards/PrevData.js"
 import CurrDataAR from "./view_dashboards/CurrDataAR.js"
 import CurrDataOM from "./view_dashboards/CurrDataOM.js"
 import CurrDataOS from "./view_dashboards/CurrDataOS.js"
+import CurrDataPatSup from "./view_dashboards/CurrDataPatSup"
 
 import SummaryViewAR from "./view_dashboards/SummaryViewAR.js"
 import SummaryViewOS from "./view_dashboards/SummaryViewOS.js"
@@ -67,10 +68,10 @@ class ViewData extends Component
 			{
 				ReactDOM.render(<CurrDataOM user_id = {this.user_id} />, document.getElementById('root'));
 			}
-			/*else if(res.data.dashboards == 4 || res.data.dashboards == '4')
+			else if(res.data.dashboards == 4 || res.data.dashboards == '4')
 			{
-				ReactDOM.render(<CurrDataPatSupport user_id = {this.user_id} />, document.getElementById('root'));
-			}*/
+				ReactDOM.render(<CurrDataPatSup user_id = {this.user_id} />, document.getElementById('root'));
+			}
 		})
 		
 	}

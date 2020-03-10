@@ -10,9 +10,9 @@ import EmployeeLogInPage from "../../EmployeeLogInPage"
 import ViewData from "../ViewData"
 
 
-import PreviousDataViewOM from './OM/PreviousDataViewOM'
+import PreviousDataViewPatSup from './PatSup/PreviousDataViewPatSup'
 
-class CurrDataOM extends Component
+class CurrDataPatSup extends Component
 {
 	constructor(props)
 	{
@@ -53,7 +53,7 @@ class CurrDataOM extends Component
 		//console.log("here here here");
 		return this.state.employees.map(function(object)
 		{
-			return <PreviousDataViewOM key={object.userid} obj={object} />;
+			return <PreviousDataViewPatSup key={object.userid} obj={object} />;
 		});
 	}
 	
@@ -64,65 +64,48 @@ class CurrDataOM extends Component
 			<div className="container-fluid">
 				
 				<IndexHeader />
-				
-				<div>
 					<div className= "row">
 						<div className = "col-lg-3 col-md-3 col-sm-3 col-cs-3">
 							<button className="btn btn-primary" onClick={this.back}> Back </button>
 						</div>
 						<div className = "col-lg-9 col-md-9 col-sm-9 col-cs-9">
-							<h3 align="center"> Today's Data for OM Dashboard </h3>
+							<h3 align="center"> Today's Data for Patient Support Dashboard </h3>
 						</div>
 					</div>
 					<table className="table table-striped table-bordered" style={{marginTop: 20}}>
 						<thead>
 							<tr>
 								<th> </th>
-								<th colSpan="15"> Support </th>
-								<th colSpan="5"> Coding </th>
-								<th colSpan="7"> AR </th>
+								<th> </th>
+								<th colSpan="2"> Safiyyah </th>
+								<th colSpan="5"> Ashley Standish </th>
+								<th colSpan="3"> Bailea </th>
+								<th colSpan="3"> Justin </th>
 							</tr>
 							<tr>
 								<th> Date</th>
-								<th> SP </th>
-								<th> ENL </th>
-								<th> DNU </th>
-								<th> NYUCP </th>
-								<th> NOM </th>
-								<th> EMAILS </th>
-								<th> DEPOSIT PULLS </th>
-								<th> BLANK BATCH CORRES </th>
-								<th> CORRESPON - DENCE </th>
-								<th> ACCT AUDITS </th>
-								<th> INV CORRECT </th>
-								<th> PHONE </th>
-								<th> INV ADDR </th>
-								<th> COLLECTS </th>
-								<th> MEDICAL RECORDS </th>
-								<th> NA </th>
-								<th> ON HOLDS </th>
-								<th> CODING QUEUE </th>
-								<th> ON SITES </th>
-								<th> OOA'S </th>
-								<th> 120+ </th>
-								<th> 120+ (%) </th>
-								<th> 90+ </th>
-								<th> VOICEMAILS </th>
-								<th> UNAPPLIED </th>
-								<th> AUDIT </th>
-								<th> WB's </th>
+								<th> </th>
+								<th> MVP </th>
+								<th> Invalid Address (oldest date open) </th>
+								<th> Attachments </th>
+								<th> WC Mailing (yes/no) </th>
+								<th> WC deleted claims to archived (yes/no) </th>
+								<th> Accident Type (WC/NF) (yes/no) </th>
+								<th> Last Address given Worked (last date finished) </th>
+								<th> Indep Health </th>
+								<th> BCBS of WNY </th>
+								<th> Emails </th>
+								<th> NDC Numbers </th>
+								<th> Medicare Facility Location </th>
+								<th> Medicare Secondary to be original </th>
 							</tr>
 						</thead>
-						<tbody>
 							{this.userList()}
-						</tbody>
 					</table>
-				</div>
-				
 			</div>
 		)
 		
 	}
 }
 
-export default CurrDataOM
+export default CurrDataPatSup
