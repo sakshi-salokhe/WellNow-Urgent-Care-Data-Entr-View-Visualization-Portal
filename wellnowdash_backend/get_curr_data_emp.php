@@ -139,28 +139,19 @@ else if($dashboards == '4' or $dashboards == 4)
 			$emp[$c]['when_done'] = $row['when_done'];
 			
 			$emp[$c]['saf_mvp_sod'] = $row['saf_mvp_sod'];
-			$emp[$c]['saf_mvp_eod'] = $row['saf_mvp_eod'];
 			$emp[$c]['saf_inval_addr_sod'] = $row['saf_inval_addr_sod'];
-			$emp[$c]['saf_inval_addr_eod'] = $row['saf_inval_addr_eod'];
 			$emp[$c]['ash_attachments_sod'] = $row['ash_attachments_sod'];
-			$emp[$c]['ash_attachments_eod'] = $row['ash_attachments_eod'];
 			$emp[$c]['ash_wc_mailing_sod'] = $row['ash_wc_mailing_sod'];
 			$emp[$c]['ash_wc_deleted_sod'] = $row['ash_wc_deleted_sod'];
 			$emp[$c]['ash_acc_type_sod'] = $row['ash_acc_type_sod'];
 			$emp[$c]['ash_last_addr_sod'] = $row['ash_last_addr_sod'];
 			$emp[$c]['bailey_indep_health_sod'] = $row['bailey_indep_health_sod'];
-			$emp[$c]['bailey_indep_health_eod'] = $row['bailey_indep_health_eod'];
 			$emp[$c]['bailey_bcbs_sod'] = $row['bailey_bcbs_sod'];
-			$emp[$c]['bailey_bcbs_eod'] = $row['bailey_bcbs_eod'];
 			$emp[$c]['bailey_emails_sod'] = $row['bailey_emails_sod'];
-			$emp[$c]['bailey_emails_eod'] = $row['bailey_emails_eod'];
 			$emp[$c]['justin_ndc_num_sod'] = $row['justin_ndc_num_sod'];
-			$emp[$c]['justin_ndc_num_eod'] = $row['justin_ndc_num_eod'];
 			$emp[$c]['justin_medicare_loc_sod'] = $row['justin_medicare_loc_sod'];
-			$emp[$c]['justin_medicare_loc_eod'] = $row['justin_medicare_loc_eod'];
 			$emp[$c]['justin_medicare_sec_sod'] = $row['justin_medicare_sec_sod'];
-			$emp[$c]['justin_medicare_sec_eod'] = $row['justin_medicare_sec_eod'];
-
+			
 			$c++;
 		}
 		echo json_encode($emp);

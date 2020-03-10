@@ -301,52 +301,34 @@ else if($dashboard == 4 or $dashboard == '4')
 	$emp['when_done'] = $today;
 	
 	$emp['saf_mvp_sod'] = $row2['saf_mvp_sod'];
-	$emp['saf_mvp_eod'] = $row2['saf_mvp_eod'];
 	$emp['saf_inval_addr_sod'] = $row2['saf_inval_addr_sod'];
-	$emp['saf_inval_addr_eod'] = $row2['saf_inval_addr_eod'];
 	$emp['ash_attachments_sod'] = $row2['ash_attachments_sod'];
-	$emp['ash_attachments_eod'] = $row2['ash_attachments_eod'];
 	$emp['ash_wc_mailing_sod'] = $row2['ash_wc_mailing_sod'];
 	$emp['ash_wc_deleted_sod'] = $row2['ash_wc_deleted_sod'];
 	$emp['ash_acc_type_sod'] = $row2['ash_acc_type_sod'];
 	$emp['ash_last_addr_sod'] = $row2['ash_last_addr_sod'];
 	$emp['bailey_indep_health_sod'] = $row2['bailey_indep_health_sod'];
-	$emp['bailey_indep_health_eod'] = $row2['bailey_indep_health_eod'];
 	$emp['bailey_bcbs_sod'] = $row2['bailey_bcbs_sod'];
-	$emp['bailey_bcbs_eod'] = $row2['bailey_bcbs_eod'];
 	$emp['bailey_emails_sod'] = $row2['bailey_emails_sod'];
-	$emp['bailey_emails_eod'] = $row2['bailey_emails_eod'];
 	$emp['justin_ndc_num_sod'] = $row2['justin_ndc_num_sod'];
-	$emp['justin_ndc_num_eod'] = $row2['justin_ndc_num_eod'];
 	$emp['justin_medicare_loc_sod'] = $row2['justin_medicare_loc_sod'];
-	$emp['justin_medicare_loc_eod'] = $row2['justin_medicare_loc_eod'];
 	$emp['justin_medicare_sec_sod'] = $row2['justin_medicare_sec_sod'];
-	$emp['justin_medicare_sec_eod'] = $row2['justin_medicare_sec_eod'];
 	
 	if($count > 0)
 	{
 		$emp['saf_mvp_sod_PH'] = $row3['saf_mvp_sod'];
-		$emp['saf_mvp_eod_PH'] = $row3['saf_mvp_eod'];
 		$emp['saf_inval_addr_sod_PH'] = $row3['saf_inval_addr_sod'];
-		$emp['saf_inval_addr_eod_PH'] = $row3['saf_inval_addr_eod'];
 		$emp['ash_attachments_sod_PH'] = $row3['ash_attachments_sod'];
-		$emp['ash_attachments_eod_PH'] = $row3['ash_attachments_eod'];
 		$emp['ash_wc_mailing_sod_PH'] = $row3['ash_wc_mailing_sod'];
 		$emp['ash_wc_deleted_sod_PH'] = $row3['ash_wc_deleted_sod'];
 		$emp['ash_acc_type_sod_PH'] = $row3['ash_acc_type_sod'];
 		$emp['ash_last_addr_sod_PH'] = $row3['ash_last_addr_sod'];
 		$emp['bailey_indep_health_sod_PH'] = $row3['bailey_indep_health_sod'];
-		$emp['bailey_indep_health_eod_PH'] = $row3['bailey_indep_health_eod'];
 		$emp['bailey_bcbs_sod_PH'] = $row3['bailey_bcbs_sod'];
-		$emp['bailey_bcbs_eod_PH'] = $row3['bailey_bcbs_eod'];
 		$emp['bailey_emails_sod_PH'] = $row3['bailey_emails_sod'];
-		$emp['bailey_emails_eod_PH'] = $row3['bailey_emails_eod'];
 		$emp['justin_ndc_num_sod_PH'] = $row3['justin_ndc_num_sod'];
-		$emp['justin_ndc_num_eod_PH'] = $row3['justin_ndc_num_eod'];
 		$emp['justin_medicare_loc_sod_PH'] = $row3['justin_medicare_loc_sod'];
-		$emp['justin_medicare_loc_eod_PH'] = $row3['justin_medicare_loc_eod'];
 		$emp['justin_medicare_sec_sod_PH'] = $row3['justin_medicare_sec_sod'];
-		$emp['justin_medicare_sec_eod_PH'] = $row3['justin_medicare_sec_eod'];
 	}
 	
 	
