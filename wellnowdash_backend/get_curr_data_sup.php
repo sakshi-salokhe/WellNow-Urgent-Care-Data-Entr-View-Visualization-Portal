@@ -238,20 +238,66 @@ else if($dashboards == '3')
 		
 	}
 }
-/*else if($dashboards == '2')
+else if($dashboards == '4' or $dashboards == 4)
 {
-	$sql = "select * from os_data where when_done between '$startdate' and '$enddate'";
+	$sql = "select * from pat_sup_data where when_done = '$today'";
+	if($res = mysqli_query($con, $sql))
+	{
+		$c = 0;
+		while($row = mysqli_fetch_assoc($res))
+		{
+			$emp[$c]['id'] = $row['pat_sup_id'];
+			$emp[$c]['when_done'] = $row['when_done'];
+			$emp[$c]['dashboards'] = $dashboards;
+			$emp[$c]['supervisor_id'] = $sup_id;
+			
+			$emp[$c]['saf_mvp_sod'] = $row['saf_mvp_sod'];
+			$emp[$c]['saf_inval_addr_sod'] = $row['saf_inval_addr_sod'];
+			$emp[$c]['ash_attachments_sod'] = $row['ash_attachments_sod'];
+			$emp[$c]['ash_wc_mailing_sod'] = $row['ash_wc_mailing_sod'];
+			$emp[$c]['ash_wc_deleted_sod'] = $row['ash_wc_deleted_sod'];
+			$emp[$c]['ash_acc_type_sod'] = $row['ash_acc_type_sod'];
+			$emp[$c]['ash_last_addr_sod'] = $row['ash_last_addr_sod'];
+			$emp[$c]['bailey_indep_health_sod'] = $row['bailey_indep_health_sod'];
+			$emp[$c]['bailey_bcbs_sod'] = $row['bailey_bcbs_sod'];
+			$emp[$c]['bailey_emails_sod'] = $row['bailey_emails_sod'];
+			$emp[$c]['justin_ndc_num_sod'] = $row['justin_ndc_num_sod'];
+			$emp[$c]['justin_medicare_loc_sod'] = $row['justin_medicare_loc_sod'];
+			$emp[$c]['justin_medicare_sec_sod'] = $row['justin_medicare_sec_sod'];
+			
+			$c++;
+		}
+		
+		if($c >= 1)
+		{
+			echo json_encode($emp);
+		}
+		else{
+			$emp[$c]['id'] = $row['pat_sup_id'];
+			$emp[$c]['when_done'] = $today;
+			$emp[$c]['dashboards'] = $dashboards;
+			$emp[$c]['supervisor_id'] = $sup_id;
+			
+			$emp[$c]['saf_mvp_sod'] = "";
+			$emp[$c]['saf_inval_addr_sod'] = "";
+			$emp[$c]['ash_attachments_sod'] = "";
+			$emp[$c]['ash_wc_mailing_sod'] = "";
+			$emp[$c]['ash_wc_deleted_sod'] = "";
+			$emp[$c]['ash_acc_type_sod'] = "";
+			$emp[$c]['ash_last_addr_sod'] = "";
+			$emp[$c]['bailey_indep_health_sod'] = "";
+			$emp[$c]['bailey_bcbs_sod'] = "";
+			$emp[$c]['bailey_emails_sod'] = "";
+			$emp[$c]['justin_ndc_num_sod'] = "";
+			$emp[$c]['justin_medicare_loc_sod'] = "";
+			$emp[$c]['justin_medicare_sec_sod'] = "";
+			
+			echo json_encode($emp);
+		}
+		
+	}
+	
 }
-else if($dashboards == '3')
-{
-	$sql = "select * from om_data where when_done between '$startdate' and '$enddate'";
-}
-else if($dashboards == '4')
-{
-	$sql = "select * from pat_support_data where when_done between '$startdate' and '$enddate'";
-}
-*/
-
 else
 {
 	http_response_code(404);
