@@ -1355,23 +1355,19 @@ else if($dashboards == '4')
 			if($row['saf_mvp_sod'] == "") 
 			{
 				$saf_mvp_sod_val = "-";
-				$saf_mvp_sod_val1 = 0;
 			} 
 			else 
 			{
 				$saf_mvp_sod_val = $row['saf_mvp_sod'];
-				$saf_mvp_sod_val1 = $row['saf_mvp_sod'];
 			}
 			
 			if($row['saf_inval_addr_sod'] == "") 
 			{
 				$saf_inval_addr_sod_val = "-";
-				$saf_inval_addr_sod_val1 = 0;
 			} 
 			else 
 			{
 				$saf_inval_addr_sod_val = $row['saf_inval_addr_sod'];
-				$saf_inval_addr_sod_val1 = $row['saf_inval_addr_sod'];
 			}
 			
 			if($row['ash_attachments_sod'] == "") 
