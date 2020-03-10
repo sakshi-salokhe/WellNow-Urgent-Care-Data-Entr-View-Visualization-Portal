@@ -21,13 +21,9 @@ if(isset($postdata) && !empty($postdata))
 	$ash_attachments_sod_val = $_POST['ash_attachments_sod_val'];
 	$ash_attachments_eod_val = $_POST['ash_attachments_eod_val'];
 	$ash_wc_mailing_sod_val = $_POST['ash_wc_mailing_sod_val'];
-	$ash_wc_mailing_eod_val = $_POST['ash_wc_mailing_eod_val'];
 	$ash_wc_deleted_sod_val = $_POST['ash_wc_deleted_sod_val'];
-	$ash_wc_deleted_eod_val = $_POST['ash_wc_deleted_eod_val'];
 	$ash_acc_type_sod_val = $_POST['ash_acc_type_sod_val'];
-	$ash_acc_type_eod_val = $_POST['ash_acc_type_eod_val'];
 	$ash_last_addr_sod_val = $_POST['ash_last_addr_sod_val'];
-	$ash_last_addr_eod_val = $_POST['ash_last_addr_eod_val'];
 	$bailey_indep_health_sod_val = $_POST['bailey_indep_health_sod_val'];
 	$bailey_indep_health_eod_val = $_POST['bailey_indep_health_eod_val'];
 	$bailey_bcbs_sod_val = $_POST['bailey_bcbs_sod_val'];
@@ -87,22 +83,10 @@ if(isset($postdata) && !empty($postdata))
 			$r7 = mysqli_query($con, $q7);
 		}
 		
-		if(empty($ash_wc_mailing_eod_val) == False)
-		{
-			$q8 = "update pat_sup_data set ash_wc_mailing_eod = '$ash_wc_mailing_eod_val' where when_done = '$today'";
-			$r8 = mysqli_query($con, $q8);
-		}
-		
 		if(empty($ash_wc_deleted_sod_val) == False)
 		{
 			$q9 = "update pat_sup_data set ash_wc_deleted_sod = '$ash_wc_deleted_sod_val' where when_done = '$today'";
 			$r9 = mysqli_query($con, $q9);
-		}
-		
-		if(empty($ash_wc_deleted_eod_val) == False)
-		{
-			$q10 = "update pat_sup_data set ash_wc_deleted_eod = '$ash_wc_deleted_eod_val' where when_done = '$today'";
-			$r10 = mysqli_query($con, $q10);
 		}
 		
 		if(empty($ash_acc_type_sod_val) == False)
@@ -110,22 +94,10 @@ if(isset($postdata) && !empty($postdata))
 			$q10 = "update pat_sup_data set ash_acc_type_sod = '$ash_acc_type_sod_val' where when_done = '$today'";
 			$r10 = mysqli_query($con, $q10);
 		}
-		
-		if(empty($ash_acc_type_eod_val) == False)
-		{
-			$q10 = "update pat_sup_data set ash_acc_type_eod = '$ash_acc_type_eod_val' where when_done = '$today'";
-			$r10 = mysqli_query($con, $q10);
-		}
-		
+	
 		if(empty($ash_last_addr_sod_val) == False)
 		{
 			$q10 = "update pat_sup_data set ash_last_addr_sod = '$ash_last_addr_sod_val' where when_done = '$today'";
-			$r10 = mysqli_query($con, $q10);
-		}
-		
-		if(empty($ash_last_addr_eod_val) == False)
-		{
-			$q10 = "update pat_sup_data set ash_last_addr_eod = '$ash_last_addr_eod_val' where when_done = '$today'";
 			$r10 = mysqli_query($con, $q10);
 		}
 		

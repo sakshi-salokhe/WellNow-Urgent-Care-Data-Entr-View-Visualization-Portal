@@ -26,9 +26,12 @@ if($dashboard == 1 or $dashboard == '1')
 	$result3 = mysqli_query($con,$sql3);
 	$row3 = mysqli_fetch_array($result3);
 	$count = mysqli_num_rows($result3);
+	$today = date('Y-m-d');
 	
 	$emp['userid'] = $userid;
 	$emp['dashboard'] = $dashboard;
+	$emp['when_done'] = $today;
+	
 	$emp['wb_tech_other'] = $row2['wb_tech_other'];
 	$emp['wb_demo_elig'] = $row2['wb_demo_elig'];
 	$emp['wb_timely_filing'] = $row2['wb_timely_filing'];
@@ -79,13 +82,13 @@ else if($dashboard == 2 or $dashboard == '2')
 	
 	$result3 = mysqli_query($con,$sql3);
 	
-	
+	$today = date('Y-m-d');
 	$row3 = mysqli_fetch_array($result3);
 	$count = mysqli_num_rows($result3);
 	
 	$emp['userid'] = $userid;
 	$emp['dashboard'] = $dashboard;
-	
+	$emp['when_done'] = $today;
 	
 	$emp['RPQ_print_queue_total'] = $row2['RPQ_print_queue_total'];
 	$emp['RPQ_num_of_WC'] = $row2['RPQ_num_of_WC'];
@@ -175,13 +178,14 @@ else if($dashboard == 3 or $dashboard == '3')
 	
 	$result3 = mysqli_query($con,$sql3);
 	
+	$today = date('Y-m-d');
 	
 	$row3 = mysqli_fetch_array($result3);
 	$count = mysqli_num_rows($result3);
 	
 	$emp['userid'] = $userid;
 	$emp['dashboard'] = $dashboard;
-	
+	$emp['when_done'] = $today;
 	
 	$emp['support_sp'] = $row2['support_sp'];
 	$emp['support_enl'] = $row2['support_enl'];
@@ -290,45 +294,61 @@ else if($dashboard == 4 or $dashboard == '4')
 	$result3 = mysqli_query($con,$sql3);
 	$row3 = mysqli_fetch_array($result3);
 	$count = mysqli_num_rows($result3);
+	$today = date('Y-m-d');
 	
 	$emp['userid'] = $userid;
 	$emp['dashboard'] = $dashboard;
-	$emp['wb_tech_other'] = $row2['wb_tech_other'];
-	$emp['wb_demo_elig'] = $row2['wb_demo_elig'];
-	$emp['wb_timely_filing'] = $row2['wb_timely_filing'];
-	$emp['wb_coding_replies'] = $row2['wb_coding_replies'];
-	$emp['wb_sup_reviews'] = $row2['wb_sup_reviews'];
-	$emp['wb_nf_corres'] = $row2['wb_nf_corres'];
-	$emp['wb_wc_corres'] = $row2['wb_wc_corres'];
-	$emp['waystar_medc_sec'] = $row2['waystar_medc_sec'];
-	$emp['waystar_oob'] = $row2['waystar_oob'];
-	$emp['waystar_fidelis_tf'] = $row2['waystar_fidelis_tf'];
+	$emp['when_done'] = $today;
+	
+	$emp['saf_mvp_sod'] = $row2['saf_mvp_sod'];
+	$emp['saf_mvp_eod'] = $row2['saf_mvp_eod'];
+	$emp['saf_inval_addr_sod'] = $row2['saf_inval_addr_sod'];
+	$emp['saf_inval_addr_eod'] = $row2['saf_inval_addr_eod'];
+	$emp['ash_attachments_sod'] = $row2['ash_attachments_sod'];
+	$emp['ash_attachments_eod'] = $row2['ash_attachments_eod'];
+	$emp['ash_wc_mailing_sod'] = $row2['ash_wc_mailing_sod'];
+	$emp['ash_wc_deleted_sod'] = $row2['ash_wc_deleted_sod'];
+	$emp['ash_acc_type_sod'] = $row2['ash_acc_type_sod'];
+	$emp['ash_last_addr_sod'] = $row2['ash_last_addr_sod'];
+	$emp['bailey_indep_health_sod'] = $row2['bailey_indep_health_sod'];
+	$emp['bailey_indep_health_eod'] = $row2['bailey_indep_health_eod'];
+	$emp['bailey_bcbs_sod'] = $row2['bailey_bcbs_sod'];
+	$emp['bailey_bcbs_eod'] = $row2['bailey_bcbs_eod'];
+	$emp['bailey_emails_sod'] = $row2['bailey_emails_sod'];
+	$emp['bailey_emails_eod'] = $row2['bailey_emails_eod'];
+	$emp['justin_ndc_num_sod'] = $row2['justin_ndc_num_sod'];
+	$emp['justin_ndc_num_eod'] = $row2['justin_ndc_num_eod'];
+	$emp['justin_medicare_loc_sod'] = $row2['justin_medicare_loc_sod'];
+	$emp['justin_medicare_loc_eod'] = $row2['justin_medicare_loc_eod'];
+	$emp['justin_medicare_sec_sod'] = $row2['justin_medicare_sec_sod'];
+	$emp['justin_medicare_sec_eod'] = $row2['justin_medicare_sec_eod'];
 	
 	if($count > 0)
 	{
-		$emp['wb_tech_other_PH'] = $row3['wb_tech_other'];
-		$emp['wb_demo_elig_PH'] = $row3['wb_demo_elig'];
-		$emp['wb_timely_filing_PH'] = $row3['wb_timely_filing'];
-		$emp['wb_coding_replies_PH'] = $row3['wb_coding_replies'];
-		$emp['wb_sup_reviews_PH'] = $row3['wb_sup_reviews'];
-		$emp['wb_nf_corres_PH'] = $row3['wb_nf_corres'];
-		$emp['wb_wc_corres_PH'] = $row3['wb_wc_corres'];
-		$emp['waystar_medc_sec_PH'] = $row3['waystar_medc_sec'];
-		$emp['waystar_oob_PH'] = $row3['waystar_oob'];
-		$emp['waystar_fidelis_tf_PH'] = $row3['waystar_fidelis_tf'];
+		$emp['saf_mvp_sod_PH'] = $row3['saf_mvp_sod'];
+		$emp['saf_mvp_eod_PH'] = $row3['saf_mvp_eod'];
+		$emp['saf_inval_addr_sod_PH'] = $row3['saf_inval_addr_sod'];
+		$emp['saf_inval_addr_eod_PH'] = $row3['saf_inval_addr_eod'];
+		$emp['ash_attachments_sod_PH'] = $row3['ash_attachments_sod'];
+		$emp['ash_attachments_eod_PH'] = $row3['ash_attachments_eod'];
+		$emp['ash_wc_mailing_sod_PH'] = $row3['ash_wc_mailing_sod'];
+		$emp['ash_wc_deleted_sod_PH'] = $row3['ash_wc_deleted_sod'];
+		$emp['ash_acc_type_sod_PH'] = $row3['ash_acc_type_sod'];
+		$emp['ash_last_addr_sod_PH'] = $row3['ash_last_addr_sod'];
+		$emp['bailey_indep_health_sod_PH'] = $row3['bailey_indep_health_sod'];
+		$emp['bailey_indep_health_eod_PH'] = $row3['bailey_indep_health_eod'];
+		$emp['bailey_bcbs_sod_PH'] = $row3['bailey_bcbs_sod'];
+		$emp['bailey_bcbs_eod_PH'] = $row3['bailey_bcbs_eod'];
+		$emp['bailey_emails_sod_PH'] = $row3['bailey_emails_sod'];
+		$emp['bailey_emails_eod_PH'] = $row3['bailey_emails_eod'];
+		$emp['justin_ndc_num_sod_PH'] = $row3['justin_ndc_num_sod'];
+		$emp['justin_ndc_num_eod_PH'] = $row3['justin_ndc_num_eod'];
+		$emp['justin_medicare_loc_sod_PH'] = $row3['justin_medicare_loc_sod'];
+		$emp['justin_medicare_loc_eod_PH'] = $row3['justin_medicare_loc_eod'];
+		$emp['justin_medicare_sec_sod_PH'] = $row3['justin_medicare_sec_sod'];
+		$emp['justin_medicare_sec_eod_PH'] = $row3['justin_medicare_sec_eod'];
 	}
-	else{
-		$emp['wb_tech_other_PH'] = NULL;
-		$emp['wb_demo_elig_PH'] = NULL;
-		$emp['wb_timely_filing_PH'] = NULL;
-		$emp['wb_coding_replies_PH'] = NULL;
-		$emp['wb_sup_reviews_PH'] = NULL;
-		$emp['wb_nf_corres_PH'] = NULL;
-		$emp['wb_wc_corres_PH'] = NULL;
-		$emp['waystar_medc_sec_PH'] = NULL;
-		$emp['waystar_oob_PH'] = NULL;
-		$emp['waystar_fidelis_tf_PH'] = NULL;
-	}
+	
 	
 	echo json_encode($emp);
 }
