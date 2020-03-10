@@ -19,50 +19,32 @@ class EnterDataPatSup extends Component
 		this.state = 
 		{
 			saf_mvp_sod : false,
-			saf_mvp_eod : false,
 			saf_inval_addr_sod : false,
-			saf_inval_addr_eod : false,
 			ash_attachments_sod : false,
-			ash_attachments_eod : false,
 			ash_wc_mailing_sod : false,
 			ash_wc_deleted_sod : false,
 			ash_acc_type_sod : false,
 			ash_last_addr_sod : false,
 			bailey_indep_health_sod : false,
-			bailey_indep_health_eod : false,
 			bailey_bcbs_sod : false,
-			bailey_bcbs_eod : false,
 			bailey_emails_sod : false,
-			bailey_emails_eod : false,
 			justin_ndc_num_sod : false,
-			justin_ndc_num_eod : false,
 			justin_medicare_loc_sod: false,
-			justin_medicare_loc_eod : false,
 			justin_medicare_sec_sod: false,
-			justin_medicare_sec_eod : false,			 
 			
 			saf_mvp_sod_val : this.props.data.saf_mvp_sod_PH,
-			saf_mvp_eod_val : this.props.data.saf_mvp_eod_PH,
 			saf_inval_addr_sod_val : this.props.data.saf_inval_addr_sod_PH,
-			saf_inval_addr_eod_val : this.props.data.saf_inval_addr_eod_PH,
 			ash_attachments_sod_val : this.props.data.ash_attachments_sod_PH,
-			ash_attachments_eod_val : this.props.data.ash_attachments_eod_PH,
 			ash_wc_mailing_sod_val : this.props.data.ash_wc_mailing_sod_PH,
 			ash_wc_deleted_sod_val : this.props.data.ash_wc_deleted_sod_PH,
 			ash_acc_type_sod_val : this.props.data.ash_acc_type_sod_PH,
 			ash_last_addr_sod_val : this.props.data.ash_last_addr_sod_PH,
 			bailey_indep_health_sod_val : this.props.data.bailey_indep_health_sod_PH,
-			bailey_indep_health_eod_val : this.props.data.bailey_indep_health_eod_PH,
 			bailey_bcbs_sod_val : this.props.data.bailey_bcbs_sod_PH,
-			bailey_bcbs_eod_val : this.props.data.bailey_bcbs_eod_PH,
 			bailey_emails_sod_val : this.props.data.bailey_emails_sod_PH,
-			bailey_emails_eod_val : this.props.data.bailey_emails_eod_PH,
 			justin_ndc_num_sod_val : this.props.data.justin_ndc_num_sod_PH,
-			justin_ndc_num_eod_val : this.props.data.justin_ndc_num_eod_PH,
 			justin_medicare_loc_sod_val : this.props.data.justin_medicare_loc_sod_PH,
-			justin_medicare_loc_eod_val : this.props.data.justin_medicare_loc_eod_PH,
 			justin_medicare_sec_sod_val : this.props.data.justin_medicare_sec_sod_PH,
-			justin_medicare_sec_eod_val : this.props.data.justin_medicare_sec_eod_PH,
 			
 		}
 		
@@ -75,15 +57,6 @@ class EnterDataPatSup extends Component
 			this.state.saf_mvp_sod = true
 		}
 		
-		if(this.props.data.saf_mvp_eod == 0)
-		{
-			this.state.saf_mvp_eod = false 
-		}
-		else
-		{
-			this.state.saf_mvp_eod = true
-		}
-		
 		if(this.props.data.saf_inval_addr_sod == 0)
 		{
 			this.state.saf_inval_addr_sod = false 
@@ -93,15 +66,6 @@ class EnterDataPatSup extends Component
 			this.state.saf_inval_addr_sod = true
 		}
 		
-		if(this.props.data.saf_inval_addr_eod == 0)
-		{
-			this.state.saf_inval_addr_eod = false 
-		}
-		else
-		{
-			this.state.saf_inval_addr_eod = true
-		}
-		
 		if(this.props.data.ash_attachments_sod == 0)
 		{
 			this.state.ash_attachments_sod = false 
@@ -109,15 +73,6 @@ class EnterDataPatSup extends Component
 		else
 		{
 			this.state.ash_attachments_sod = true
-		}
-		
-		if(this.props.data.ash_attachments_eod == 0)
-		{
-			this.state.ash_attachments_eod = false 
-		}
-		else
-		{
-			this.state.ash_attachments_eod = true
 		}
 		
 		if(this.props.data.ash_wc_mailing_sod == 0)
@@ -165,15 +120,6 @@ class EnterDataPatSup extends Component
 			this.state.bailey_indep_health_sod = true
 		}
 		
-		if(this.props.data.bailey_indep_health_eod == 0)
-		{
-			this.state.bailey_indep_health_eod = false 
-		}
-		else
-		{
-			this.state.bailey_indep_health_eod = true
-		}
-		
 		if(this.props.data.bailey_bcbs_sod == 0)
 		{
 			this.state.bailey_bcbs_sod = false 
@@ -181,15 +127,6 @@ class EnterDataPatSup extends Component
 		else
 		{
 			this.state.bailey_bcbs_sod = true
-		}
-		
-		if(this.props.data.bailey_bcbs_eod == 0)
-		{
-			this.state.bailey_bcbs_eod = false 
-		}
-		else
-		{
-			this.state.bailey_bcbs_eod = true
 		}
 		
 		if(this.props.data.bailey_emails_sod == 0)
@@ -201,15 +138,6 @@ class EnterDataPatSup extends Component
 			this.state.bailey_emails_sod = true
 		}
 		
-		if(this.props.data.bailey_emails_eod == 0)
-		{
-			this.state.bailey_emails_eod = false 
-		}
-		else
-		{
-			this.state.bailey_emails_eod = true
-		}
-		
 		if(this.props.data.justin_ndc_num_sod == 0)
 		{
 			this.state.justin_ndc_num_sod = false 
@@ -217,15 +145,6 @@ class EnterDataPatSup extends Component
 		else
 		{
 			this.state.justin_ndc_num_sod = true
-		}
-		
-		if(this.props.data.justin_ndc_num_eod == 0)
-		{
-			this.state.justin_ndc_num_eod = false 
-		}
-		else
-		{
-			this.state.justin_ndc_num_eod = true
 		}
 		
 		if(this.props.data.justin_medicare_loc_sod == 0)
@@ -237,15 +156,6 @@ class EnterDataPatSup extends Component
 			this.state.justin_medicare_loc_sod = true
 		}
 		
-		if(this.props.data.justin_medicare_loc_eod == 0)
-		{
-			this.state.justin_medicare_loc_eod = false 
-		}
-		else
-		{
-			this.state.justin_medicare_loc_eod = true
-		}
-		
 		if(this.props.data.justin_medicare_sec_sod == 0)
 		{
 			this.state.justin_medicare_sec_sod = false 
@@ -253,15 +163,6 @@ class EnterDataPatSup extends Component
 		else
 		{
 			this.state.justin_medicare_sec_sod = true
-		}
-		
-		if(this.props.data.justin_medicare_sec_eod == 0)
-		{
-			this.state.justin_medicare_sec_eod = false 
-		}
-		else
-		{
-			this.state.justin_medicare_sec_eod = true
 		}
 		
 		this.onchange = this.onchange.bind(this)
@@ -285,27 +186,18 @@ class EnterDataPatSup extends Component
 		const obj = {
 					userid : this.props.data.userid,
 					saf_mvp_sod_val : this.state.saf_mvp_sod_val,
-					saf_mvp_eod_val : this.state.saf_mvp_eod_val,
 					saf_inval_addr_sod_val : this.state.saf_inval_addr_sod_val,
-					saf_inval_addr_eod_val : this.state.saf_inval_addr_eod_val,
 					ash_attachments_sod_val : this.state.ash_attachments_sod_val,
-					ash_attachments_eod_val : this.state.ash_attachments_eod_val,
 					ash_wc_mailing_sod_val : this.state.ash_wc_mailing_sod_val,
 					ash_wc_deleted_sod_val : this.state.ash_wc_deleted_sod_val,
 					ash_acc_type_sod_val : this.state.ash_acc_type_sod_val,
 					ash_last_addr_sod_val : this.state.ash_last_addr_sod_val,
 					bailey_indep_health_sod_val : this.state.bailey_indep_health_sod_val,
-					bailey_indep_health_eod_val : this.state.bailey_indep_health_eod_val,
 					bailey_bcbs_sod_val : this.state.bailey_bcbs_sod_val,
-					bailey_bcbs_eod_val : this.state.bailey_bcbs_eod_val,
 					bailey_emails_sod_val : this.state.bailey_emails_sod_val,
-					bailey_emails_eod_val : this.state.bailey_emails_eod_val,
 					justin_ndc_num_sod_val : this.state.justin_ndc_num_sod_val,
-					justin_ndc_num_eod_val : this.state.justin_ndc_num_eod_val,
 					justin_medicare_loc_sod_val : this.state.justin_medicare_loc_sod_val,
-					justin_medicare_loc_eod_val : this.state.justin_medicare_loc_eod_val,
 					justin_medicare_sec_sod_val : this.state.justin_medicare_sec_sod_val,
-					justin_medicare_sec_eod_val : this.state.justin_medicare_sec_eod_val,
 					
 				};
 		console.log("obj",obj);
@@ -377,7 +269,6 @@ class EnterDataPatSup extends Component
 						<thead>
 							<tr>
 								<th> </th>
-								<th> </th>
 								<th colSpan="2"> Safiyyah </th>
 								<th colSpan="5"> Ashley Standish </th>
 								<th colSpan="3"> Bailea </th>
@@ -385,7 +276,6 @@ class EnterDataPatSup extends Component
 							</tr>
 							<tr>
 								<th> Date</th>
-								<th> </th>
 								<th> MVP </th>
 								<th> Invalid Address (oldest date open) </th>
 								<th> Attachments </th>
@@ -403,11 +293,8 @@ class EnterDataPatSup extends Component
 						</thead>
 						<tbody>
 							<tr>
-								<td rowspan="2">
-									{this.props.data.when_done}
-								</td>
 								<td>
-									SOD
+									{this.props.data.when_done}
 								</td>
 								<td>
 									<input className = "form-control" type = "number" placeholder = {this.props.data.saf_mvp_sod_PH} value = {this.state.saf_mvp_sod_val} name = "saf_mvp_sod_val" onChange = {this.onchange} disabled={this.state.saf_mvp_sod === true ? false : true}/>
@@ -460,51 +347,6 @@ class EnterDataPatSup extends Component
 								<td>
 									<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_sec_sod_PH} value = {this.state.justin_medicare_sec_sod_val} name = "justin_medicare_sec_sod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_sec_sod === true ? false : true}/>
 								</td>
-							</tr>
-							
-							<tr>
-								<td>
-									EOD
-								</td>
-								<td>
-									<input className = "form-control" type = "number" placeholder = {this.props.data.saf_mvp_eod_PH} value = {this.state.saf_mvp_eod_val} name = "saf_mvp_eod_val" onChange = {this.onchange} disabled={this.state.saf_mvp_eod === true ? false : true}/>
-								</td>
-								<td>
-									<input className = "form-control" type = "date" placeholder = {this.props.data.saf_inval_addr_eod_PH} value = {this.state.saf_inval_addr_eod_val} name = "saf_inval_addr_eod_val" onChange = {this.onchange} disabled={this.state.saf_inval_addr_eod === true ? false : true}/>
-								</td>
-								<td>
-									<input className = "form-control" type = "number" placeholder = {this.props.data.ash_attachments_eod_PH} value = {this.state.ash_attachments_eod_val} name = "ash_attachments_eod_val" onChange = {this.onchange} disabled={this.state.ash_attachments_eod === true ? false : true}/>
-								</td>
-								<td>
-									
-								</td>
-								<td>
-									
-								</td>
-								<td>
-									
-								</td>
-								<td>
-									
-								</td>
-								<td>
-									<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_indep_health_eod_PH} value = {this.state.bailey_indep_health_eod_val} name = "bailey_indep_health_eod_val" onChange = {this.onchange} disabled={this.state.bailey_indep_health_eod === true ? false : true}/>
-								</td>
-								<td>
-									<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_bcbs_eod_PH} value = {this.state.bailey_bcbs_eod_val} name = "bailey_bcbs_eod_val" onChange = {this.onchange} disabled={this.state.bailey_bcbs_eod === true ? false : true}/>
-								</td>	
-								<td>
-									<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_emails_eod_PH} value = {this.state.bailey_emails_eod_val} name = "bailey_emails_eod_val" onChange = {this.onchange} disabled={this.state.bailey_emails_eod === true ? false : true}/>
-								</td>
-								<td>
-									<input className = "form-control" type = "number" placeholder = {this.props.data.justin_ndc_num_eod_PH} value = {this.state.justin_ndc_num_eod_val} name = "justin_ndc_num_eod_val" onChange = {this.onchange} disabled={this.state.justin_ndc_num_eod === true ? false : true}/>
-								</td>
-								<td>
-									<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_loc_eod_PH} value = {this.state.justin_medicare_loc_eod_val} name = "justin_medicare_loc_eod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_loc_eod === true ? false : true}/>
-								</td>
-								<td>
-									<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_sec_eod_PH} value = {this.state.justin_medicare_sec_eod_val} name = "justin_medicare_sec_eod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_sec_eod === true ? false : true}/>
-								</td>						
 							</tr>
 						</tbody>
 					</table>

@@ -64,7 +64,6 @@ class DataList_PatSup extends Component
 						<thead>
 							<tr>
 								<th> </th>
-								<th> </th>
 								<th colSpan="2"> Safiyyah </th>
 								<th colSpan="5"> Ashley Standish </th>
 								<th colSpan="3"> Bailea </th>
@@ -72,7 +71,6 @@ class DataList_PatSup extends Component
 							</tr>
 							<tr>
 								<th> Date</th>
-								<th> </th>
 								<th> MVP </th>
 								<th> Invalid Address (oldest date open) </th>
 								<th> Attachments </th>

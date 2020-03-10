@@ -94,10 +94,10 @@ class ViewData extends Component
 			{
 				ReactDOM.render(<SummaryViewOM user_id = {this.user_id} />, document.getElementById('root'));
 			}
-			/*else if(res.data.dashboards == 4 || res.data.dashboards == '4')
+			else if(res.data.dashboards == 4 || res.data.dashboards == '4')
 			{
-				ReactDOM.render(<CurrDataPatSupport user_id = {this.user_id} />, document.getElementById('root'));
-			}*/
+				alert("There is no Summary page for Patient Support Dashboard");
+			}
 		})
 	}
 	

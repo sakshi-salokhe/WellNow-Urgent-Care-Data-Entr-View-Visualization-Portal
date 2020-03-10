@@ -15,11 +15,8 @@ class PreviousDataViewPatSup extends Component
 		return (
 			<tbody>
 				<tr>
-					<td rowspan="2">
-						{this.props.obj.when_done}
-					</td>
 					<td>
-						SOD
+						{this.props.obj.when_done}
 					</td>
 					<td>
 						{this.props.obj.saf_mvp_sod}
@@ -62,50 +59,6 @@ class PreviousDataViewPatSup extends Component
 					</td>
 				</tr>
 				
-				<tr>
-					<td>
-						EOD
-					</td>
-					<td>
-						{this.props.obj.saf_mvp_eod}
-					</td>
-					<td>
-						{this.props.obj.saf_inval_addr_eod}
-					</td>
-					<td>
-						{this.props.obj.ash_attachments_eod}
-					</td>
-					<td>
-						
-					</td>
-					<td>
-						
-					</td>
-					<td>
-						
-					</td>
-					<td>
-						
-					</td>
-					<td>
-						{this.props.obj.bailey_indep_health_eod}
-					</td>
-					<td>
-						{this.props.obj.bailey_bcbs_eod}
-					</td>	
-					<td>
-						{this.props.obj.bailey_emails_eod}
-					</td>
-					<td>
-						{this.props.obj.justin_ndc_num_eod}
-					</td>
-					<td>
-						{this.props.obj.whejustin_medicare_loc_eodn_done}
-					</td>
-					<td>
-						{this.props.obj.justin_medicare_sec_eod}
-					</td>						
-				</tr>
 			</tbody>
 		);
 	}
