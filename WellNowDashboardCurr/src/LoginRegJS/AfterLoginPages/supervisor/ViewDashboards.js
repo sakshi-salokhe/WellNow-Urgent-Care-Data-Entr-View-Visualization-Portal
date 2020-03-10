@@ -15,6 +15,7 @@ import PrevData from "./view_dashboards/PrevData"
 import ViewCurrDataAR from "./view_dashboards/AR/ViewCurrDataAR"
 import ViewCurrDataOM from "./view_dashboards/OM/ViewCurrDataOM"
 import ViewCurrDataOS from "./view_dashboards/OS/ViewCurrDataOS"
+import ViewCurrDataPatSup from "./view_dashboards/PatSup/ViewCurrDataPatSup"
 
 import PrevDataVisualise from "./view_dashboards/PrevDataVisualise"
 
@@ -86,6 +87,10 @@ class ViewDashboards extends Component
 			{
 				ReactDOM.render(<SummaryViewOM user_id = {this.user_id} />, document.getElementById('root'));
 			}
+			else if(res.data.dashboards == 4 || res.data.dashboards == '4')
+			{
+				alert("Summary page not for Patient Support Dashboard.");
+			}
 		})
 	}
 	
@@ -106,6 +111,10 @@ class ViewDashboards extends Component
 			else if(resp.data[0].dashboards == 3 || resp.data[0].dashboards === '3')
 			{
 				ReactDOM.render(<ViewCurrDataOM data = {resp.data}/>, document.getElementById('root'));
+			}
+			else if(resp.data[0].dashboards == 4 || resp.data[0].dashboards === '4')
+			{
+				ReactDOM.render(<ViewCurrDataPatSup data = {resp.data}/>, document.getElementById('root'));
 			}
 			})
 	}
