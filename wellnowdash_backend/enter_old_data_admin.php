@@ -19,7 +19,10 @@ if($dashboard == 1)
 	$row3 = mysqli_fetch_array($result3);
 	$count = mysqli_num_rows($result3);
 	
+	$emp['when_done'] = $today;
+	
 	$emp['dashboard'] = $dashboard;
+	
 	$emp['wb_tech_other'] = 1;
 	$emp['wb_demo_elig'] = 1;
 	$emp['wb_timely_filing'] = 1;
@@ -68,6 +71,8 @@ else if($dashboard == 2)
 	$result3 = mysqli_query($con,$sql3);
 	$row3 = mysqli_fetch_array($result3);
 	$count = mysqli_num_rows($result3);
+	
+	$emp['when_done'] = $today;
 	
 	$emp['dashboard'] = $dashboard;
 	
@@ -158,6 +163,8 @@ else if($dashboard == 3)
 	$result3 = mysqli_query($con,$sql3);
 	$row3 = mysqli_fetch_array($result3);
 	$count = mysqli_num_rows($result3);
+	
+	$emp['when_done'] = $today;
 	
 	$emp['dashboard'] = $dashboard;
 	

@@ -30,6 +30,7 @@ if($dashboard == 1 or $dashboard == '1')
 	
 	$emp['userid'] = $userid;
 	$emp['dashboard'] = $dashboard;
+	$emp['when_done'] = $today."-".$today_year;
 	$emp['wb_tech_other'] = $row2['wb_tech_other'];
 	$emp['wb_demo_elig'] = $row2['wb_demo_elig'];
 	$emp['wb_timely_filing'] = $row2['wb_timely_filing'];
@@ -80,7 +81,7 @@ else if($dashboard == 2 or $dashboard == '2')
 	
 	$emp['userid'] = $userid;
 	$emp['dashboard'] = $dashboard;
-	
+	$emp['when_done'] = $today."-".$today_year;
 	$emp['RPQ_print_queue_total'] = $row2['RPQ_print_queue_total'];
 	$emp['RPQ_num_of_WC'] = $row2['RPQ_num_of_WC'];
 	$emp['IL_RCM_Ins'] = $row2['IL_RCM_Ins'];
@@ -167,7 +168,7 @@ else if($dashboard == 3 or $dashboard == '3')
 	
 	$emp['userid'] = $userid;
 	$emp['dashboard'] = $dashboard;
-	
+	$emp['when_done'] = $today."-".$today_year;
 	$emp['support_sp'] = $row2['support_sp'];
 	$emp['support_enl'] = $row2['support_enl'];
 	$emp['support_dnu'] = $row2['support_dnu'];

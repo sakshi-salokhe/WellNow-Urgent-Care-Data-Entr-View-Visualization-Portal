@@ -26,6 +26,7 @@ if($dashboard == 1)
 	$result3 = mysqli_query($con,$sql3);
 	$row3 = mysqli_fetch_array($result3);
 	$count = mysqli_num_rows($result3);
+	$emp['when_done'] = $today;
 	
 	$emp['userid'] = $userid;
 	$emp['dashboard'] = $dashboard;
@@ -79,6 +80,9 @@ else if($dashboard == 2)
 	$result3 = mysqli_query($con,$sql3);
 	$row3 = mysqli_fetch_array($result3);
 	$count = mysqli_num_rows($result3);
+	
+	
+	$emp['when_done'] = $today;
 	
 	$emp['userid'] = $userid;
 	$emp['dashboard'] = $dashboard;
@@ -169,6 +173,9 @@ else if($dashboard == 3)
 	$result3 = mysqli_query($con,$sql3);
 	$row3 = mysqli_fetch_array($result3);
 	$count = mysqli_num_rows($result3);
+	
+	
+	$emp['when_done'] = $today;
 	
 	$emp['userid'] = $userid;
 	$emp['dashboard'] = $dashboard;
