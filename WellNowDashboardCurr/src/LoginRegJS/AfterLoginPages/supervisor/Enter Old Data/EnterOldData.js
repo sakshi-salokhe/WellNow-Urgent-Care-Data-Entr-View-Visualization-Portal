@@ -53,6 +53,7 @@ class EnterOldData extends Component
 		if(obj.olddate.length == 0)
 		{
 			alert("Fill out all the fields!");
+			ReactDOM.render(<EnterOldData user_id = {this.props.data.user_id}/>, document.getElementById('root'));
 		}
 		else{
 			//console.log(obj);
@@ -93,7 +94,7 @@ class EnterOldData extends Component
 						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> choose the old date: </b></label>
 						
 						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "date" value = {this.state.olddate} name = "olddate" onChange = {this.onchangeOldDate} /> 
+							<input className = "form-control" type = "date" max={moment().format("YYYY-MM-DD")} value = {this.state.olddate} name = "olddate" onChange = {this.onchangeOldDate} /> 
 						</div>
 						
 						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>

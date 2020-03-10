@@ -364,247 +364,131 @@ class EnterDataOS extends Component
 		var user_id = this.props.data.userid;
 		
 		return (
-			<div className = "container">
-				<h3> Enter Data </h3>
+			<div className = "container-fluid">
+				<h3> Enter Data {this.props.data.when_done} </h3>
 				
-				<form className="form-horizontal">
-				<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Print Queue Total: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.RPQ_print_queue_total_PH} value = {this.state.RPQ_print_queue_total_val == null ? null : this.state.RPQ_print_queue_total_val} name = "RPQ_print_queue_total_val" onChange = {this.onChange} disabled={this.state.RPQ_print_queue_total === true ? false : true} />
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
+				<form>
+					<table className="table table-striped table-bordered" style={{marginTop: 20}}>
+						<thead>
+							<tr>
+								<th colSpan="2"> Ready To Print Queue </th>
+								<th colSpan="6"> In-Limbo </th>
+								<th colSpan="3"> Workbaskets/Email </th>
+							</tr>
+							<tr>
+								<th> Print Queue Total </th>
+								<th> # of WC </th>
+								<th> RCM - Ins </th>
+								<th> RCM - WC </th>
+								<th> **NINS </th>
+								<th> **NNF </th>
+								<th> **NWC </th>
+								<th> **ENL </th>
+								<th> NF Updates </th>
+								<th> WC Updates </th>
+								<th> OS Email Inbox </th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.RPQ_print_queue_total_PH} value = {this.state.RPQ_print_queue_total_val == null ? null : this.state.RPQ_print_queue_total_val} name = "RPQ_print_queue_total_val" onChange = {this.onChange} disabled={this.state.RPQ_print_queue_total === true ? false : true} />
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.RPQ_num_of_WC_PH} value = {this.state.RPQ_num_of_WC_val} name = "RPQ_num_of_WC_val" onChange = {this.onChange} disabled={this.state.RPQ_num_of_WC === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.IL_RCM_Ins_PH} value = {this.state.IL_RCM_Ins_val} name = "IL_RCM_Ins_val" onChange = {this.onChange} disabled={this.state.IL_RCM_Ins === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.IL_RCM_WC_PH} value = {this.state.IL_RCM_WC_val} name = "IL_RCM_WC_val" onChange = {this.onChange} disabled={this.state.IL_RCM_WC === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.IL_NINS_PH} value = {this.state.IL_NINS_val} name = "IL_NINS_val" onChange = {this.onChange} disabled={this.state.IL_NINS === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.IL_NNF_PH} value = {this.state.IL_NNF_val} name = "IL_NNF_val" onChange = {this.onChange} disabled={this.state.IL_NNF === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.IL_NWC_PH} value = {this.state.IL_NWC_val} name = "IL_NWC_val" onChange = {this.onChange} disabled={this.state.IL_NWC === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.IL_ENL_PH} value = {this.state.IL_ENL_val} name = "IL_ENL_val" onChange = {this.onChange} disabled={this.state.IL_ENL === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.WBE_NF_Updates_PH} value = {this.state.WBE_NF_Updates_val} name = "WBE_NF_Updates_val" onChange = {this.onChange} disabled={this.state.WBE_NF_Updates === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.WBE_WC_Updates_PH} value = {this.state.WBE_WC_Updates_val} name = "WBE_WC_Updates_val" onChange = {this.onChange} disabled={this.state.WBE_WC_Updates === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.WBE_OS_Email_Inbox_PH} value = {this.state.WBE_OS_Email_Inbox_val} name = "WBE_OS_Email_Inbox_val" onChange = {this.onChange} disabled={this.state.WBE_OS_Email_Inbox === true ? false : true}/>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> # of WC: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.RPQ_num_of_WC_PH} value = {this.state.RPQ_num_of_WC_val} name = "RPQ_num_of_WC_val" onChange = {this.onChange} disabled={this.state.RPQ_num_of_WC === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
+					<br />
 					
-					<h2> In-Limbo </h2>
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> RCM-Ins: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.IL_RCM_Ins_PH} value = {this.state.IL_RCM_Ins_val} name = "IL_RCM_Ins_val" onChange = {this.onChange} disabled={this.state.IL_RCM_Ins === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> RCM-WC: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.IL_RCM_WC_PH} value = {this.state.IL_RCM_WC_val} name = "IL_RCM_WC_val" onChange = {this.onChange} disabled={this.state.IL_RCM_WC === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> **NINS: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.IL_NINS_PH} value = {this.state.IL_NINS_val} name = "IL_NINS_val" onChange = {this.onChange} disabled={this.state.IL_NINS === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> **NNF: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.IL_NNF_PH} value = {this.state.IL_NNF_val} name = "IL_NNF_val" onChange = {this.onChange} disabled={this.state.IL_NNF === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> **NWC: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.IL_NWC_PH} value = {this.state.IL_NWC_val} name = "IL_NWC_val" onChange = {this.onChange} disabled={this.state.IL_NWC === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> **ENL: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.IL_ENL_PH} value = {this.state.IL_ENL_val} name = "IL_ENL_val" onChange = {this.onChange} disabled={this.state.IL_ENL === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<h2> Rejections / Attachments</h2>
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> WS Prof: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.RA_WS_Prof_PH} value = {this.state.RA_WS_Prof_val} name = "RA_WS_Prof_val" onChange = {this.onChange} disabled={this.state.RA_WS_Prof === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> WS Prof Day: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.RA_WS_Prof_Day_PH} value = {this.state.RA_WS_Prof_Day_val} name = "RA_WS_Prof_Day_val" onChange = {this.onChange} disabled={this.state.RA_WS_Prof_Day === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> WS Inst: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.RA_WS_Inst_PH} value = {this.state.RA_WS_Inst_val} name = "RA_WS_Inst_val" onChange = {this.onChange} disabled={this.state.RA_WS_Inst === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> WS Inst Day: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.RA_WS_Inst_Day_PH} value = {this.state.RA_WS_Inst_Day_val} name = "RA_WS_Inst_Day_val" onChange = {this.onChange} disabled={this.state.RA_WS_Inst_Day === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Attachments: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.RA_Attachments_PH} value = {this.state.RA_Attachments_val} name = "RA_Attachments_val" onChange = {this.onChange} disabled={this.state.RA_Attachments === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<h2> Workbaskets / email </h2>
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> NF Updates: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.WBE_NF_Updates_PH} value = {this.state.WBE_NF_Updates_val} name = "WBE_NF_Updates_val" onChange = {this.onChange} disabled={this.state.WBE_NF_Updates === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> WC Updates: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.WBE_WC_Updates_PH} value = {this.state.WBE_WC_Updates_val} name = "WBE_WC_Updates_val" onChange = {this.onChange} disabled={this.state.WBE_WC_Updates === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> OS Email Inbox: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.WBE_OS_Email_Inbox_PH} value = {this.state.WBE_OS_Email_Inbox_val} name = "WBE_OS_Email_Inbox_val" onChange = {this.onChange} disabled={this.state.WBE_OS_Email_Inbox === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<h2> Coding </h2>
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> FFS Total: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.Coding_FFS_Total_PH} value = {this.state.Coding_FFS_Total_val} name = "Coding_FFS_Total_val" onChange = {this.onChange} disabled={this.state.Coding_FFS_Total === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>	
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> FFS On-Hold: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.Coding_FFS_On_hold_PH} value = {this.state.Coding_FFS_On_hold_val} name = "Coding_FFS_On_hold_val" onChange = {this.onChange} disabled={this.state.Coding_FFS_On_hold === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Coding Queue: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.Coding_Coding_Queue_PH} value = {this.state.Coding_Coding_Queue_val} name = "Coding_Coding_Queue_val" onChange = {this.onChange} disabled={this.state.Coding_Coding_Queue === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Coding Queue Days: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.Coding_Coding_Queue_Days_PH} value = {this.state.Coding_Coding_Queue_Days_val} name = "Coding_Coding_Queue_Days_val" onChange = {this.onChange} disabled={this.state.Coding_Coding_Queue_Days === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> WS Coding: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.Coding_WS_Coding_PH} value = {this.state.Coding_WS_Coding_val} name = "Coding_WS_Coding_val" onChange = {this.onChange} disabled={this.state.Coding_WS_Coding === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> FFS On-Hold Rpt: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.Coding_FFS_Onhold_Report_PH} value = {this.state.Coding_FFS_Onhold_Report_val} name = "Coding_FFS_Onhold_Report_val" onChange = {this.onChange} disabled={this.state.Coding_FFS_Onhold_Report === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-					</div>
-					
+					<table className="table table-striped table-bordered" style={{marginTop: 20}}>
+						<thead>
+							<tr>
+								<th colSpan="5"> Rejections/Attachments </th>
+								<th colSpan="6"> Coding </th>
+							</tr>
+							<tr>
+								<th> WS Prof  </th>
+								<th> WS Prof Day </th>
+								<th> WS Inst  </th>
+								<th> WS Inst Day </th>
+								<th> Attachments </th>
+								<th> FFS Total </th>
+								<th> FFS On-hold </th>
+								<th> Coding Queue </th>
+								<th> Coding Queue Days </th>
+								<th> WS Coding  </th>
+								<th> FFS On-hold Rpt </th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.RA_WS_Prof_PH} value = {this.state.RA_WS_Prof_val} name = "RA_WS_Prof_val" onChange = {this.onChange} disabled={this.state.RA_WS_Prof === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.RA_WS_Prof_Day_PH} value = {this.state.RA_WS_Prof_Day_val} name = "RA_WS_Prof_Day_val" onChange = {this.onChange} disabled={this.state.RA_WS_Prof_Day === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.RA_WS_Inst_PH} value = {this.state.RA_WS_Inst_val} name = "RA_WS_Inst_val" onChange = {this.onChange} disabled={this.state.RA_WS_Inst === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.RA_WS_Inst_Day_PH} value = {this.state.RA_WS_Inst_Day_val} name = "RA_WS_Inst_Day_val" onChange = {this.onChange} disabled={this.state.RA_WS_Inst_Day === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.RA_Attachments_PH} value = {this.state.RA_Attachments_val} name = "RA_Attachments_val" onChange = {this.onChange} disabled={this.state.RA_Attachments === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.Coding_FFS_Total_PH} value = {this.state.Coding_FFS_Total_val} name = "Coding_FFS_Total_val" onChange = {this.onChange} disabled={this.state.Coding_FFS_Total === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.Coding_FFS_On_hold_PH} value = {this.state.Coding_FFS_On_hold_val} name = "Coding_FFS_On_hold_val" onChange = {this.onChange} disabled={this.state.Coding_FFS_On_hold === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.Coding_Coding_Queue_PH} value = {this.state.Coding_Coding_Queue_val} name = "Coding_Coding_Queue_val" onChange = {this.onChange} disabled={this.state.Coding_Coding_Queue === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.Coding_Coding_Queue_Days_PH} value = {this.state.Coding_Coding_Queue_Days_val} name = "Coding_Coding_Queue_Days_val" onChange = {this.onChange} disabled={this.state.Coding_Coding_Queue_Days === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.Coding_WS_Coding_PH} value = {this.state.Coding_WS_Coding_val} name = "Coding_WS_Coding_val" onChange = {this.onChange} disabled={this.state.Coding_WS_Coding === true ? false : true}/>
+								</td>
+								<td>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.Coding_FFS_Onhold_Report_PH} value = {this.state.Coding_FFS_Onhold_Report_val} name = "Coding_FFS_Onhold_Report_val" onChange = {this.onChange} disabled={this.state.Coding_FFS_Onhold_Report === true ? false : true}/>
+								</td>
+								
+							</tr>
+						</tbody>
+					</table>
 					<div className="form-group">
 						<div>
 							&nbsp;&nbsp;&nbsp;&nbsp;

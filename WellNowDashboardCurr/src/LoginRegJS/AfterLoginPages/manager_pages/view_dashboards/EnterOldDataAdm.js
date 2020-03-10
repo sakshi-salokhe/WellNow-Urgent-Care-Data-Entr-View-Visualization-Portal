@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Redirect} from "react-router"
 import {Link} from "react-router-dom"
-
+import moment from "moment"
 
 import IndexHeader from "../../../../IndexHeader";
 import ManagerLogInPage from "../../ManagerLogInPage"
@@ -65,7 +65,7 @@ class EnterOldDataAdm extends Component
 		{
 			alert("Fill out all the fields!");
 		}
-		if(obj.dashboards == 1 || obj.dashboards == '1')
+		else if(obj.dashboards == 1 || obj.dashboards == '1')
 		{
 			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_old_data_admin.php?dashboards=1&olddate='+obj.olddate)
 			.then(
@@ -214,7 +214,7 @@ class EnterOldDataAdm extends Component
 						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Choose the date : </b></label>
 						
 						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "date" value = {this.state.olddate} name = "olddate" onChange = {this.onchangeOldDate} /> 
+							<input className = "form-control" type = "date" max={moment().format("YYYY-MM-DD")} value = {this.state.olddate} name = "olddate" onChange = {this.onchangeOldDate} /> 
 						</div>
 						
 						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>

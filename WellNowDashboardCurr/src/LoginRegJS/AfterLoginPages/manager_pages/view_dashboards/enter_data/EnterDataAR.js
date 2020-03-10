@@ -299,116 +299,66 @@ class EnterDataAR extends Component
 			<div className = "container">
 				<h3> Enter Data </h3>
 				
-				<form className="form-horizontal">
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> wb_tech_other_val: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.wb_tech_other_PH} value = {this.state.wb_tech_other_val} name = "wb_tech_other_val" onChange = {this.onChangewb_tech_other} disabled={this.state.wb_tech_other === true ? false : true} />
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> wb_demo_elig_val: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.wb_demo_elig_PH} value = {this.state.wb_demo_elig_val} name = "wb_demo_elig_val" onChange = {this.onChangewb_demo_elig} disabled={this.state.wb_demo_elig === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> wb_timely_filing_val: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.wb_timely_filing_PH} value = {this.state.wb_timely_filing_val} name = "wb_timely_filing_val" onChange = {this.onChangewb_timely_filing} disabled={this.state.wb_timely_filing === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> wb_coding_replies_val: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.wb_coding_replies_PH} value = {this.state.wb_coding_replies_val} name = "wb_coding_replies_val" onChange = {this.onChangewb_coding_replies} disabled={this.state.wb_coding_replies === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> wb_sup_reviews_val: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.wb_sup_reviews_PH} value = {this.state.wb_sup_reviews_val} name = "wb_sup_reviews_val" onChange = {this.onChangewb_sup_reviews} disabled={this.state.wb_sup_reviews === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> wb_nf_corres_val: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.wb_nf_corres_PH} value = {this.state.wb_nf_corres_val} name = "wb_nf_corres_val" onChange = {this.onChangewb_nf_corres} disabled={this.state.wb_nf_corres === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> wb_wc_corres_val: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.wb_wc_corres_PH} value = {this.state.wb_wc_corres_val} name = "wb_wc_corres_val" onChange = {this.onChangewb_wc_corres} disabled={this.state.wb_wc_corres === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> waystar_medc_sec_val: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.waystar_medc_sec_PH} value = {this.state.waystar_medc_sec_val} name = "waystar_medc_sec_val" onChange = {this.onChangewaystar_medc_sec} disabled={this.state.waystar_medc_sec === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> waystar_oob_val: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.waystar_oob_PH} value = {this.state.waystar_oob_val} name = "waystar_oob_val" onChange = {this.onChangewaystar_oob} disabled={this.state.waystar_oob === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
-					
-					<div className="form-group">
-						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> waystar_fidelis_tf_val: </b></label>
-						
-						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "number" placeholder = {this.props.data.waystar_fidelis_tf_PH} value = {this.state.waystar_fidelis_tf_val} name = "waystar_fidelis_tf_val" onChange = {this.onChangewaystar_fidelis_tf} disabled={this.state.waystar_fidelis_tf === true ? false : true}/>
-						</div>
-						
-						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
-						
-					</div>
+				<form>
+					<table className="table table-striped table-bordered" style={{marginTop: 20}}>
+						<thead>
+							<tr>
+								<th> </th>
+								<th colSpan="7"> Workbasket </th>
+								<th colSpan="3"> Waystar </th>
+							</tr>
+							<tr>
+								<th> Date</th>
+								<th> Tech/Other </th>
+								<th> Demo / Elig </th>
+								<th> Timely Filing </th>
+								<th> Coding Replies </th>
+								<th> Sup Reviews </th>
+								<th> NF Corres </th>
+								<th> WC Corres </th>
+								<th> Medc Sec </th>
+								<th> OOB </th>
+								<th> Fidelis TF </th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td> 
+									{this.props.data.when_done}
+								</td>
+								<td> 
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_tech_other_PH} value = {this.state.wb_tech_other_val == null ? null : this.state.wb_tech_other_val} name = "wb_tech_other_val" onChange = {this.onChangewb_tech_other} disabled={this.state.wb_tech_other === true ? false : true} />
+								</td>
+								<td> 
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_demo_elig_PH} value = {this.state.wb_demo_elig_val} name = "wb_demo_elig_val" onChange = {this.onChangewb_demo_elig} disabled={this.state.wb_demo_elig === true ? false : true}/>
+								</td>
+								<td> 
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_timely_filing_PH} value = {this.state.wb_timely_filing_val} name = "wb_timely_filing_val" onChange = {this.onChangewb_timely_filing} disabled={this.state.wb_timely_filing === true ? false : true}/>
+								</td>
+								<td> 
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_coding_replies_PH} value = {this.state.wb_coding_replies_val} name = "wb_coding_replies_val" onChange = {this.onChangewb_coding_replies} disabled={this.state.wb_coding_replies === true ? false : true}/>
+								</td>
+								<td> 
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_sup_reviews_PH} value = {this.state.wb_sup_reviews_val} name = "wb_sup_reviews_val" onChange = {this.onChangewb_sup_reviews} disabled={this.state.wb_sup_reviews === true ? false : true}/>
+								</td>
+								<td> 
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_nf_corres_PH} value = {this.state.wb_nf_corres_val} name = "wb_nf_corres_val" onChange = {this.onChangewb_nf_corres} disabled={this.state.wb_nf_corres === true ? false : true}/>
+								</td>
+								<td> 
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_wc_corres_PH} value = {this.state.wb_wc_corres_val} name = "wb_wc_corres_val" onChange = {this.onChangewb_wc_corres} disabled={this.state.wb_wc_corres === true ? false : true}/>
+								</td>
+								<td> 
+									<input className = "form-control" type = "number" placeholder = {this.props.data.waystar_medc_sec_PH} value = {this.state.waystar_medc_sec_val} name = "waystar_medc_sec_val" onChange = {this.onChangewaystar_medc_sec} disabled={this.state.waystar_medc_sec === true ? false : true}/>
+								</td>
+								<td> 
+									<input className = "form-control" type = "number" placeholder = {this.props.data.waystar_oob_PH} value = {this.state.waystar_oob_val} name = "waystar_oob_val" onChange = {this.onChangewaystar_oob} disabled={this.state.waystar_oob === true ? false : true}/>
+								</td>
+								<td> 
+									<input className = "form-control" type = "number" placeholder = {this.props.data.waystar_fidelis_tf_PH} value = {this.state.waystar_fidelis_tf_val} name = "waystar_fidelis_tf_val" onChange = {this.onChangewaystar_fidelis_tf} disabled={this.state.waystar_fidelis_tf === true ? false : true}/>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 					
 					<div className="form-group">
 						<div>
