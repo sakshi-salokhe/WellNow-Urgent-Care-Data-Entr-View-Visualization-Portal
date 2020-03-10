@@ -17,6 +17,7 @@ import EditInfo from "./supervisor/EditInfo"
 import AR_Dash_Privileges from "./supervisor/privileges/AR_Dash_Privileges"
 import OM_Dash_Privileges from "./supervisor/privileges/OM_Dash_Privileges"
 import OS_Dash_Privileges from "./supervisor/privileges/OS_Dash_Privileges"
+import PatSup_Dash_Privileges from "./supervisor/privileges/PatSup_Dash_Privileges"
 
 
 class ManagerLogInPage extends Component 
@@ -85,12 +86,10 @@ class ManagerLogInPage extends Component
 			{
 				ReactDOM.render(<OM_Dash_Privileges data = {resp.data}/>, document.getElementById('root'));
 			}
-			
-			/*
-			else if(resp.data.dashboards == 4 || obj.dashboards === '4')
+			else if(resp.data.dashboards == 4 || resp.data.dashboards === '4')
 			{
-				ReactDOM.render(<ViewCurrDataPat data = {resp.data}/>, document.getElementById('root'));
-			}*/
+				ReactDOM.render(<PatSup_Dash_Privileges data = {resp.data}/>, document.getElementById('root'));
+			}
 			})
 	}
 	
