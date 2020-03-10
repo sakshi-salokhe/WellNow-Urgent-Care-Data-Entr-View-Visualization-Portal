@@ -25,13 +25,9 @@ class EnterDataPatSup extends Component
 			ash_attachments_sod : false,
 			ash_attachments_eod : false,
 			ash_wc_mailing_sod : false,
-			ash_wc_mailing_eod : false,
 			ash_wc_deleted_sod : false,
-			ash_wc_deleted_eod : false,
 			ash_acc_type_sod : false,
-			ash_acc_type_eod : false,
 			ash_last_addr_sod : false,
-			ash_last_addr_eod : false,
 			bailey_indep_health_sod : false,
 			bailey_indep_health_eod : false,
 			bailey_bcbs_sod : false,
@@ -52,13 +48,9 @@ class EnterDataPatSup extends Component
 			ash_attachments_sod_val : this.props.data.ash_attachments_sod_PH,
 			ash_attachments_eod_val : this.props.data.ash_attachments_eod_PH,
 			ash_wc_mailing_sod_val : this.props.data.ash_wc_mailing_sod_PH,
-			ash_wc_mailing_eod_val : this.props.data.ash_wc_mailing_eod_PH,
 			ash_wc_deleted_sod_val : this.props.data.ash_wc_deleted_sod_PH,
-			ash_wc_deleted_eod_val : this.props.data.ash_wc_deleted_eod_PH,
 			ash_acc_type_sod_val : this.props.data.ash_acc_type_sod_PH,
-			ash_acc_type_eod_val : this.props.data.ash_acc_type_eod_PH,
 			ash_last_addr_sod_val : this.props.data.ash_last_addr_sod_PH,
-			ash_last_addr_eod_val : this.props.data.ash_last_addr_eod_PH,
 			bailey_indep_health_sod_val : this.props.data.bailey_indep_health_sod_PH,
 			bailey_indep_health_eod_val : this.props.data.bailey_indep_health_eod_PH,
 			bailey_bcbs_sod_val : this.props.data.bailey_bcbs_sod_PH,
@@ -74,248 +66,212 @@ class EnterDataPatSup extends Component
 			
 		}
 		
-		if(this.props.data.saf_mvp_sod_total == 0)
+		if(this.props.data.saf_mvp_sod == 0)
 		{
-			this.state.saf_mvp_sod_total = false 
+			this.state.saf_mvp_sod = false 
 		}
 		else
 		{
-			this.state.saf_mvp_sod_total = true
+			this.state.saf_mvp_sod = true
 		}
 		
-		if(this.props.data.saf_mvp_eod_total == 0)
+		if(this.props.data.saf_mvp_eod == 0)
 		{
-			this.state.saf_mvp_eod_total = false 
+			this.state.saf_mvp_eod = false 
 		}
 		else
 		{
-			this.state.saf_mvp_eod_total = true
+			this.state.saf_mvp_eod = true
 		}
 		
-		if(this.props.data.saf_inval_addr_sod_total == 0)
+		if(this.props.data.saf_inval_addr_sod == 0)
 		{
-			this.state.saf_inval_addr_sod_total = false 
+			this.state.saf_inval_addr_sod = false 
 		}
 		else
 		{
-			this.state.saf_inval_addr_sod_total = true
+			this.state.saf_inval_addr_sod = true
 		}
 		
-		if(this.props.data.saf_inval_addr_eod_total == 0)
+		if(this.props.data.saf_inval_addr_eod == 0)
 		{
-			this.state.saf_inval_addr_eod_total = false 
+			this.state.saf_inval_addr_eod = false 
 		}
 		else
 		{
-			this.state.saf_inval_addr_eod_total = true
+			this.state.saf_inval_addr_eod = true
 		}
 		
-		if(this.props.data.ash_attachments_sod_total == 0)
+		if(this.props.data.ash_attachments_sod == 0)
 		{
-			this.state.ash_attachments_sod_total = false 
+			this.state.ash_attachments_sod = false 
 		}
 		else
 		{
-			this.state.ash_attachments_sod_total = true
+			this.state.ash_attachments_sod = true
 		}
 		
-		if(this.props.data.ash_attachments_eod_total == 0)
+		if(this.props.data.ash_attachments_eod == 0)
 		{
-			this.state.ash_attachments_eod_total = false 
+			this.state.ash_attachments_eod = false 
 		}
 		else
 		{
-			this.state.ash_attachments_eod_total = true
+			this.state.ash_attachments_eod = true
 		}
 		
-		if(this.props.data.ash_wc_mailing_sod_total == 0)
+		if(this.props.data.ash_wc_mailing_sod == 0)
 		{
-			this.state.ash_wc_mailing_sod_total = false 
+			this.state.ash_wc_mailing_sod = false 
 		}
 		else
 		{
-			this.state.ash_wc_mailing_sod_total = true
+			this.state.ash_wc_mailing_sod = true
 		}
 		
-		if(this.props.data.ash_wc_mailing_eod_total == 0)
+		if(this.props.data.ash_wc_deleted_sod == 0)
 		{
-			this.state.ash_wc_mailing_eod_total = false 
+			this.state.ash_wc_deleted_sod = false 
 		}
 		else
 		{
-			this.state.ash_wc_mailing_eod_total = true
+			this.state.ash_wc_deleted_sod = true
 		}
 		
-		if(this.props.data.ash_wc_deleted_sod_total == 0)
+		if(this.props.data.ash_acc_type_sod == 0)
 		{
-			this.state.ash_wc_deleted_sod_total = false 
+			this.state.ash_acc_type_sod = false 
 		}
 		else
 		{
-			this.state.ash_wc_deleted_sod_total = true
+			this.state.ash_acc_type_sod = true
 		}
 		
-		if(this.props.data.ash_wc_deleted_eod_total == 0)
+		if(this.props.data.ash_last_addr_sod == 0)
 		{
-			this.state.ash_wc_deleted_eod_total = false 
+			this.state.ash_last_addr_sod = false 
 		}
 		else
 		{
-			this.state.ash_wc_deleted_eod_total = true
+			this.state.ash_last_addr_sod = true
 		}
 		
-		if(this.props.data.ash_acc_type_sod_total == 0)
+		if(this.props.data.bailey_indep_health_sod == 0)
 		{
-			this.state.ash_acc_type_sod_total = false 
+			this.state.bailey_indep_health_sod = false 
 		}
 		else
 		{
-			this.state.ash_acc_type_sod_total = true
+			this.state.bailey_indep_health_sod = true
 		}
 		
-		if(this.props.data.ash_acc_type_eod_total == 0)
+		if(this.props.data.bailey_indep_health_eod == 0)
 		{
-			this.state.ash_acc_type_eod_total = false 
+			this.state.bailey_indep_health_eod = false 
 		}
 		else
 		{
-			this.state.ash_acc_type_eod_total = true
+			this.state.bailey_indep_health_eod = true
 		}
 		
-		if(this.props.data.ash_last_addr_sod_total == 0)
+		if(this.props.data.bailey_bcbs_sod == 0)
 		{
-			this.state.ash_last_addr_sod_total = false 
+			this.state.bailey_bcbs_sod = false 
 		}
 		else
 		{
-			this.state.ash_last_addr_sod_total = true
+			this.state.bailey_bcbs_sod = true
 		}
 		
-		if(this.props.data.ash_last_addr_eod_total == 0)
+		if(this.props.data.bailey_bcbs_eod == 0)
 		{
-			this.state.ash_last_addr_eod_total = false 
+			this.state.bailey_bcbs_eod = false 
 		}
 		else
 		{
-			this.state.ash_last_addr_eod_total = true
+			this.state.bailey_bcbs_eod = true
 		}
 		
-		if(this.props.data.bailey_indep_health_sod_total == 0)
+		if(this.props.data.bailey_emails_sod == 0)
 		{
-			this.state.bailey_indep_health_sod_total = false 
+			this.state.bailey_emails_sod = false 
 		}
 		else
 		{
-			this.state.bailey_indep_health_sod_total = true
+			this.state.bailey_emails_sod = true
 		}
 		
-		if(this.props.data.bailey_indep_health_eod_total == 0)
+		if(this.props.data.bailey_emails_eod == 0)
 		{
-			this.state.bailey_indep_health_eod_total = false 
+			this.state.bailey_emails_eod = false 
 		}
 		else
 		{
-			this.state.bailey_indep_health_eod_total = true
+			this.state.bailey_emails_eod = true
 		}
 		
-		if(this.props.data.bailey_bcbs_sod_total == 0)
+		if(this.props.data.justin_ndc_num_sod == 0)
 		{
-			this.state.bailey_bcbs_sod_total = false 
+			this.state.justin_ndc_num_sod = false 
 		}
 		else
 		{
-			this.state.bailey_bcbs_sod_total = true
+			this.state.justin_ndc_num_sod = true
 		}
 		
-		if(this.props.data.bailey_bcbs_eod_total == 0)
+		if(this.props.data.justin_ndc_num_eod == 0)
 		{
-			this.state.bailey_bcbs_eod_total = false 
+			this.state.justin_ndc_num_eod = false 
 		}
 		else
 		{
-			this.state.bailey_bcbs_eod_total = true
+			this.state.justin_ndc_num_eod = true
 		}
 		
-		if(this.props.data.bailey_emails_sod_total == 0)
+		if(this.props.data.justin_medicare_loc_sod == 0)
 		{
-			this.state.bailey_emails_sod_total = false 
+			this.state.justin_medicare_loc_sod = false 
 		}
 		else
 		{
-			this.state.bailey_emails_sod_total = true
+			this.state.justin_medicare_loc_sod = true
 		}
 		
-		if(this.props.data.bailey_emails_eod_total == 0)
+		if(this.props.data.justin_medicare_loc_eod == 0)
 		{
-			this.state.bailey_emails_eod_total = false 
+			this.state.justin_medicare_loc_eod = false 
 		}
 		else
 		{
-			this.state.bailey_emails_eod_total = true
+			this.state.justin_medicare_loc_eod = true
 		}
 		
-		if(this.props.data.justin_ndc_num_sod_total == 0)
+		if(this.props.data.justin_medicare_sec_sod == 0)
 		{
-			this.state.justin_ndc_num_sod_total = false 
+			this.state.justin_medicare_sec_sod = false 
 		}
 		else
 		{
-			this.state.justin_ndc_num_sod_total = true
+			this.state.justin_medicare_sec_sod = true
 		}
 		
-		if(this.props.data.justin_ndc_num_eod_total == 0)
+		if(this.props.data.justin_medicare_sec_eod == 0)
 		{
-			this.state.justin_ndc_num_eod_total = false 
+			this.state.justin_medicare_sec_eod = false 
 		}
 		else
 		{
-			this.state.justin_ndc_num_eod_total = true
+			this.state.justin_medicare_sec_eod = true
 		}
 		
-		if(this.props.data.justin_medicare_loc_sod_total == 0)
-		{
-			this.state.justin_medicare_loc_sod_total = false 
-		}
-		else
-		{
-			this.state.justin_medicare_loc_sod_total = true
-		}
-		
-		if(this.props.data.justin_medicare_loc_eod_total == 0)
-		{
-			this.state.justin_medicare_loc_eod_total = false 
-		}
-		else
-		{
-			this.state.justin_medicare_loc_eod_total = true
-		}
-		
-		if(this.props.data.justin_medicare_sec_sod_total == 0)
-		{
-			this.state.justin_medicare_sec_sod_total = false 
-		}
-		else
-		{
-			this.state.justin_medicare_sec_sod_total = true
-		}
-		
-		if(this.props.data.justin_medicare_sec_eod_total == 0)
-		{
-			this.state.justin_medicare_sec_eod_total = false 
-		}
-		else
-		{
-			this.state.justin_medicare_sec_eod_total = true
-		}
-		
-		this.onChange = this.onChange.bind(this)
+		this.onchange = this.onchange.bind(this)
 				
 		this.save = this.save.bind(this)
 		this.cancel = this.cancel.bind(this)
 	
 	}
 	
-	onChange(e)
+	onchange(e)
 	{
 		this.setState(
 		{
@@ -335,13 +291,9 @@ class EnterDataPatSup extends Component
 					ash_attachments_sod_val : this.state.ash_attachments_sod_val,
 					ash_attachments_eod_val : this.state.ash_attachments_eod_val,
 					ash_wc_mailing_sod_val : this.state.ash_wc_mailing_sod_val,
-					ash_wc_mailing_eod_val : this.state.ash_wc_mailing_eod_val,
 					ash_wc_deleted_sod_val : this.state.ash_wc_deleted_sod_val,
-					ash_wc_deleted_eod_val : this.state.ash_wc_deleted_eod_val,
 					ash_acc_type_sod_val : this.state.ash_acc_type_sod_val,
-					ash_acc_type_eod_val : this.state.ash_acc_type_eod_val,
 					ash_last_addr_sod_val : this.state.ash_last_addr_sod_val,
-					ash_last_addr_eod_val : this.state.ash_last_addr_eod_val,
 					bailey_indep_health_sod_val : this.state.bailey_indep_health_sod_val,
 					bailey_indep_health_eod_val : this.state.bailey_indep_health_eod_val,
 					bailey_bcbs_sod_val : this.state.bailey_bcbs_sod_val,
@@ -418,134 +370,153 @@ class EnterDataPatSup extends Component
 		var user_id = this.props.data.userid;
 		
 		return (
-			<div className = "container">
+			<div className = "container-fluid">
 				<h3> Enter Data </h3>
-				<hr />
-				
-				<table className="table table-striped table-bordered" style={{marginTop: 20}}>
-						<thead>
-							<tr>
-								<th> </th>
-								<th> </th>
-								<th colSpan="2"> Safiyyah </th>
-								<th colSpan="5"> Ashley Standish </th>
-								<th colSpan="3"> Bailea </th>
-								<th colSpan="3"> Justin </th>
-							</tr>
-							<tr>
-								<th> Date</th>
-								<th> </th>
-								<th> MVP </th>
-								<th> Invalid Address (oldest date open) </th>
-								<th> Attachments </th>
-								<th> WC Mailing (yes/no) </th>
-								<th> WC deleted claims to archived (yes/no) </th>
-								<th> Accident Type (WC/NF) (yes/no) </th>
-								<th> Last Address given Worked (last date finished) </th>
-								<th> Indep Health </th>
-								<th> BCBS of WNY </th>
-								<th> Emails </th>
-								<th> NDC Numbers </th>
-								<th> Medicare Facility Location </th>
-								<th> Medicare Secondary to be original </th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td rowspan="2">
-									{this.props.obj.when_done}
-								</td>
-								<td>
-									SOD
-								</td>
-								<td>
-									{this.props.obj.saf_mvp_sod}
-								</td>
-								<td>
-									{this.props.obj.saf_inval_addr_sod}
-								</td>
-								<td>
-									{this.props.obj.ash_attachments_sod}
-								</td>
-								<td>
-									{this.props.obj.ash_wc_mailing_sod}
-								</td>
-								<td>
-									{this.props.obj.ash_wc_deleted_sod }
-								</td>
-								<td>
-									{this.props.obj.ash_acc_type_sod}
-								</td>
-								<td>
-									{this.props.obj.ash_last_addr_sod}
-								</td>
-								<td>
-									{this.props.obj.bailey_indep_health_sod}
-								</td>
-								<td>
-									{this.props.obj.bailey_bcbs_sod}
-								</td>	
-								<td>
-									{this.props.obj.bailey_emails_sod}
-								</td>
-								<td>
-									{this.props.obj.justin_ndc_num_sod}
-								</td>
-								<td>
-									{this.props.obj.justin_medicare_loc_sod}
-								</td>
-								<td>
-									{this.props.obj.justin_medicare_sec_sod}
-								</td>
-							</tr>
-							
-							<tr>
-								<td>
-									EOD
-								</td>
-								<td>
-									{this.props.obj.saf_mvp_eod}
-								</td>
-								<td>
-									{this.props.obj.saf_inval_addr_eod}
-								</td>
-								<td>
-									{this.props.obj.ash_attachments_eod}
-								</td>
-								<td>
-									{this.props.obj.ash_wc_mailing_eod}
-								</td>
-								<td>
-									{this.props.obj.ash_wc_deleted_eod }
-								</td>
-								<td>
-									{this.props.obj.ash_acc_type_eod}
-								</td>
-								<td>
-									{this.props.obj.ash_last_addr_eod}
-								</td>
-								<td>
-									{this.props.obj.bailey_indep_health_eod}
-								</td>
-								<td>
-									{this.props.obj.bailey_bcbs_eod}
-								</td>
-								<td>
-									{this.props.obj.bailey_emails_eod}
-								</td>
-								<td>
-									{this.props.obj.justin_ndc_num_eod}
-								</td>
-								<td>
-									{this.props.obj.justin_medicare_loc_eod}
-								</td>
-								<td>
-									{this.props.obj.justin_medicare_sec_eod}
-								</td>								
-							</tr>
-						</tbody>
-					</table>
-			
+				<form>
+					<table className="table table-striped table-bordered" style={{marginTop: 20}}>
+							<thead>
+								<tr>
+									<th> </th>
+									<th> </th>
+									<th colSpan="2"> Safiyyah </th>
+									<th colSpan="5"> Ashley Standish </th>
+									<th colSpan="3"> Bailea </th>
+									<th colSpan="3"> Justin </th>
+								</tr>
+								<tr>
+									<th> Date</th>
+									<th> </th>
+									<th> MVP </th>
+									<th> Invalid Address (oldest date open) </th>
+									<th> Attachments </th>
+									<th> WC Mailing (yes/no) </th>
+									<th> WC deleted claims to archived (yes/no) </th>
+									<th> Accident Type (WC/NF) (yes/no) </th>
+									<th> Last Address given Worked (last date finished) </th>
+									<th> Indep Health </th>
+									<th> BCBS of WNY </th>
+									<th> Emails </th>
+									<th> NDC Numbers </th>
+									<th> Medicare Facility Location </th>
+									<th> Medicare Secondary to be original </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td rowspan="2">
+										{this.props.data.when_done}
+									</td>
+									<td>
+										SOD
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.saf_mvp_sod_PH} value = {this.state.saf_mvp_sod_val} name = "saf_mvp_sod_val" onChange = {this.onchange} disabled={this.state.saf_mvp_sod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "date" placeholder = {this.props.data.saf_inval_addr_sod_PH} value = {this.state.saf_inval_addr_sod_val} name = "saf_inval_addr_sod_val" onChange = {this.onchange} disabled={this.state.saf_inval_addr_sod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.ash_attachments_sod_PH} value = {this.state.ash_attachments_sod_val} name = "ash_attachments_sod_val" onChange = {this.onchange} disabled={this.state.ash_attachments_sod === true ? false : true}/>
+									</td>
+									<td>
+										<select className = "form-control" value = {this.state.ash_wc_mailing_sod_val} name = "ash_wc_mailing_sod_val" onChange = {this.onchange} placeholder = {this.props.data.ash_wc_mailing_sod_PH} disabled={this.state.ash_wc_mailing_sod === true ? false : true}>
+											<option value="">--Choose value -- </option>
+											<option value="yes"> Yes </option>
+											<option value="no"> No </option>
+										</select>
+									</td>
+									<td>
+										<select className = "form-control" value = {this.state.ash_wc_deleted_sod_val} name = "ash_wc_deleted_sod_val" onChange = {this.onchange} placeholder = {this.props.data.ash_wc_deleted_sod_PH} disabled={this.state.ash_wc_deleted_sod === true ? false : true}>
+											<option value="">--Choose value -- </option>
+											<option value="yes"> Yes </option>
+											<option value="no"> No </option>
+										</select>
+									</td>
+									<td>
+										<select className = "form-control" value = {this.state.ash_acc_type_sod_val} name = "ash_acc_type_sod_val" onChange = {this.onchange} placeholder = {this.props.data.ash_acc_type_sod_PH} disabled={this.state.ash_acc_type_sod === true ? false : true}>
+											<option value="">--Choose value -- </option>
+											<option value="yes"> Yes </option>
+											<option value="no"> No </option>
+										</select>
+									</td>
+									<td>
+										<input className = "form-control" type = "date" placeholder = {this.props.data.ash_last_addr_sod_PH} value = {this.state.ash_last_addr_sod_val} name = "ash_last_addr_sod_val" onChange = {this.onchange} disabled={this.state.ash_last_addr_sod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_indep_health_sod_PH} value = {this.state.bailey_indep_health_sod_val} name = "bailey_indep_health_sod_val" onChange = {this.onchange} disabled={this.state.bailey_indep_health_sod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_bcbs_sod_PH} value = {this.state.bailey_bcbs_sod_val} name = "bailey_bcbs_sod_val" onChange = {this.onchange} disabled={this.state.bailey_bcbs_sod === true ? false : true}/>
+									</td>	
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_emails_sod_PH} value = {this.state.bailey_emails_sod_val} name = "bailey_emails_sod_val" onChange = {this.onchange} disabled={this.state.bailey_emails_sod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.justin_ndc_num_sod_PH} value = {this.state.justin_ndc_num_sod_val} name = "justin_ndc_num_sod_val" onChange = {this.onchange} disabled={this.state.justin_ndc_num_sod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_loc_sod_PH} value = {this.state.justin_medicare_loc_sod_val} name = "justin_medicare_loc_sod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_loc_sod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_sec_sod_PH} value = {this.state.justin_medicare_sec_sod_val} name = "justin_medicare_sec_sod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_sec_sod === true ? false : true}/>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>
+										EOD
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.saf_mvp_eod_PH} value = {this.state.saf_mvp_eod_val} name = "saf_mvp_eod_val" onChange = {this.onchange} disabled={this.state.saf_mvp_eod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "date" placeholder = {this.props.data.saf_inval_addr_eod_PH} value = {this.state.saf_inval_addr_eod_val} name = "saf_inval_addr_eod_val" onChange = {this.onchange} disabled={this.state.saf_inval_addr_eod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.ash_attachments_eod_PH} value = {this.state.ash_attachments_eod_val} name = "ash_attachments_eod_val" onChange = {this.onchange} disabled={this.state.ash_attachments_eod === true ? false : true}/>
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_indep_health_eod_PH} value = {this.state.bailey_indep_health_eod_val} name = "bailey_indep_health_eod_val" onChange = {this.onchange} disabled={this.state.bailey_indep_health_eod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_bcbs_eod_PH} value = {this.state.bailey_bcbs_eod_val} name = "bailey_bcbs_eod_val" onChange = {this.onchange} disabled={this.state.bailey_bcbs_eod === true ? false : true}/>
+									</td>	
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.bailey_emails_eod_PH} value = {this.state.bailey_emails_eod_val} name = "bailey_emails_eod_val" onChange = {this.onchange} disabled={this.state.bailey_emails_eod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.justin_ndc_num_eod_PH} value = {this.state.justin_ndc_num_eod_val} name = "justin_ndc_num_eod_val" onChange = {this.onchange} disabled={this.state.justin_ndc_num_eod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_loc_eod_PH} value = {this.state.justin_medicare_loc_eod_val} name = "justin_medicare_loc_eod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_loc_eod === true ? false : true}/>
+									</td>
+									<td>
+										<input className = "form-control" type = "number" placeholder = {this.props.data.justin_medicare_sec_eod_PH} value = {this.state.justin_medicare_sec_eod_val} name = "justin_medicare_sec_eod_val" onChange = {this.onchange} disabled={this.state.justin_medicare_sec_eod === true ? false : true}/>
+									</td>						
+								</tr>
+							</tbody>
+						</table>
+						<div className="form-group">
+							<div>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<button className="btn btn-info" onClick = {this.save}><b> Enter  </b></button>
+								&nbsp;&nbsp;&nbsp;
+								<button className="btn btn-warning" onClick = {this.cancel}> Cancel </button>
+							</div>
+						</div>
+					</form>
 			</div>
 		)
 	}
