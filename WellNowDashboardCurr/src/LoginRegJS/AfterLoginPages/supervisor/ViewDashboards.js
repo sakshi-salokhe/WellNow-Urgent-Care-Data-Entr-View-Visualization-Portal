@@ -26,12 +26,14 @@ import CurrDataChartOS from "./view_dashboards/OS/CurrDataChartOS"
 import EnterDataAR from "./Enter Data/EnterDataAR"
 import EnterDataOM from "./Enter Data/EnterDataOM"
 import EnterDataOS from "./Enter Data/EnterDataOS"
+import EnterDataPatSup from "./Enter Data/EnterDataPatSup"
 
 import EnterOldData from "./Enter Old Data/EnterOldData"
 
 import EnterGoalAR from "./Enter Data/EnterGoalAR"
 import EnterGoalOM from "./Enter Data/EnterGoalOM"
 import EnterGoalOS from "./Enter Data/EnterGoalOS"
+//import EnterGoalPatSup from "./Enter Data/EnterGoalPatSup"
 
 import AR_Goals_headers from "./view_dashboards/AR/AR_Goals_headers"
 import OM_Goals_headers from "./view_dashboards/OM/OM_Goals_headers"
@@ -162,6 +164,10 @@ class ViewDashboards extends Component
 				{
 					ReactDOM.render(<EnterDataOM data = {res.data} />, document.getElementById('root'));
 				}
+				else if(res.data.dashboard == 4 || res.data.dashboard == '4')
+				{
+					ReactDOM.render(<EnterDataPatSup data = {res.data} />, document.getElementById('root'));
+				}
 				else
 				{
 					alert('something wrong');
@@ -177,7 +183,6 @@ class ViewDashboards extends Component
 		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_dash_id.php?user_id='+this.user_id)
 		.then(
 			res => {
-				console.log("THIS:",res.data);
 				ReactDOM.render(<EnterOldData data = {res.data} />, document.getElementById('root'));
 			})
 		.catch(err => console.log(err))
