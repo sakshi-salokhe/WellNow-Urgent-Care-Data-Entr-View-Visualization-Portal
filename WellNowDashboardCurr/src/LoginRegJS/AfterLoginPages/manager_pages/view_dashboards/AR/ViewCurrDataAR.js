@@ -8,7 +8,7 @@ import moment from "moment"
 
 import IndexHeader from "../../../../../IndexHeader";
 import ManagerLogInPage from "../../../ManagerLogInPage"
-import ViewDashboards from "../../ViewDashboards"
+import CurrData from "../CurrData"
 import PreviousDataViewAR from './PreviousDataViewAR'
 
 class ViewCurrDataAR extends Component
@@ -31,7 +31,7 @@ class ViewCurrDataAR extends Component
 	
 	back()
 	{
-		ReactDOM.render(<ViewDashboards />, document.getElementById('root'));
+		ReactDOM.render(<CurrData />, document.getElementById('root'));
 	}
 	
 	render()

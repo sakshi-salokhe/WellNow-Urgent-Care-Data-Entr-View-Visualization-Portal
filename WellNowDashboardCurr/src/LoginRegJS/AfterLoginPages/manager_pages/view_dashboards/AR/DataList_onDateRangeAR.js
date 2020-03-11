@@ -8,7 +8,7 @@ import moment from "moment"
 
 import IndexHeader from "../../../../../IndexHeader";
 import ManagerLogInPage from "../../../ManagerLogInPage"
-import ViewDashboards from "../../ViewDashboards"
+import PrevData from "../PrevData"
 import PreviousDataViewAR from './PreviousDataViewAR'
 
 class DataList_onDateRangeAR extends Component
@@ -31,7 +31,7 @@ class DataList_onDateRangeAR extends Component
 	
 	back()
 	{
-		ReactDOM.render(<ViewDashboards />, document.getElementById('root'));
+		ReactDOM.render(<PrevData />, document.getElementById('root'));
 	}
 	
 	render()

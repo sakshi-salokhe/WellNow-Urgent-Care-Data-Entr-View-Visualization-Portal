@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Redirect} from "react-router"
 import {Link} from "react-router-dom"
 
-import SupervisorLogInPage from "../../SupervisorLogInPage"
+import EnterOldData from "./EnterOldData"
 
 class EnterEditOldDataOM extends Component
 {
@@ -577,6 +577,7 @@ class EnterEditOldDataOM extends Component
 		event.preventDefault();
 		const obj = {
 					userid : this.props.data.userid,
+					user_id : this.props.data.userid,
 					date: this.props.data.date,
 					
 					support_sp_val : this.state.support_sp_val,	
@@ -622,7 +623,7 @@ class EnterEditOldDataOM extends Component
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
-								ReactDOM.render(<SupervisorLogInPage user_id = {obj.userid} />, document.getElementById('root'));
+								ReactDOM.render(<EnterOldData data = {obj} />, document.getElementById('root'));
 							}
 							else
 							{
@@ -638,7 +639,7 @@ class EnterEditOldDataOM extends Component
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
-								ReactDOM.render(<SupervisorLogInPage user_id = {obj.userid} />, document.getElementById('root'));
+								ReactDOM.render(<EnterOldData data = {obj} />, document.getElementById('root'));
 							}
 							else{
 								alert("There was some error. Please try again later.")
@@ -654,9 +655,9 @@ class EnterEditOldDataOM extends Component
 	{
 		event.preventDefault();
 		const obj = {
-					userid : this.props.data.userid
+					user_id : this.props.data.userid
 		}
-		ReactDOM.render(<SupervisorLogInPage user_id = {obj.userid} />, document.getElementById('root'));
+		ReactDOM.render(<EnterOldData data = {obj} />, document.getElementById('root'));
 	}
 	
 	render()

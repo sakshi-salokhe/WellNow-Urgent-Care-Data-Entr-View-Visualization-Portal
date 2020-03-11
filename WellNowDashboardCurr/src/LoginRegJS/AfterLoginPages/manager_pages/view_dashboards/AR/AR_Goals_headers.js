@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import moment from "moment"
 
 import IndexHeader from "../../../../../IndexHeader";
-import ViewDashboards from "../../ViewDashboards"
+import ViewGoals from "../ViewGoals"
 import GoalsViewAR from './GoalsViewAR'
 
 class AR_Goals_headers extends Component
@@ -31,7 +31,7 @@ class AR_Goals_headers extends Component
 	
 	back()
 	{
-		ReactDOM.render(<ViewDashboards />, document.getElementById('root'));
+		ReactDOM.render(<ViewGoals />, document.getElementById('root'));
 	}
 	
 	render()

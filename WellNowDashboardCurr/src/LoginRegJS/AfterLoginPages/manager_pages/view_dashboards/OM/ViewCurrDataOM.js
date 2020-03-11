@@ -8,7 +8,7 @@ import moment from "moment"
 
 import IndexHeader from "../../../../../IndexHeader";
 import ManagerLogInPage from "../../../ManagerLogInPage"
-import ViewDashboards from "../../ViewDashboards"
+import CurrData from "../CurrData"
 
 import PreviousDataViewOM from './PreviousDataViewOM'
 
@@ -32,7 +32,7 @@ class ViewCurrDataOM extends Component
 	
 	back()
 	{
-		ReactDOM.render(<ViewDashboards />, document.getElementById('root'));
+		ReactDOM.render(<CurrData />, document.getElementById('root'));
 	}
 	
 	render()

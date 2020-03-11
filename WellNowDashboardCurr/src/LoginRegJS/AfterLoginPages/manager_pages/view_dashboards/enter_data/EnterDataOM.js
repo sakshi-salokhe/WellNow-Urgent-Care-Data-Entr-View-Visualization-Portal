@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Redirect} from "react-router"
 import {Link} from "react-router-dom"
 
-import ManagerLogInPage from "../../../ManagerLogInPage"
+import EnterData from "../EnterData"
 
 class EnterDataOM extends Component
 {
@@ -623,7 +623,7 @@ class EnterDataOM extends Component
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
-								ReactDOM.render(<ManagerLogInPage />, document.getElementById('root'));
+								ReactDOM.render(<EnterData />, document.getElementById('root'));
 							}
 							else
 							{
@@ -641,7 +641,7 @@ class EnterDataOM extends Component
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
-								ReactDOM.render(<ManagerLogInPage />, document.getElementById('root'));
+								ReactDOM.render(<EnterData />, document.getElementById('root'));
 							}
 							else{
 								alert("There was some error. Please try again later.")
@@ -655,7 +655,7 @@ class EnterDataOM extends Component
 	
 	cancel()
 	{
-		ReactDOM.render(<ManagerLogInPage />, document.getElementById('root'));
+		ReactDOM.render(<EnterData />, document.getElementById('root'));
 	}
 	
 	render()

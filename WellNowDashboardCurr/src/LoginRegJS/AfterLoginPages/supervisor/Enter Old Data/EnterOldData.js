@@ -80,7 +80,7 @@ class EnterOldData extends Component
 	
 	render()
 	{
-		console.log(this.props);
+		console.log("data",this.props.data.user_id);
 			
 		return(
 			//take input date range

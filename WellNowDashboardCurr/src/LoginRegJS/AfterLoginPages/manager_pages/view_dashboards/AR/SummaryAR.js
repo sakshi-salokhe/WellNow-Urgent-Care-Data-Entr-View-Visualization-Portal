@@ -8,7 +8,7 @@ import moment from "moment"
 
 import IndexHeader from "../../../../../IndexHeader";
 import ManagerLogInPage from "../../../ManagerLogInPage"
-import ViewDashboards from "../../ViewDashboards"
+import SummaryVisualise from "../SummaryVisualise"
 import PreviousDataViewAR from './PreviousDataViewAR'
 
 class SummaryAR extends Component
@@ -31,7 +31,7 @@ class SummaryAR extends Component
 	
 	back()
 	{
-		ReactDOM.render(<ViewDashboards />, document.getElementById('root'));
+		ReactDOM.render(<SummaryVisualise />, document.getElementById('root'));
 	}
 	
 	render()

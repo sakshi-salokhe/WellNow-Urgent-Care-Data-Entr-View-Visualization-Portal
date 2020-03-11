@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import moment from "moment"
 
 import IndexHeader from "../../../../../IndexHeader";
-import ViewDashboards from "../../ViewDashboards"
+import PrevData from "../PrevData"
 import PreviousDataViewPatSup from './PreviousDataViewPatSup'
 
 class DataList_onDateRangePatSup extends Component
@@ -31,7 +31,7 @@ class DataList_onDateRangePatSup extends Component
 	
 	back()
 	{
-		ReactDOM.render(<ViewDashboards user_id = {this.props.data[0].supervisor_id}/>, document.getElementById('root'));
+		ReactDOM.render(<PrevData user_id = {this.props.data[0].supervisor_id}/>, document.getElementById('root'));
 	}
 	
 	render()

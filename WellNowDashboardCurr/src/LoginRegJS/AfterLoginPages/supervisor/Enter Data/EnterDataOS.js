@@ -7,7 +7,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Redirect} from "react-router"
 import {Link} from "react-router-dom"
 
-import SupervisorLogInPage from "../../SupervisorLogInPage"
+import ViewDashboards from "../ViewDashboards"
 
 class EnterDataOS extends Component
 {
@@ -326,7 +326,7 @@ class EnterDataOS extends Component
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
-								ReactDOM.render(<SupervisorLogInPage user_id = {obj.userid} />, document.getElementById('root'));
+								ReactDOM.render(<ViewDashboards user_id = {obj.userid} />, document.getElementById('root'));
 							}
 							else
 							{
@@ -344,7 +344,7 @@ class EnterDataOS extends Component
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
-								ReactDOM.render(<SupervisorLogInPage user_id = {obj.userid} />, document.getElementById('root'));
+								ReactDOM.render(<ViewDashboards user_id = {obj.userid} />, document.getElementById('root'));
 							}
 							else{
 								alert("There was some error. Please try again later.")
@@ -362,7 +362,7 @@ class EnterDataOS extends Component
 		const obj = {
 					userid : this.props.data.userid
 		}
-		ReactDOM.render(<SupervisorLogInPage user_id = {obj.userid} />, document.getElementById('root'));
+		ReactDOM.render(<ViewDashboards user_id = {obj.userid} />, document.getElementById('root'));
 	}
 	
 	render()

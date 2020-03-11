@@ -4,7 +4,7 @@ import axios from "axios"
 import qs from "qs"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import SupervisorLogInPage from "../../SupervisorLogInPage"
+import ViewDashboards from "../ViewDashboards"
 
 class EnterDataPatSup extends Component
 {
@@ -214,7 +214,7 @@ class EnterDataPatSup extends Component
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
-								ReactDOM.render(<SupervisorLogInPage user_id = {obj.userid} />, document.getElementById('root'));
+								ReactDOM.render(<ViewDashboards user_id = {obj.userid} />, document.getElementById('root'));
 							}
 							else
 							{
@@ -232,7 +232,7 @@ class EnterDataPatSup extends Component
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
-								ReactDOM.render(<SupervisorLogInPage user_id = {obj.userid} />, document.getElementById('root'));
+								ReactDOM.render(<ViewDashboards user_id = {obj.userid} />, document.getElementById('root'));
 							}
 							else{
 								alert("There was some error. Please try again later.")
@@ -250,7 +250,7 @@ class EnterDataPatSup extends Component
 		const obj = {
 					userid : this.props.data.userid
 		}
-		ReactDOM.render(<SupervisorLogInPage user_id = {obj.userid} />, document.getElementById('root'));
+		ReactDOM.render(<ViewDashboards user_id = {obj.userid} />, document.getElementById('root'));
 	}
 	
 	render()
