@@ -13,6 +13,7 @@ import ViewDashboards from "../ViewDashboards"
 import EnterEditOldDataAR from './EnterEditOldDataAR'
 import EnterEditOldDataOM from './EnterEditOldDataOM'
 import EnterEditOldDataOS from './EnterEditOldDataOS'
+import EnterEditOldDataPatSup from './EnterEditOldDataPatSup'
 
 class EnterOldData extends Component
 {
@@ -71,6 +72,10 @@ class EnterOldData extends Component
 				else if(resp.data.dashboard == 3 || resp.data.dashboard === '3')
 				{
 					ReactDOM.render(<EnterEditOldDataOM data = {resp.data}/>, document.getElementById('root'));
+				}
+				else if(resp.data.dashboard == 4 || resp.data.dashboard === '4')
+				{
+					ReactDOM.render(<EnterEditOldDataPatSup data = {resp.data}/>, document.getElementById('root'));
 				}
 				})
 		}
