@@ -9,7 +9,7 @@ import {Bar, Line} from 'react-chartjs-2';
 import IndexHeader from "../../../../../IndexHeader";
 import ViewDashboards from '../../ViewDashboards'
 
-class CurrDataChartOS extends Component
+class CurrDataChartPatSup extends Component
 {
 	constructor(props)
 	{
@@ -38,6 +38,7 @@ class CurrDataChartOS extends Component
 		dlabel.shift();
 		dlabel.shift();
 		dlabel.pop();
+		console.log(this.props.data);	
 		
 		for(var k = 0; k < (dlabel.length/2); k++)
 		{
@@ -46,7 +47,6 @@ class CurrDataChartOS extends Component
 		
 		for(var key in this.props.data[0])
 		{
-			//dlabel.push(key);
 			d_temp.push(this.props.data[0][key]);
 		}
 		d_temp.shift();
@@ -54,13 +54,13 @@ class CurrDataChartOS extends Component
 		d_temp.shift();
 		d_temp.shift();
 		d_temp.pop();
-			
+		
+		
 		var len = d_temp.length;
 			
 		for(var k = 0; k < (len/2); k++)
 		{
 			d1.push(d_temp[k]);
-			//dlabel1.push(dlabel[k]);
 		}
 		
 		for(var k = (len/2); k < (len); k++)
@@ -68,10 +68,6 @@ class CurrDataChartOS extends Component
 			d2.push(d_temp[k]);
 		}
 			
-		console.log("d_temp: ", d_temp);
-		console.log("d1: ",d1);
-		console.log("d2: ",d2);
-		
 		this.state = {
 			chartData:{
 				labels : dlabel1,
@@ -104,13 +100,14 @@ class CurrDataChartOS extends Component
 					pointBorderWidth: 10,
 					pointHoverRadius: 5,
 					pointHoverBorderWidth: 2,
-					pointHoverBorderColor: 'rgba(0, 0, 0)',
+					pointHoverBorderColor: 'rgba(0, 0, 0, 1)',
 					data:d2,
 					type: 'bubble',
 					backgroundColor:dynamicColors(),
-					pointRadius: 5,
-					pointHitRadius: 10,
-					order: 1
+					pointRadius: 35,
+					pointHitRadius: 50,
+					order: 1,
+					fillOpacity: 1.0,
 				}]
 			}
 			
@@ -125,8 +122,6 @@ class CurrDataChartOS extends Component
 	render()
 	{
 		const data = this.props.data;
-		console.log("here todays data in supervisor",data);
-		
 		
 		return(
 			<div className = "container">
@@ -146,7 +141,7 @@ class CurrDataChartOS extends Component
 				<br />
 				<div classname = "chart">
 					<Bar data = {this.state.chartData} options = {{
-						title:{ display: true, text: 'OS Dashboard Data Visualisation for today'},
+						title:{ display: true, text: 'Patient Support Dashboard Data Visualisation for today'},
 						scales: {yAxes: [{stacked: true}]}
 					}} />
 				</div>
@@ -155,4 +150,4 @@ class CurrDataChartOS extends Component
 	}
 }
 
-export default CurrDataChartOS
+export default CurrDataChartPatSup

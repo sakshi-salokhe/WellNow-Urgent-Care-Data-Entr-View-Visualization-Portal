@@ -78,7 +78,7 @@ class DailyChartwithGoalsAR extends Component
 			backgroundColor: dynamicColors(),
 			pointRadius: 15,
 			pointHitRadius: 10,
-			order: 1
+			order: 2
 			},
 			{
 				label: this.props.data[i].mon,
@@ -93,11 +93,11 @@ class DailyChartwithGoalsAR extends Component
 				pointHoverBorderWidth: 2,
 				pointHoverBorderColor: 'rgba(0, 0, 0)',
 				data:d2,
-				type: 'line',
+				type: 'bubble',
 				backgroundColor:dynamicColors(),
 				pointRadius: 5,
 				pointHitRadius: 10,
-				order: 2
+				order: 1
 			});
 			dlabel = [];
 			d1 = [];

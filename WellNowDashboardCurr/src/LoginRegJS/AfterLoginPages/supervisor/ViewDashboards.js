@@ -22,6 +22,7 @@ import PrevDataVisualise from "./view_dashboards/PrevDataVisualise"
 import CurrDataChartAR from "./view_dashboards/AR/CurrDataChartAR"
 import CurrDataChartOM from "./view_dashboards/OM/CurrDataChartOM"
 import CurrDataChartOS from "./view_dashboards/OS/CurrDataChartOS"
+import CurrDataChartPatSup from "./view_dashboards/PatSup/CurrDataChartPatSup"
 
 import EnterDataAR from "./Enter Data/EnterDataAR"
 import EnterDataOM from "./Enter Data/EnterDataOM"
@@ -143,6 +144,10 @@ class ViewDashboards extends Component
 			else if(resp.data[0].dashboards == 3 || resp.data[0].dashboards === '3')
 			{
 				ReactDOM.render(<CurrDataChartOM data = {resp.data}/>, document.getElementById('root'));
+			}
+			else if(resp.data[0].dashboards == 4 || resp.data[0].dashboards === '4')
+			{
+				ReactDOM.render(<CurrDataChartPatSup data = {resp.data}/>, document.getElementById('root'));
 			}
 			})
 	}

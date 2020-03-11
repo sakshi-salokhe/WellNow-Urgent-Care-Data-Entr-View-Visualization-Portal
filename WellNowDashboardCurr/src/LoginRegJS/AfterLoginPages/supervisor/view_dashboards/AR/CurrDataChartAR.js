@@ -42,7 +42,7 @@ class CurrDataChartAR extends Component
 					backgroundColor:dynamicColors(),
 					pointRadius: 15,
 					pointHitRadius: 10,
-					order: 1
+					order: 2
 				},
 				{
 					label: this.props.data[0].curr_mon,
@@ -57,11 +57,11 @@ class CurrDataChartAR extends Component
 					pointHoverBorderWidth: 2,
 					pointHoverBorderColor: 'rgba(0, 0, 0)',
 					data:[this.props.data[0].wb_tech_other_goals, this.props.data[0].wb_demo_elig_goals,this.props.data[0].wb_timely_filing_goals,this.props.data[0].wb_coding_replies_goals,this.props.data[0].wb_sup_reviews_goals,this.props.data[0].wb_nf_corres_goals,this.props.data[0].wb_wc_corres_goals,this.props.data[0].waystar_medc_sec_goals,this.props.data[0].waystar_oob_goals,this.props.data[0].waystar_fidelis_tf_goals],
-					type: 'line',
+					type: 'bubble',
 					backgroundColor:dynamicColors(),
 					pointRadius: 5,
 					pointHitRadius: 10,
-					order: 2
+					order: 1
 				}]
 			}
 			
