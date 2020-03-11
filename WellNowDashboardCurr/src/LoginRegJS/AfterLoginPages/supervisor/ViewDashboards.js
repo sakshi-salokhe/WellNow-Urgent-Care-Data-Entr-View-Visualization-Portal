@@ -38,6 +38,7 @@ import EnterGoalPatSup from "./Enter Data/EnterGoalPatSup"
 import AR_Goals_headers from "./view_dashboards/AR/AR_Goals_headers"
 import OM_Goals_headers from "./view_dashboards/OM/OM_Goals_headers"
 import OS_Goals_headers from "./view_dashboards/OS/OS_Goals_headers"
+import PatSup_Goals_headers from "./view_dashboards/PatSup/PatSup_Goals_headers"
 
 import SummaryViewAR from "./view_dashboards/summary/SummaryViewAR"
 import SummaryViewOM from "./view_dashboards/summary/SummaryViewOM"
@@ -225,18 +226,19 @@ class ViewDashboards extends Component
 		.then(resp => {
 			if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')
 			{
-				console.log("data",resp.data);
 				ReactDOM.render(<AR_Goals_headers data = {resp.data}/>, document.getElementById('root'));
 			}
 			else if(resp.data[0].dashboards === 2 || resp.data[0].dashboards === '2')
 			{
-				console.log("data",resp.data);
 				ReactDOM.render(<OS_Goals_headers data = {resp.data}/>, document.getElementById('root'));
 			}
 			else if(resp.data[0].dashboards === 3 || resp.data[0].dashboards === '3')
 			{
-				console.log("data",resp.data);
 				ReactDOM.render(<OM_Goals_headers data = {resp.data}/>, document.getElementById('root'));
+			}
+			else if(resp.data[0].dashboards === 4 || resp.data[0].dashboards === '4')
+			{
+				ReactDOM.render(<PatSup_Goals_headers data = {resp.data}/>, document.getElementById('root'));
 			}
 			})
 	}
