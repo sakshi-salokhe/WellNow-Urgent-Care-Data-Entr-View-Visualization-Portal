@@ -20,7 +20,7 @@ $sup_id = $user_id;
 if($dashboards == '1' or $dashboards == 1)
 {
 	
-	$sql = "select * from ar_data where when_done between '$startdate' and '$enddate'";
+	$sql = "select * from ar_data where when_done between '$startdate' and '$enddate' order by when_done asc";
 	if($res = mysqli_query($con, $sql))
 	{
 		
@@ -107,7 +107,7 @@ if($dashboards == '1' or $dashboards == 1)
 else if($dashboards == '2' or $dashboards == 2)
 {
 	
-	$sql = "select * from os_data where when_done between '$startdate' and '$enddate'";
+	$sql = "select * from os_data where when_done between '$startdate' and '$enddate' order by when_done asc";
 	if($res = mysqli_query($con, $sql))
 	{
 		
@@ -244,7 +244,7 @@ else if($dashboards == '2' or $dashboards == 2)
 }
 else if($dashboards == '3')
 {
-	$sql = "select * from om_data where when_done between '$startdate' and '$enddate'";
+	$sql = "select * from om_data where when_done between '$startdate' and '$enddate' order by when_done asc";
 	if($res = mysqli_query($con, $sql))
 	{
 		
@@ -407,16 +407,85 @@ else if($dashboards == '3')
 		
 	}
 }
-/*else if($dashboards == '2')
+else if($dashboards == '4' or $dashboards == 4)
 {
-	$sql = "select * from os_data where when_done between '$startdate' and '$enddate'";
+	
+	$sql = "select * from pat_sup_data where when_done between '$startdate' and '$enddate' order by when_done asc";
+	if($res = mysqli_query($con, $sql))
+	{
+		
+		$c = 0;
+		while($row = mysqli_fetch_assoc($res))
+		{
+			$emp[$c]['id'] = $row['pat_sup_id'];
+			$emp[$c]['when_done'] = $row['when_done'];
+			$emp[$c]['dashboards'] = $dashboards;
+			$emp[$c]['supervisor_id'] = $sup_id;
+			
+			$emp[$c]['saf_mvp_sod'] = $row['saf_mvp_sod'];
+			$emp[$c]['ash_attachments_sod'] = $row['ash_attachments_sod'];
+			$emp[$c]['bailey_indep_health_sod'] = $row['bailey_indep_health_sod'];
+			$emp[$c]['bailey_bcbs_sod'] = $row['bailey_bcbs_sod'];
+			$emp[$c]['bailey_emails_sod'] = $row['bailey_emails_sod'];
+			$emp[$c]['justin_ndc_num_sod'] = $row['justin_ndc_num_sod'];
+			$emp[$c]['justin_medicare_loc_sod'] = $row['justin_medicare_loc_sod'];
+			$emp[$c]['justin_medicare_sec_sod'] = $row['justin_medicare_sec_sod'];
+			
+			$dat1 = strtotime($row['when_done']);
+			$mon1 = date("n",$dat1);
+			
+			$sql1 = "select * from pat_sup_goals where when_done = '$mon1'";
+			$res1 = mysqli_query($con, $sql1);
+			$row1 = mysqli_fetch_assoc($res1);
+		
+			
+			$emp[$c]['saf_mvp_sod_goals'] = $row1['saf_mvp_sod'];
+			$emp[$c]['ash_attachments_sod_goals'] = $row1['ash_attachments_sod'];
+			$emp[$c]['bailey_indep_health_sod_goals'] = $row1['bailey_indep_health_sod'];
+			$emp[$c]['bailey_bcbs_sod_goals'] = $row1['bailey_bcbs_sod'];
+			$emp[$c]['bailey_emails_sod_goals'] = $row1['bailey_emails_sod'];
+			$emp[$c]['justin_ndc_num_sod_goals'] = $row1['justin_ndc_num_sod'];
+			$emp[$c]['justin_medicare_loc_sod_goals'] = $row1['justin_medicare_loc_sod'];
+			$emp[$c]['justin_medicare_sec_sod_goals'] = $row1['justin_medicare_sec_sod'];
+			$emp[$c]['mon'] = $mon1;
+			
+			$c++;
+		}
+		
+		if(empty($emp[$c]['id']) == False)
+		{
+			echo json_encode($emp);
+		}
+		else
+		{
+			$emp[$c]['id'] = 0;
+			$emp[$c]['when_done'] = $startdate.' to '.$enddate;
+			$emp[$c]['dashboards'] = $dashboards;
+			$emp[$c]['supervisor_id'] = $sup_id;
+			$emp[$c]['saf_mvp_sod'] = 0;
+			$emp[$c]['ash_attachments_sod'] = 0;
+			$emp[$c]['bailey_indep_health_sod'] = 0;
+			$emp[$c]['bailey_bcbs_sod'] = 0;
+			$emp[$c]['bailey_emails_sod'] = 0;
+			$emp[$c]['justin_ndc_num_sod'] = 0;
+			$emp[$c]['justin_medicare_loc_sod'] = 0;
+			$emp[$c]['justin_medicare_sec_sod'] = 0;
+			
+			$emp[$c]['saf_mvp_sod_goals'] = 0;
+			$emp[$c]['ash_attachments_sod_goals'] = 0;
+			$emp[$c]['bailey_indep_health_sod_goals'] = 0;
+			$emp[$c]['bailey_bcbs_sod_goals'] = 0;
+			$emp[$c]['bailey_emails_sod_goals'] = 0;
+			$emp[$c]['justin_ndc_num_sod_goals'] = 0;
+			$emp[$c]['justin_medicare_loc_sod_goals'] = 0;
+			$emp[$c]['justin_medicare_sec_sod_goals'] = 0;
+			$emp[$c]['mon'] = "-";
+			
+			echo json_encode($emp);
+		}
+		
+	}
 }
-else if($dashboards == '4')
-{
-	$sql = "select * from pat_support_data where when_done between '$startdate' and '$enddate'";
-}
-*/
-
 else
 {
 	http_response_code(404);
