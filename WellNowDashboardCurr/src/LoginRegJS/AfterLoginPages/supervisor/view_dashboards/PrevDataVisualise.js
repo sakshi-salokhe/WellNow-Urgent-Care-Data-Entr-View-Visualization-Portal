@@ -25,6 +25,11 @@ import WeeklyChartOS from './OS/WeeklyChartOS'
 import MonthlyChartOS from './OS/MonthlyChartOS'
 import DailyChartwithGoalsOS from './OS/DailyChartwithGoalsOS'
 
+import DailyChartPatSup from './PatSup/DailyChartPatSup'
+//import WeeklyChartPatSup from './PatSup/WeeklyChartPatSup'
+//import MonthlyChartPatSup from './PatSup/MonthlyChartPatSup'
+//import DailyChartwithGoalsPatSup from './PatSup/DailyChartwithGoalsPatSup'
+
 class PrevDataVisualise extends Component
 {
 	constructor(props) //props to be used when get method for db
@@ -102,6 +107,10 @@ class PrevDataVisualise extends Component
 					{
 						ReactDOM.render(<DailyChartOM data = {resp.data}/>, document.getElementById('root'));
 					}
+					else if(resp.data[0].dashboards == 4 || resp.data[0].dashboards === '4')
+					{
+						ReactDOM.render(<DailyChartPatSup data = {resp.data}/>, document.getElementById('root'));
+					}
 				})
 			}
 			else if(obj.pattern == 2 || obj.pattern == '2')
@@ -164,7 +173,6 @@ class PrevDataVisualise extends Component
 				})
 			}
 		}
-		
 
 	}
 	
