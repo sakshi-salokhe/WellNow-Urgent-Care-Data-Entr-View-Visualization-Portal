@@ -33,7 +33,7 @@ import EnterOldData from "./Enter Old Data/EnterOldData"
 import EnterGoalAR from "./Enter Data/EnterGoalAR"
 import EnterGoalOM from "./Enter Data/EnterGoalOM"
 import EnterGoalOS from "./Enter Data/EnterGoalOS"
-//import EnterGoalPatSup from "./Enter Data/EnterGoalPatSup"
+import EnterGoalPatSup from "./Enter Data/EnterGoalPatSup"
 
 import AR_Goals_headers from "./view_dashboards/AR/AR_Goals_headers"
 import OM_Goals_headers from "./view_dashboards/OM/OM_Goals_headers"
@@ -205,6 +205,10 @@ class ViewDashboards extends Component
 				else if(res.data.dashboard == 3 || res.data.dashboard == '3')
 				{
 					ReactDOM.render(<EnterGoalOM data = {res.data} />, document.getElementById('root'));
+				}
+				else if(res.data.dashboard == 4 || res.data.dashboard == '4')
+				{
+					ReactDOM.render(<EnterGoalPatSup data = {res.data} />, document.getElementById('root'));
 				}
 				else
 				{
