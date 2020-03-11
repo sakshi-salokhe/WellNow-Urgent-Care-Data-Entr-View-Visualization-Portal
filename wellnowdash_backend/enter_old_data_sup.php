@@ -277,6 +277,72 @@ else if($dashboard == 3)
 	
 	echo json_encode($emp);
 }
+else if($dashboard == 4)
+{
+	$sql2 = "select * from pat_sup_access where user_id = '$userid'";
+	$result2 = mysqli_query($con,$sql2);
+	$row2 = mysqli_fetch_array($result2);
+	
+	$sql3 = "select * from pat_sup_data where when_done = '$today'";
+	$result3 = mysqli_query($con,$sql3);
+	$row3 = mysqli_fetch_array($result3);
+	$count = mysqli_num_rows($result3);
+	
+	
+	$emp['when_done'] = $today;
+	
+	$emp['userid'] = $userid;
+	$emp['dashboard'] = $dashboard;
+	$emp['date'] = $today;
+	
+	$emp['saf_mvp_sod'] = $row2['saf_mvp_sod'];
+	$emp['saf_inval_addr_sod'] = $row2['saf_inval_addr_sod'];
+	$emp['ash_attachments_sod'] = $row2['ash_attachments_sod'];
+	$emp['ash_wc_mailing_sod'] = $row2['ash_wc_mailing_sod'];
+	$emp['ash_wc_deleted_sod'] = $row2['ash_wc_deleted_sod'];
+	$emp['ash_acc_type_sod'] = $row2['ash_acc_type_sod'];
+	$emp['ash_last_addr_sod'] = $row2['ash_last_addr_sod'];
+	$emp['bailey_indep_health_sod'] = $row2['bailey_indep_health_sod'];
+	$emp['bailey_bcbs_sod'] = $row2['bailey_bcbs_sod'];
+	$emp['bailey_emails_sod'] = $row2['bailey_emails_sod'];
+	$emp['justin_ndc_num_sod'] = $row2['justin_ndc_num_sod'];
+	$emp['justin_medicare_loc_sod'] = $row2['justin_medicare_loc_sod'];
+	$emp['justin_medicare_sec_sod'] = $row2['justin_medicare_sec_sod'];
+	
+	if($count > 0)
+	{
+		$emp['saf_mvp_sod_PH'] = $row3['saf_mvp_sod'];
+		$emp['saf_inval_addr_sod_PH'] = $row3['saf_inval_addr_sod'];
+		$emp['ash_attachments_sod_PH'] = $row3['ash_attachments_sod'];
+		$emp['ash_wc_mailing_sod_PH'] = $row3['ash_wc_mailing_sod'];
+		$emp['ash_wc_deleted_sod_PH'] = $row3['ash_wc_deleted_sod'];
+		$emp['ash_acc_type_sod_PH'] = $row3['ash_acc_type_sod'];
+		$emp['ash_last_addr_sod_PH'] = $row3['ash_last_addr_sod'];
+		$emp['bailey_indep_health_sod_PH'] = $row3['bailey_indep_health_sod'];
+		$emp['bailey_bcbs_sod_PH'] = $row3['bailey_bcbs_sod'];
+		$emp['bailey_emails_sod_PH'] = $row3['bailey_emails_sod'];
+		$emp['justin_ndc_num_sod_PH'] = $row3['justin_ndc_num_sod'];
+		$emp['justin_medicare_loc_sod_PH'] = $row3['justin_medicare_loc_sod'];
+		$emp['justin_medicare_sec_sod_PH'] = $row3['justin_medicare_sec_sod'];
+	}
+	else{
+		$emp['saf_mvp_sod_PH'] = NULL;
+		$emp['saf_inval_addr_sod_PH'] = NULL;
+		$emp['ash_attachments_sod_PH'] = NULL;
+		$emp['ash_wc_mailing_sod_PH'] = NULL;
+		$emp['ash_wc_deleted_sod_PH'] = NULL;
+		$emp['ash_acc_type_sod_PH'] = NULL;
+		$emp['ash_last_addr_sod_PH'] = NULL;
+		$emp['bailey_indep_health_sod_PH'] = NULL;
+		$emp['bailey_bcbs_sod_PH'] = NULL;
+		$emp['bailey_emails_sod_PH'] = NULL;
+		$emp['justin_ndc_num_sod_PH'] = NULL;
+		$emp['justin_medicare_loc_sod_PH'] = NULL;
+		$emp['justin_medicare_sec_sod_PH'] = NULL;
+	}
+	
+	echo json_encode($emp);
+}
 else
 {
 	http_response_code(422);
