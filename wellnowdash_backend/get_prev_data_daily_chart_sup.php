@@ -462,6 +462,7 @@ else if($dashboards == '4' or $dashboards == 4)
 			$emp[$c]['when_done'] = $startdate.' to '.$enddate;
 			$emp[$c]['dashboards'] = $dashboards;
 			$emp[$c]['supervisor_id'] = $sup_id;
+			
 			$emp[$c]['saf_mvp_sod'] = 0;
 			$emp[$c]['ash_attachments_sod'] = 0;
 			$emp[$c]['bailey_indep_health_sod'] = 0;
