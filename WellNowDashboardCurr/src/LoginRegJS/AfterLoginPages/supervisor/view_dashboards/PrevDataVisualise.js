@@ -26,8 +26,8 @@ import MonthlyChartOS from './OS/MonthlyChartOS'
 import DailyChartwithGoalsOS from './OS/DailyChartwithGoalsOS'
 
 import DailyChartPatSup from './PatSup/DailyChartPatSup'
-//import WeeklyChartPatSup from './PatSup/WeeklyChartPatSup'
-//import MonthlyChartPatSup from './PatSup/MonthlyChartPatSup'
+import WeeklyChartPatSup from './PatSup/WeeklyChartPatSup'
+import MonthlyChartPatSup from './PatSup/MonthlyChartPatSup'
 //import DailyChartwithGoalsPatSup from './PatSup/DailyChartwithGoalsPatSup'
 
 class PrevDataVisualise extends Component
@@ -131,6 +131,10 @@ class PrevDataVisualise extends Component
 					{
 						ReactDOM.render(<WeeklyChartOM data = {resp.data}/>, document.getElementById('root'));
 					}
+					else if(resp.data[0].dashboards == 4 || resp.data[0].dashboards === '4')
+					{
+						ReactDOM.render(<WeeklyChartPatSup data = {resp.data}/>, document.getElementById('root'));
+					}
 				})
 			}
 			else if(obj.pattern == 3 || obj.pattern == '3')
@@ -150,6 +154,10 @@ class PrevDataVisualise extends Component
 					else if(resp.data[0].dashboards == 3 || resp.data[0].dashboards === '3')
 					{
 						ReactDOM.render(<MonthlyChartOM data = {resp.data}/>, document.getElementById('root'));
+					}
+					else if(resp.data[0].dashboards == 4 || resp.data[0].dashboards === '4')
+					{
+						ReactDOM.render(<MonthlyChartPatSup data = {resp.data}/>, document.getElementById('root'));
 					}
 				})
 			}
