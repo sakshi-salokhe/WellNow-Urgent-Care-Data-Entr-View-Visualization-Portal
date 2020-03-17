@@ -25,6 +25,11 @@ import WeeklyChartOS from './OS/WeeklyChartOS'
 import MonthlyChartOS from './OS/MonthlyChartOS'
 import DailyChartwithGoalsOS from './OS/DailyChartwithGoalsOS'
 
+import DailyChartPatSup from './PatSup/DailyChartPatSup'
+import WeeklyChartPatSup from './PatSup/WeeklyChartPatSup'
+import MonthlyChartPatSup from './PatSup/MonthlyChartPatSup'
+import DailyChartwithGoalsPatSup from './PatSup/DailyChartwithGoalsPatSup'
+
 class PrevDataVisualise extends Component
 {
 	constructor(props) //props to be used when get method for db
@@ -88,7 +93,7 @@ class PrevDataVisualise extends Component
 		{
 			if(obj.pattern == 1 || obj.pattern == '1')
 			{
-				axios.get('http://localhost:81/wellnowdash_backend/get_prev_data_daily_chart_sup.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&user_id='+this.props.user_id)
+				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data_daily_chart_sup.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&user_id='+this.props.user_id)
 				.then(resp => {
 					if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')
 					{
@@ -102,11 +107,15 @@ class PrevDataVisualise extends Component
 					{
 						ReactDOM.render(<DailyChartOM data = {resp.data}/>, document.getElementById('root'));
 					}
+					else if(resp.data[0].dashboards == 4 || resp.data[0].dashboards === '4')
+					{
+						ReactDOM.render(<DailyChartPatSup data = {resp.data}/>, document.getElementById('root'));
+					}
 				})
 			}
 			else if(obj.pattern == 2 || obj.pattern == '2')
 			{
-				axios.get('http://localhost:81/wellnowdash_backend/get_prev_data_weekly_chart_sup.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&user_id='+this.props.user_id)
+				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data_weekly_chart_sup.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&user_id='+this.props.user_id)
 				.then(resp => {
 					console.log("weekly data for charts - sup:", resp.data);
 					if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')
@@ -122,11 +131,15 @@ class PrevDataVisualise extends Component
 					{
 						ReactDOM.render(<WeeklyChartOM data = {resp.data}/>, document.getElementById('root'));
 					}
+					else if(resp.data[0].dashboards == 4 || resp.data[0].dashboards === '4')
+					{
+						ReactDOM.render(<WeeklyChartPatSup data = {resp.data}/>, document.getElementById('root'));
+					}
 				})
 			}
 			else if(obj.pattern == 3 || obj.pattern == '3')
 			{
-				axios.get('http://localhost:81/wellnowdash_backend/get_prev_data_monthly_chart_sup.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&user_id='+this.props.user_id)
+				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data_monthly_chart_sup.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&user_id='+this.props.user_id)
 				.then(resp => {
 					console.log("here:",resp.data);
 						
@@ -142,11 +155,15 @@ class PrevDataVisualise extends Component
 					{
 						ReactDOM.render(<MonthlyChartOM data = {resp.data}/>, document.getElementById('root'));
 					}
+					else if(resp.data[0].dashboards == 4 || resp.data[0].dashboards === '4')
+					{
+						ReactDOM.render(<MonthlyChartPatSup data = {resp.data}/>, document.getElementById('root'));
+					}
 				})
 			}
 			else if(obj.pattern == 4 || obj.pattern == '4')
 			{
-				axios.get('http://localhost:81/wellnowdash_backend/get_prev_data_daily_chart_sup.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&user_id='+this.props.user_id)
+				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data_daily_chart_sup.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&user_id='+this.props.user_id)
 				.then(resp => {
 					if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')
 					{
@@ -161,10 +178,13 @@ class PrevDataVisualise extends Component
 					{
 						ReactDOM.render(<DailyChartwithGoalsOM data = {resp.data}/>, document.getElementById('root'));
 					}
+					else if(resp.data[0].dashboards == 4 || resp.data[0].dashboards === '4')
+					{
+						ReactDOM.render(<DailyChartwithGoalsPatSup data = {resp.data}/>, document.getElementById('root'));
+					}
 				})
 			}
 		}
-		
 
 	}
 	
