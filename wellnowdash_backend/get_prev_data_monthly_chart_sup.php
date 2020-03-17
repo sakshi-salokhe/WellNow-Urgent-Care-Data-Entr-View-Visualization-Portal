@@ -1276,20 +1276,243 @@ else if($dashboards == '3' or $dashboards == 3)
 		
 	}
 }
-/*else if($dashboards == '2')
+else if($dashboards == '4' or $dashboards == 4)
 {
-	$sql = "select * from os_data where when_done between '$startdate' and '$enddate'";
+	
+	$sql = "select * from pat_sup_data where when_done between '$startdate' and '$enddate' order by when_done";
+	if($res = mysqli_query($con, $sql))
+	{
+		$c = 0;
+		while($row = mysqli_fetch_assoc($res))
+		{
+			$emp[$c]['id'] = $row['pat_sup_id'];
+			$emp[$c]['when_done'] = $row['when_done'];
+			$emp[$c]['dashboards'] = $dashboards;
+			$emp[$c]['supervisor_id'] = $sup_id;
+			
+			$emp[$c]['saf_mvp_sod'] = $row['saf_mvp_sod'];
+			$emp[$c]['ash_attachments_sod'] = $row['ash_attachments_sod'];
+			$emp[$c]['bailey_indep_health_sod'] = $row['bailey_indep_health_sod'];
+			$emp[$c]['bailey_bcbs_sod'] = $row['bailey_bcbs_sod'];
+			$emp[$c]['bailey_emails_sod'] = $row['bailey_emails_sod'];
+			$emp[$c]['justin_ndc_num_sod'] = $row['justin_ndc_num_sod'];
+			$emp[$c]['justin_medicare_loc_sod'] = $row['justin_medicare_loc_sod'];
+			$emp[$c]['justin_medicare_sec_sod'] = $row['justin_medicare_sec_sod'];
+			
+			$dat1 = strtotime($row['when_done']);
+			$mon1 = date("n",$dat1);
+			
+			$sql1 = "select * from pat_sup_goals where when_done = '$mon1'";
+			$res1 = mysqli_query($con, $sql1);
+			$row1 = mysqli_fetch_assoc($res1);
+		
+			
+			$emp[$c]['saf_mvp_sod_goals'] = $row1['saf_mvp_sod'];
+			$emp[$c]['ash_attachments_sod_goals'] = $row1['ash_attachments_sod'];
+			$emp[$c]['bailey_indep_health_sod_goals'] = $row1['bailey_indep_health_sod'];
+			$emp[$c]['bailey_bcbs_sod_goals'] = $row1['bailey_bcbs_sod'];
+			$emp[$c]['bailey_emails_sod_goals'] = $row1['bailey_emails_sod'];
+			$emp[$c]['justin_ndc_num_sod_goals'] = $row1['justin_ndc_num_sod'];
+			$emp[$c]['justin_medicare_loc_sod_goals'] = $row1['justin_medicare_loc_sod'];
+			$emp[$c]['justin_medicare_sec_sod_goals'] = $row1['justin_medicare_sec_sod'];
+			
+			$emp[$c]['mon'] = $mon1;
+			
+			$c++;
+		}
+		
+		if(empty($emp[$c]['id']) == True)
+		{
+			$saf_mvp_sod_count = 0;
+			$ash_attachments_sod_count = 0;
+			$bailey_indep_health_sod_count = 0;
+			$bailey_bcbs_sod_count = 0;
+			$bailey_emails_sod_count = 0;
+			$justin_ndc_num_sod_count = 0;
+			$justin_medicare_loc_sod_count = 0;
+			$justin_medicare_sec_sod_count = 0;
+			
+			$goal_mon = 0;
+			$saf_mvp_sod_goals = 0;
+			$ash_attachments_sod_goals = 0;
+			$bailey_indep_health_sod_goals = 0;
+			$bailey_bcbs_sod_goals = 0;
+			$bailey_emails_sod_goals = 0;
+			$justin_ndc_num_sod_goals = 0;
+			$justin_medicare_loc_sod_goals = 0;
+			$justin_medicare_sec_sod_goals = 0;
+			
+			$c1 = 0;
+			$c2 = 0;
+			$month_num = 0;
+			$num_of_m = sizeof($months);
+			
+			$y = 0;
+			$x = 0;
+			$cm = 0;
+			
+				while(($x < $c) and($y < $num_of_m))
+				{
+					$cm = $months[$y];
+					
+					$curr_date = $emp[$x]['when_done'];
+					$str_curr_date = strtotime($curr_date);
+					$curr_month = date("n",$str_curr_date);
+					
+					if($cm == $curr_month)
+					{
+						
+						$c1++;
+						$saf_mvp_sod = is_numeric($emp[$x]['saf_mvp_sod']) ? $emp[$x]['saf_mvp_sod'] : 0;
+						$ash_attachments_sod = is_numeric($emp[$x]['ash_attachments_sod']) ? $emp[$x]['ash_attachments_sod'] : 0;
+						$bailey_indep_health_sod = is_numeric($emp[$x]['bailey_indep_health_sod']) ? $emp[$x]['bailey_indep_health_sod'] : 0;
+						$bailey_bcbs_sod = is_numeric($emp[$x]['bailey_bcbs_sod']) ? $emp[$x]['bailey_bcbs_sod'] : 0;
+						$bailey_emails_sod = is_numeric($emp[$x]['bailey_emails_sod']) ? $emp[$x]['bailey_emails_sod'] : 0;
+						$justin_ndc_num_sod = is_numeric($emp[$x]['justin_ndc_num_sod']) ? $emp[$x]['justin_ndc_num_sod'] : 0;
+						$justin_medicare_loc_sod = is_numeric($emp[$x]['justin_medicare_loc_sod']) ? $emp[$x]['justin_medicare_loc_sod'] : 0;
+						$justin_medicare_sec_sod = is_numeric($emp[$x]['justin_medicare_sec_sod']) ? $emp[$x]['justin_medicare_sec_sod'] : 0;
+						
+						$goal_mon = is_numeric($emp[$x]['mon']) ? $emp[$x]['mon'] : "-";
+						
+						$saf_mvp_sod_goals = is_numeric($emp[$x]['saf_mvp_sod_goals']) ? $emp[$x]['saf_mvp_sod_goals'] : 0;
+						$ash_attachments_sod_goals = is_numeric($emp[$x]['ash_attachments_sod_goals']) ? $emp[$x]['ash_attachments_sod_goals'] : 0;
+						$bailey_indep_health_sod_goals = is_numeric($emp[$x]['bailey_indep_health_sod_goals']) ? $emp[$x]['bailey_indep_health_sod_goals'] : 0;
+						$bailey_bcbs_sod_goals = is_numeric($emp[$x]['bailey_bcbs_sod_goals']) ? $emp[$x]['bailey_bcbs_sod_goals'] : 0;
+						$bailey_emails_sod_goals = is_numeric($emp[$x]['bailey_emails_sod_goals']) ? $emp[$x]['bailey_emails_sod_goals'] : 0;
+						$justin_ndc_num_sod_goals = is_numeric($emp[$x]['justin_ndc_num_sod_goals']) ? $emp[$x]['justin_ndc_num_sod_goals'] : 0;
+						$justin_medicare_loc_sod_goals = is_numeric($emp[$x]['justin_medicare_loc_sod_goals']) ? $emp[$x]['justin_medicare_loc_sod_goals'] : 0;
+						$justin_medicare_sec_sod_goals = is_numeric($emp[$x]['justin_medicare_sec_sod_goals']) ? $emp[$x]['justin_medicare_sec_sod_goals'] : 0;
+						
+						$saf_mvp_sod_count = $saf_mvp_sod_count + $saf_mvp_sod;
+						$ash_attachments_sod_count = $ash_attachments_sod_count + $ash_attachments_sod;
+						$bailey_indep_health_sod_count = $bailey_indep_health_sod_count + $bailey_indep_health_sod;
+						$bailey_bcbs_sod_count = $bailey_bcbs_sod_count + $bailey_bcbs_sod;
+						$bailey_emails_sod_count = $bailey_emails_sod_count + $bailey_emails_sod;
+						$justin_ndc_num_sod_count = $justin_ndc_num_sod_count + $justin_ndc_num_sod;
+						$justin_medicare_loc_sod_count = $justin_medicare_loc_sod_count + $justin_medicare_loc_sod;
+						$justin_medicare_sec_sod_count = $justin_medicare_sec_sod_count + $justin_medicare_sec_sod;
+						
+						$x++;
+					}
+					else
+					{
+						if($c1 == 0)
+						{
+							$c2 = 1;
+						}
+						else{
+							$c2 = isset($c1) ? $c1 : 1;
+						}
+						
+						$dets[$y]['id'] = $row['pat_sup_id'];
+						$dets[$y]['when_done'] = $cm;
+						$dets[$y]['dashboards'] = $dashboards;
+						$dets[$y]['supervisor_id'] = $sup_id;
+						
+						$dets[$y]['saf_mvp_sod_count'] = round($saf_mvp_sod_count / $c2);
+						$dets[$y]['ash_attachments_sod_count'] = round($ash_attachments_sod_count / $c2);
+						$dets[$y]['bailey_indep_health_sod_count'] = round($bailey_indep_health_sod_count / $c2);
+						$dets[$y]['bailey_bcbs_sod_count'] = round($bailey_bcbs_sod_count / $c2);
+						$dets[$y]['bailey_emails_sod_count'] = round($bailey_emails_sod_count / $c2);
+						$dets[$y]['justin_ndc_num_sod_count'] = round($justin_ndc_num_sod_count / $c2);
+						$dets[$y]['justin_medicare_loc_sod_count'] = round($justin_medicare_loc_sod_count / $c2);
+						$dets[$y]['justin_medicare_sec_sod_count'] = round($justin_medicare_sec_sod_count / $c2);
+						
+						$dets[$y]['saf_mvp_sod_goals'] = $saf_mvp_sod_goals;
+						$dets[$y]['ash_attachments_sod_goals'] = $ash_attachments_sod_goals;
+						$dets[$y]['bailey_indep_health_sod_goals'] = $bailey_indep_health_sod_goals;
+						$dets[$y]['bailey_bcbs_sod_goals'] = $bailey_bcbs_sod_goals;
+						$dets[$y]['bailey_emails_sod_goals'] = $bailey_emails_sod_goals;
+						$dets[$y]['justin_ndc_num_sod_goals'] = $justin_ndc_num_sod_goals;
+						$dets[$y]['justin_medicare_loc_sod_goals'] = $justin_medicare_loc_sod_goals;
+						$dets[$y]['justin_medicare_sec_sod_goals'] = $justin_medicare_sec_sod_goals;
+						
+						$dets[$y]['mon'] = $cm;
+						
+				
+						$c1 = 0;
+						$c2 = 0;
+						$y++;
+						
+						$saf_mvp_sod_count = 0;
+						$ash_attachments_sod_count = 0;
+						$bailey_indep_health_sod_count = 0;
+						$bailey_bcbs_sod_count = 0;
+						$bailey_emails_sod_count = 0;
+						$justin_ndc_num_sod_count = 0;
+						$justin_medicare_loc_sod_count = 0;
+						$justin_medicare_sec_sod_count = 0;
+					}
+					
+				}
+				if($c1 == 0)
+				{
+					$c2 = 1;
+				}
+				else{
+					$c2 = isset($c1) ? $c1 : 1;
+				}
+				
+				$dets[$y]['id'] = $row['ar_id'];
+				$dets[$y]['when_done'] = $cm;
+				$dets[$y]['dashboards'] = $dashboards;
+				$dets[$y]['supervisor_id'] = $sup_id;
+				
+				$dets[$y]['saf_mvp_sod_count'] = round($saf_mvp_sod_count / $c2);
+				$dets[$y]['ash_attachments_sod_count'] = round($ash_attachments_sod_count / $c2);
+				$dets[$y]['bailey_indep_health_sod_count'] = round($bailey_indep_health_sod_count / $c2);
+				$dets[$y]['bailey_bcbs_sod_count'] = round($bailey_bcbs_sod_count / $c2);
+				$dets[$y]['bailey_emails_sod_count'] = round($bailey_emails_sod_count / $c2);
+				$dets[$y]['justin_ndc_num_sod_count'] = round($justin_ndc_num_sod_count / $c2);
+				$dets[$y]['justin_medicare_loc_sod_count'] = round($justin_medicare_loc_sod_count / $c2);
+				$dets[$y]['justin_medicare_sec_sod_count'] = round($justin_medicare_sec_sod_count / $c2);
+				
+				$dets[$y]['saf_mvp_sod_goals'] = $saf_mvp_sod_goals;
+				$dets[$y]['ash_attachments_sod_goals'] = $ash_attachments_sod_goals;
+				$dets[$y]['bailey_indep_health_sod_goals'] = $bailey_indep_health_sod_goals;
+				$dets[$y]['bailey_bcbs_sod_goals'] = $bailey_bcbs_sod_goals;
+				$dets[$y]['bailey_emails_sod_goals'] = $bailey_emails_sod_goals;
+				$dets[$y]['justin_ndc_num_sod_goals'] = $justin_ndc_num_sod_goals;
+				$dets[$y]['justin_medicare_loc_sod_goals'] = $justin_medicare_loc_sod_goals;
+				$dets[$y]['justin_medicare_sec_sod_goals'] = $justin_medicare_sec_sod_goals;
+				
+				$dets[$y]['mon'] = $cm;
+				
+			echo json_encode($dets);
+		}
+		
+		else
+		{
+			$emp[$c]['id'] = 0;
+			$emp[$c]['when_done'] = $row['when_done'];
+			$emp[$c]['dashboards'] = $dashboards;
+			$emp[$c]['supervisor_id'] = $sup_id;
+			
+			$emp[$c]['saf_mvp_sod'] = 0;
+			$emp[$c]['ash_attachments_sod'] = 0;
+			$emp[$c]['bailey_indep_health_sod'] = 0;
+			$emp[$c]['bailey_bcbs_sod'] = 0;
+			$emp[$c]['bailey_emails_sod'] = 0;
+			$emp[$c]['justin_ndc_num_sod'] = 0;
+			$emp[$c]['justin_medicare_loc_sod'] = 0;
+			$emp[$c]['justin_medicare_sec_sod'] = 0;
+			
+			$emp[$c]['saf_mvp_sod_goals'] = 0;
+			$emp[$c]['ash_attachments_sod_goals'] = 0;
+			$emp[$c]['bailey_indep_health_sod_goals'] = 0;
+			$emp[$c]['bailey_bcbs_sod_goals'] = 0;
+			$emp[$c]['bailey_emails_sod_goals'] = 0;
+			$emp[$c]['justin_ndc_num_sod_goals'] = 0;
+			$emp[$c]['justin_medicare_loc_sod_goals'] = 0;
+			$emp[$c]['justin_medicare_sec_sod_goals'] = 0;
+			
+			$emp[$c]['mon'] = "-";
+			
+			echo json_encode($emp);
+		}
+		
+	}
 }
-else if($dashboards == '3')
-{
-	$sql = "select * from om_data where when_done between '$startdate' and '$enddate'";
-}
-else if($dashboards == '4')
-{
-	$sql = "select * from pat_support_data where when_done between '$startdate' and '$enddate'";
-}
-*/
-
 else
 {
 	http_response_code(404);
