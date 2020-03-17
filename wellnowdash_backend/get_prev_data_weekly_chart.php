@@ -109,7 +109,7 @@ if($dashboards == '1' or $dashboards == 1)
 			
 			
 			while($i<sizeof($array)-1){
-				while($d < 7)
+				while(($d < 7) and $i<sizeof($array))
 				{
 					$currdate = isset($array[$i]) ? $array[$i] : "";
 					$whendone = isset($emp[$c]['when_done']) ? $emp[$c]['when_done'] : "";
@@ -404,7 +404,7 @@ else if($dashboards == '2' or $dashboards == 2)
 			
 			
 			while($i<sizeof($array)-1){
-				while($d < 7)
+				while(($d < 7) and $i<sizeof($array))
 				{
 					$currdate = isset($array[$i]) ? $array[$i] : "";
 					$whendone = isset($emp[$c]['when_done']) ? $emp[$c]['when_done'] : "";
@@ -837,7 +837,7 @@ else if($dashboards == '3' or $dashboards == 3)
 			
 			
 			while($i<sizeof($array)-1){
-				while($d < 7)
+				while(($d < 7) and $i<sizeof($array))
 				{
 					$currdate = isset($array[$i]) ? $array[$i] : "";
 					$whendone = isset($emp[$c]['when_done']) ? $emp[$c]['when_done'] : "";
