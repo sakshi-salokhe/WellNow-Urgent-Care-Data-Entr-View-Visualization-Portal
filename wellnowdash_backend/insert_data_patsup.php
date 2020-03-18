@@ -14,19 +14,19 @@ $today = date("Y-m-d");
 
 if(isset($postdata) && !empty($postdata))
 {
-	$saf_mvp_sod_val = $_POST['saf_mvp_sod_val'];
-	$saf_inval_addr_sod_val = $_POST['saf_inval_addr_sod_val'];
-	$ash_attachments_sod_val = $_POST['ash_attachments_sod_val'];
-	$ash_wc_mailing_sod_val = $_POST['ash_wc_mailing_sod_val'];
-	$ash_wc_deleted_sod_val = $_POST['ash_wc_deleted_sod_val'];
-	$ash_acc_type_sod_val = $_POST['ash_acc_type_sod_val'];
-	$ash_last_addr_sod_val = $_POST['ash_last_addr_sod_val'];
-	$bailey_indep_health_sod_val = $_POST['bailey_indep_health_sod_val'];
-	$bailey_bcbs_sod_val = $_POST['bailey_bcbs_sod_val'];
-	$bailey_emails_sod_val = $_POST['bailey_emails_sod_val'];
-	$justin_ndc_num_sod_val = $_POST['justin_ndc_num_sod_val'];
-	$justin_medicare_loc_sod_val = $_POST['justin_medicare_loc_sod_val'];
-	$justin_medicare_sec_sod_val = $_POST['justin_medicare_sec_sod_val'];
+	$saf_mvp_sod_val = isset($_POST['saf_mvp_sod_val']) ? $_POST['saf_mvp_sod_val'] : "";
+	$saf_inval_addr_sod_val = isset($_POST['saf_inval_addr_sod_val']) ? $_POST['saf_inval_addr_sod_val'] : "";
+	$ash_attachments_sod_val = isset($_POST['ash_attachments_sod_val']) ? $_POST['ash_attachments_sod_val'] : "";
+	$ash_wc_mailing_sod_val = isset($_POST['ash_wc_mailing_sod_val']) ?$_POST['ash_wc_mailing_sod_val'] : "";
+	$ash_wc_deleted_sod_val = isset($_POST['ash_wc_deleted_sod_val']) ? $_POST['ash_wc_deleted_sod_val'] : "";
+	$ash_acc_type_sod_val = isset($_POST['ash_acc_type_sod_val']) ? $_POST['ash_acc_type_sod_val'] : "";
+	$ash_last_addr_sod_val = isset($_POST['ash_last_addr_sod_val']) ? $_POST['ash_last_addr_sod_val'] : "";
+	$bailey_indep_health_sod_val = isset($_POST['bailey_indep_health_sod_val']) ? $_POST['bailey_indep_health_sod_val'] : "";
+	$bailey_bcbs_sod_val = isset($_POST['bailey_bcbs_sod_val']) ? $_POST['bailey_bcbs_sod_val'] : "";
+	$bailey_emails_sod_val = isset($_POST['bailey_emails_sod_val']) ? $_POST['bailey_emails_sod_val'] : "";
+	$justin_ndc_num_sod_val = isset($_POST['justin_ndc_num_sod_val']) ? $_POST['justin_ndc_num_sod_val'] : "";
+	$justin_medicare_loc_sod_val = isset($_POST['justin_medicare_loc_sod_val']) ? $_POST['justin_medicare_loc_sod_val'] : "";
+	$justin_medicare_sec_sod_val = isset($_POST['justin_medicare_sec_sod_val']) ? $_POST['justin_medicare_sec_sod_val'] : "";
 	
 	$sql = "insert into pat_sup_data (when_done) values ('$today')";
 	if(mysqli_query($con, $sql))

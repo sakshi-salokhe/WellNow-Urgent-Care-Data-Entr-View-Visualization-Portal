@@ -79,7 +79,7 @@ else if($dashboards == '2' or $dashboards == 2)
 		echo json_encode($emp);
 	}
 }
-else if($dashboards == '3')
+else if($dashboards == '3' or $dashboards == 3)
 {
 	$sql = "select * from om_data where when_done = '$today'";
 	if($res = mysqli_query($con, $sql))

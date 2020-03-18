@@ -41,7 +41,7 @@ if($dashboard == 1 or $dashboard == '1')
 			$c++;
 		}
 		
-		if(empty($emp[$c]['id']) == True)
+		if($c >0)
 		{
 			echo json_encode($emp);
 		}
@@ -49,7 +49,7 @@ if($dashboard == 1 or $dashboard == '1')
 		{
 			$emp[$c]['id'] = 0;
 			$emp[$c]['when_done'] = "-";
-			$emp[$c]['dashboards'] = "-";
+			$emp[$c]['dashboards'] = 1;
 			$emp[$c]['userid'] = $userid;
 			$emp[$c]['wb_tech_other'] = "-";
 			$emp[$c]['wb_demo_elig'] = "-";
@@ -107,7 +107,7 @@ else if($dashboard == 2 or $dashboard == '2')
 			$c++;
 		}
 		
-		if(empty($emp[$c]['id']) == True)
+		if($c >0)
 		{
 			echo json_encode($emp);
 			
@@ -116,7 +116,7 @@ else if($dashboard == 2 or $dashboard == '2')
 		{
 			$emp[$c]['id'] = 0;
 			$emp[$c]['date'] = "-";
-			$emp[$c]['dashboards'] = "-";
+			$emp[$c]['dashboards'] = 2;
 			$emp[$c]['userid'] = $userid;
 			
 			$emp[$c]['RPQ_print_queue_total'] = "-";
@@ -194,7 +194,7 @@ else if($dashboard == 3 or $dashboard == '3')
 			$c++;
 		}
 		
-		if(empty($emp[$c]['id']) == True)
+		if($c >0)
 		{
 			echo json_encode($emp);
 			
@@ -203,7 +203,7 @@ else if($dashboard == 3 or $dashboard == '3')
 		{
 			$emp[$c]['id'] = 0;
 			$emp[$c]['date'] = "-";
-			$emp[$c]['dashboards'] = "-";
+			$emp[$c]['dashboards'] = 3;
 			$emp[$c]['userid'] = $userid;
 			
 			$emp[$c]['support_sp'] = "-";
@@ -271,7 +271,7 @@ else if($dashboard == 4 or $dashboard == '4')
 			$c++;
 		}
 		
-		if(empty($emp[$c]['id']) == True)
+		if($c >0)
 		{
 			echo json_encode($emp);
 		}
@@ -279,7 +279,7 @@ else if($dashboard == 4 or $dashboard == '4')
 		{
 			$emp[$c]['id'] = 0;
 			$emp[$c]['when_done'] = "-";
-			$emp[$c]['dashboards'] = "-";
+			$emp[$c]['dashboards'] = 4;
 			$emp[$c]['userid'] = $userid;
 			
 			$emp[$c]['saf_mvp_sod'] = "-";
