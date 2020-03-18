@@ -60,11 +60,11 @@ class ViewData extends Component
 			{
 				ReactDOM.render(<CurrDataAR user_id = {this.user_id} />, document.getElementById('root'));
 			}
-			else if(res.data.dashboards == 2 || res.data.dashboards == '3')
+			else if(res.data.dashboards == 2 || res.data.dashboards == '2')
 			{
 				ReactDOM.render(<CurrDataOS user_id = {this.user_id} />, document.getElementById('root'));
 			}
-			else if(res.data.dashboards == 3 || res.data.dashboards == '2')
+			else if(res.data.dashboards == 3 || res.data.dashboards == '3')
 			{
 				ReactDOM.render(<CurrDataOM user_id = {this.user_id} />, document.getElementById('root'));
 			}

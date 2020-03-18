@@ -24,58 +24,19 @@ class RegisterUser extends Component
 			isManager : ""
 		}
 		
-		this.onchangeemail = this.onchangeemail.bind(this);
-		this.onchangefullname = this.onchangefullname.bind(this);
-		this.onchangepassword1 = this.onchangepassword1.bind(this);
-		this.onchangeconf_password = this.onchangeconf_password.bind(this);
-		this.onchangedashboards = this.onchangedashboards.bind(this);
-		this.onchangeisManager = this.onchangeisManager.bind(this);
+		this.onchange = this.onchange.bind(this);
 		
 		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 	
 	
-	onchangeemail(e)
+	onchange(e)
 	{
 		this.setState({
-			email: e.target.value
+			[e.target.name]: e.target.value
 		});
 	}
 	
-	onchangefullname(e)
-	{
-		this.setState({
-			fullname: e.target.value
-		});
-	}
-	
-	onchangepassword1(e)
-	{
-		this.setState({
-			password1: e.target.value
-		});
-	}
-	
-	onchangeconf_password(e)
-	{
-		this.setState({
-			conf_password: e.target.value
-		});
-	}
-	
-	onchangedashboards(e)
-	{
-		this.setState({
-			dashboards: e.target.value
-		});
-	}
-	
-	onchangeisManager(e)
-	{
-		this.setState({
-			isManager: e.target.value
-		});
-	}
 	
 	handleLogin()
 	{
@@ -96,7 +57,7 @@ class RegisterUser extends Component
 					isManager: this.state.isManager
 				};
 		
-		console.log("reg:", obj);
+		//console.log("reg:", obj);
 		var domain = obj.email.substring(obj.email.lastIndexOf("@") +1);
 		
 		if(obj.fullname.length === 0 || obj.dashboards.length === 0 || obj.email.length === 0 || obj.password1.length === 0 || obj.conf_password.length === 0 || obj.isManager.length == 0)
@@ -150,7 +111,7 @@ class RegisterUser extends Component
 							<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Email: </b></div>
 							
 							<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-								<input className = "form-control" type = "email" value = {this.state.email} name = "email" placeholder = "username@wellnow.com" onChange = {this.onchangeemail} />
+								<input className = "form-control" type = "email" value = {this.state.email} name = "email" placeholder = "username@wellnow.com" onChange = {this.onchange} />
 							</div>
 							
 							<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
@@ -161,7 +122,7 @@ class RegisterUser extends Component
 							<div className="control-label col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Full Name: </b></div>
 							
 							<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-								<input className = "form-control" type = "text" value = {this.state.fullname} name = "fullname" placeholder = "John Smith" onChange = {this.onchangefullname} />
+								<input className = "form-control" type = "text" value = {this.state.fullname} name = "fullname" placeholder = "John Smith" onChange = {this.onchange} />
 							</div>
 							
 							<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
@@ -171,7 +132,7 @@ class RegisterUser extends Component
 							<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Password: </b></div>
 							
 							<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-								<input className = "form-control" type = "password" value = {this.state.password1} name = "password1" placeholder = "******" onChange = {this.onchangepassword1} />
+								<input className = "form-control" type = "password" value = {this.state.password1} name = "password1" placeholder = "******" onChange = {this.onchange} />
 							</div>
 							
 							<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
@@ -184,7 +145,7 @@ class RegisterUser extends Component
 							<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Confirm Password:  </b></div>
 							
 							<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-								<input className = "form-control" type = "password" value = {this.state.conf_password} name = "conf_password" placeholder = "******" onChange = {this.onchangeconf_password} />
+								<input className = "form-control" type = "password" value = {this.state.conf_password} name = "conf_password" placeholder = "******" onChange = {this.onchange} />
 							</div>
 							
 							<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
@@ -194,7 +155,7 @@ class RegisterUser extends Component
 							<div className="col-lg-3 col-sm-3 col-md-3 col-xs-3"><b> Choose your dashboard: </b></div>
 							
 							<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-								<select className = "form-control" value = {this.state.dashboards} name = "dashboards" onChange = {this.onchangedashboards}>
+								<select className = "form-control" value = {this.state.dashboards} name = "dashboards" onChange = {this.onchange}>
 									<option value="">--Please Choose your dashboard -- </option>
 									<option value="1"> AR Dashboard </option>
 									<option value="2"> OS Dashboard </option>
@@ -211,7 +172,7 @@ class RegisterUser extends Component
 							<div className="col-lg-3 col-sm-3 col-md-3 col-xs-3"><b> Are you a Manager of the Dashboard chosen? </b></div>
 							
 							<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-								<select className = "form-control" value = {this.state.isManager} name = "isManager" onChange = {this.onchangeisManager}>
+								<select className = "form-control" value = {this.state.isManager} name = "isManager" onChange = {this.onchange}>
 									<option value="">--Please Choose your designation -- </option>
 									<option value="1"> Yes </option>
 									<option value="0"> No </option>

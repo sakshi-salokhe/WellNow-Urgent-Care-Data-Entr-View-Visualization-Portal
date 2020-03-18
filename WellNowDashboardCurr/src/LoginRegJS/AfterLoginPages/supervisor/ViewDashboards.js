@@ -229,6 +229,7 @@ class ViewDashboards extends Component
 		//ReactDOM.render(<CurrData user_id = {this.props.user_id} />, document.getElementById('root'));
 		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/view_all_goals_sup.php?user_id='+this.props.user_id)
 		.then(resp => {
+			
 			if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')
 			{
 				ReactDOM.render(<AR_Goals_headers data = {resp.data}/>, document.getElementById('root'));

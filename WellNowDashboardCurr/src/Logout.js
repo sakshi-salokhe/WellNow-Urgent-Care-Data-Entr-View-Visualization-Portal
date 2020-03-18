@@ -14,7 +14,7 @@ class Logout extends Component
 	
 	componentDidMount()
 	{
-		axios.get("http://localhost:81/wellnowdash_backend/logout.php")
+		axios.get("http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/logout.php")
 		.then(res => console.log(res.data));
 	}
 	
