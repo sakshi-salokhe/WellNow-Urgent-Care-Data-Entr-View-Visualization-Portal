@@ -35,7 +35,7 @@ if($dashboard == 1 or $dashboard == '1')
 			$c++;
 		}
 		
-		if(empty($emp[$c]['id']) == True)
+		if($c > 0)
 		{
 			echo json_encode($emp);
 		}
@@ -43,7 +43,7 @@ if($dashboard == 1 or $dashboard == '1')
 		{
 			$emp[$c]['id'] = 0;
 			$emp[$c]['when_done'] = "-";
-			$emp[$c]['dashboards'] = "-";
+			$emp[$c]['dashboards'] = 1;
 			$emp[$c]['wb_tech_other'] = "-";
 			$emp[$c]['wb_demo_elig'] = "-";
 			$emp[$c]['wb_timely_filing'] = "-";
@@ -98,7 +98,7 @@ else if($dashboard == 2 or $dashboard == '2')
 			$c++;
 		}
 		
-		if(empty($emp[$c]['id']) == True)
+		if($c > 0)
 		{
 			echo json_encode($emp);
 		}
@@ -106,7 +106,7 @@ else if($dashboard == 2 or $dashboard == '2')
 		{
 			$emp[$c]['id'] = 0;
 			$emp[$c]['date'] = "-";
-			$emp[$c]['dashboards'] = "-";
+			$emp[$c]['dashboards'] = 2;
 			
 			$emp[$c]['RPQ_print_queue_total'] = "-";
 			$emp[$c]['RPQ_num_of_WC'] = "-";
@@ -181,7 +181,7 @@ else if($dashboard == 3 or $dashboard == '3')
 			$c++;
 		}
 		
-		if(empty($emp[$c]['id']) == True)
+		if($c > 0)
 		{
 			echo json_encode($emp);
 		}
@@ -189,7 +189,7 @@ else if($dashboard == 3 or $dashboard == '3')
 		{
 			$emp[$c]['id'] = 0;
 			$emp[$c]['date'] = "-";
-			$emp[$c]['dashboards'] = "-";
+			$emp[$c]['dashboards'] = 3;
 			
 			$emp[$c]['support_sp'] = "-";
 			$emp[$c]['support_enl'] = "-";
@@ -220,6 +220,64 @@ else if($dashboard == 3 or $dashboard == '3')
 			$emp[$c]['ar_unapplied'] = "-";
 			$emp[$c]['ar_audit'] = "-";
 			$emp[$c]['ar_wbs'] = "-";
+			
+			echo json_encode($emp);
+		}
+	}
+	
+}
+else if($dashboard == 4 or $dashboard == '4')
+{
+	$sql2 = "select * from pat_sup_goals";
+	if($res2 = mysqli_query($con, $sql2))
+	{
+		$c = 0;
+		while($row2 = mysqli_fetch_assoc($res2))
+		{
+			$emp[$c]['id'] = $row2['pat_sup_goal_id'];
+			$emp[$c]['date'] = $row2['when_done']."-".$row2["when_done_year"];
+			$emp[$c]['dashboards'] = $dashboard;
+			
+			$emp[$c]['saf_mvp_sod'] = $row2['saf_mvp_sod'];
+			$emp[$c]['saf_inval_addr_sod'] = $row2['saf_inval_addr_sod'];
+			$emp[$c]['ash_attachments_sod'] = $row2['ash_attachments_sod'];
+			$emp[$c]['ash_wc_mailing_sod'] = $row2['ash_wc_mailing_sod'];
+			$emp[$c]['ash_wc_deleted_sod'] = $row2['ash_wc_deleted_sod'];
+			$emp[$c]['ash_acc_type_sod'] = $row2['ash_acc_type_sod'];
+			$emp[$c]['ash_last_addr_sod'] = $row2['ash_last_addr_sod'];
+			$emp[$c]['bailey_indep_health_sod'] = $row2['bailey_indep_health_sod'];
+			$emp[$c]['bailey_bcbs_sod'] = $row2['bailey_bcbs_sod'];
+			$emp[$c]['bailey_emails_sod'] = $row2['bailey_emails_sod'];
+			$emp[$c]['justin_ndc_num_sod'] = $row2['justin_ndc_num_sod'];
+			$emp[$c]['justin_medicare_loc_sod'] = $row2['justin_medicare_loc_sod'];
+			$emp[$c]['justin_medicare_sec_sod'] = $row2['justin_medicare_sec_sod'];
+			
+			$c++;
+		}
+		
+		if($c > 0)
+		{
+			echo json_encode($emp);
+		}
+		else
+		{
+			$emp[$c]['id'] = 0;
+			$emp[$c]['when_done'] = "-";
+			$emp[$c]['dashboards'] = 4;
+			
+			$emp[$c]['saf_mvp_sod'] = "-";
+			$emp[$c]['saf_inval_addr_sod'] = "-";
+			$emp[$c]['ash_attachments_sod'] = "-";
+			$emp[$c]['ash_wc_mailing_sod'] = "-";
+			$emp[$c]['ash_wc_deleted_sod'] = "-";
+			$emp[$c]['ash_acc_type_sod'] = "-";
+			$emp[$c]['ash_last_addr_sod'] = "-";
+			$emp[$c]['bailey_indep_health_sod'] = "-";
+			$emp[$c]['bailey_bcbs_sod'] = "-";
+			$emp[$c]['bailey_emails_sod'] = "-";
+			$emp[$c]['justin_ndc_num_sod'] = "-";
+			$emp[$c]['justin_medicare_loc_sod'] = "-";
+			$emp[$c]['justin_medicare_sec_sod'] = "-";
 			
 			echo json_encode($emp);
 		}
