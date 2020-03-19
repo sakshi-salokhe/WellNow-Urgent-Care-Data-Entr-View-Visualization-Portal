@@ -269,6 +269,68 @@ else if($dashboard == 3)
 	
 	echo json_encode($emp);
 }
+else if($dashboard == 4)
+{
+	
+	$sql3 = "select * from pat_sup_data where when_done = '$today'";
+	$result3 = mysqli_query($con,$sql3);
+	$row3 = mysqli_fetch_array($result3);
+	$count = mysqli_num_rows($result3);
+	
+	$emp['when_done'] = $today;
+	
+	$emp['dashboard'] = $dashboard;
+	
+	$emp['saf_mvp_sod'] = 1;
+	$emp['saf_inval_addr_sod'] = 1;
+	$emp['ash_attachments_sod'] = 1;
+	$emp['ash_wc_mailing_sod'] = 1;
+	$emp['ash_wc_deleted_sod'] = 1;
+	$emp['ash_acc_type_sod'] = 1;
+	$emp['ash_last_addr_sod'] = 1;
+	$emp['bailey_indep_health_sod'] = 1;
+	$emp['bailey_bcbs_sod'] = 1;
+	$emp['bailey_emails_sod'] = 1;
+	$emp['justin_ndc_num_sod'] = 1;
+	$emp['justin_medicare_loc_sod'] = 1;
+	$emp['justin_medicare_sec_sod'] = 1;
+	
+	if($count > 0)
+	{
+		$emp['date'] = $today;
+		$emp['saf_mvp_sod_PH'] = $row3['saf_mvp_sod'];
+		$emp['saf_inval_addr_sod_PH'] = $row3['saf_inval_addr_sod'];
+		$emp['ash_attachments_sod_PH'] = $row3['ash_attachments_sod'];
+		$emp['ash_wc_mailing_sod_PH'] = $row3['ash_wc_mailing_sod'];
+		$emp['ash_wc_deleted_sod_PH'] = $row3['ash_wc_deleted_sod'];
+		$emp['ash_acc_type_sod_PH'] = $row3['ash_acc_type_sod'];
+		$emp['ash_last_addr_sod_PH'] = $row3['ash_last_addr_sod'];
+		$emp['bailey_indep_health_sod_PH'] = $row3['bailey_indep_health_sod'];
+		$emp['bailey_bcbs_sod_PH'] = $row3['bailey_bcbs_sod'];
+		$emp['bailey_emails_sod_PH'] = $row3['bailey_emails_sod'];
+		$emp['justin_ndc_num_sod_PH'] = $row3['justin_ndc_num_sod'];
+		$emp['justin_medicare_loc_sod_PH'] = $row3['justin_medicare_loc_sod'];
+		$emp['justin_medicare_sec_sod_PH'] = $row3['justin_medicare_sec_sod'];
+	}
+	else{
+		$emp['date'] = $today;
+		$emp['saf_mvp_sod_PH'] = "";
+		$emp['saf_inval_addr_sod_PH'] = "";
+		$emp['ash_attachments_sod_PH'] = "";
+		$emp['ash_wc_mailing_sod_PH'] = "";
+		$emp['ash_wc_deleted_sod_PH'] = "";
+		$emp['ash_acc_type_sod_PH'] = "";
+		$emp['ash_last_addr_sod_PH'] = "";
+		$emp['bailey_indep_health_sod_PH'] = "";
+		$emp['bailey_bcbs_sod_PH'] = "";
+		$emp['bailey_emails_sod_PH'] = "";
+		$emp['justin_ndc_num_sod_PH'] = "";
+		$emp['justin_medicare_loc_sod_PH'] = "";
+		$emp['justin_medicare_sec_sod_PH'] = "";
+	}
+	
+	echo json_encode($emp);
+}
 else
 {
 	http_response_code(422);
