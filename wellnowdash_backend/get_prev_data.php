@@ -60,7 +60,7 @@ if($dashboards == '1')
 	$waystar_oob_avg = 0;
 	$waystar_fidelis_tf_avg = 0;
 	
-	$sql = "select * from ar_data where when_done between '$startdate' and '$enddate'";
+	$sql = "select * from ar_data where when_done between '$startdate' and '$enddate' order by when_done asc";
 	if($res = mysqli_query($con, $sql))
 	{
 		$c = 0;
@@ -347,7 +347,7 @@ else if($dashboards == '2')
 	$Coding_WS_Coding_avg = 0;
 	$Coding_FFS_Onhold_Report_avg = 0;
 	
-	$sql = "select * from os_data where when_done between '$startdate' and '$enddate'";
+	$sql = "select * from os_data where when_done between '$startdate' and '$enddate' order by when_done asc";
 	if($res = mysqli_query($con, $sql))
 	{
 		$c = 0;
@@ -849,7 +849,7 @@ else if($dashboards == '3')
 	$ar_audit_avg = 0;
 	$ar_wbs_avg = 0;
 	
-	$sql = "select * from om_data where when_done between '$startdate' and '$enddate'";
+	$sql = "select * from om_data where when_done between '$startdate' and '$enddate' order by when_done asc";
 	if($res = mysqli_query($con, $sql))
 	{
 		$c = 0;
@@ -1307,6 +1307,171 @@ else if($dashboards == '3')
 		$emp[$c]['ar_unapplied'] = number_format($ar_unapplied_avg,2,'.','');
 		$emp[$c]['ar_audit'] = number_format($ar_audit_avg,2,'.','');
 		$emp[$c]['ar_wbs'] = number_format($ar_wbs_avg,2,'.','');
+		
+		echo json_encode($emp);
+	}
+}
+else if($dashboards == '4')
+{
+	$saf_mvp_sod_val = 0;
+	$saf_inval_addr_sod_val = 0;
+	$ash_attachments_sod_val = 0;
+	$ash_wc_mailing_sod_val = 0;
+	$ash_wc_deleted_sod_val = 0;
+	$ash_acc_type_sod_val = 0;
+	$ash_last_addr_sod_val = 0;
+	$bailey_indep_health_sod_val = 0;
+	$bailey_bcbs_sod_val = 0;
+	$bailey_emails_sod_val = 0;
+	$justin_ndc_num_sod_val = 0;
+	$justin_medicare_loc_sod_val = 0;
+	$justin_medicare_sec_sod_val = 0;
+	
+	$sql = "select * from pat_sup_data where when_done between '$startdate' and '$enddate' order by when_done asc";
+	if($res = mysqli_query($con, $sql))
+	{
+		$c = 0;
+		while($row = mysqli_fetch_assoc($res))
+		{
+			if($row['saf_mvp_sod'] == "") 
+			{
+				$saf_mvp_sod_val = "-";
+			} 
+			else 
+			{
+				$saf_mvp_sod_val = $row['saf_mvp_sod'];
+			}
+			
+			if($row['saf_inval_addr_sod'] == "") 
+			{
+				$saf_inval_addr_sod_val = "-";
+			} 
+			else 
+			{
+				$saf_inval_addr_sod_val = $row['saf_inval_addr_sod'];
+			}
+			
+			if($row['ash_attachments_sod'] == "") 
+			{
+				$ash_attachments_sod_val = "-";
+			} 
+			else 
+			{
+				$ash_attachments_sod_val = $row['ash_attachments_sod'];
+			}
+			
+			if($row['ash_wc_mailing_sod'] == "") 
+			{
+				$ash_wc_mailing_sod_val = "-";
+			} 
+			else 
+			{
+				$ash_wc_mailing_sod_val = $row['ash_wc_mailing_sod'];
+			}
+			
+			if($row['ash_wc_deleted_sod'] == "") 
+			{
+				$ash_wc_deleted_sod_val = "-";
+			} 
+			else 
+			{
+				$ash_wc_deleted_sod_val = $row['ash_wc_deleted_sod'];
+			}
+			
+			if($row['ash_acc_type_sod'] == "") 
+			{
+				$ash_acc_type_sod_val = "-";
+			} 
+			else 
+			{
+				$ash_acc_type_sod_val = $row['ash_acc_type_sod'];
+			}
+			
+			if($row['ash_last_addr_sod'] == "") 
+			{
+				$ash_last_addr_sod_val = "-";
+			} 
+			else 
+			{
+				$ash_last_addr_sod_val = $row['ash_last_addr_sod'];
+			}
+			
+			if($row['bailey_indep_health_sod'] == "") 
+			{
+				$bailey_indep_health_sod_val = "-";
+			} 
+			else 
+			{
+				$bailey_indep_health_sod_val = $row['bailey_indep_health_sod'];
+			}
+			
+			if($row['bailey_bcbs_sod'] == "") 
+			{
+				$bailey_bcbs_sod_val = "-";
+			} 
+			else 
+			{
+				$bailey_bcbs_sod_val = $row['bailey_bcbs_sod'];
+			}
+			
+			if($row['bailey_emails_sod'] == "") 
+			{
+				$bailey_emails_sod_val = "-";
+			} 
+			else 
+			{
+				$bailey_emails_sod_val = $row['bailey_emails_sod'];
+			}
+			
+			if($row['justin_ndc_num_sod'] == "") 
+			{
+				$justin_ndc_num_sod_val = "-";
+			} 
+			else 
+			{
+				$justin_ndc_num_sod_val = $row['justin_ndc_num_sod'];
+			}
+			
+			if($row['justin_medicare_loc_sod'] == "") 
+			{
+				$justin_medicare_loc_sod_val = "-";
+			} 
+			else 
+			{
+				$justin_medicare_loc_sod_val = $row['justin_medicare_loc_sod'];
+			}
+			
+			if($row['justin_medicare_sec_sod'] == "") 
+			{
+				$justin_medicare_sec_sod_val = "-";
+			} 
+			else 
+			{
+				$justin_medicare_sec_sod_val = $row['justin_medicare_sec_sod'];
+			}
+			
+			
+			$emp[$c]['id'] = $row['pat_sup_id'];
+			$emp[$c]['when_done'] = $row['when_done'];
+			$emp[$c]['dashboards'] = $dashboards;
+			$emp[$c]['saf_mvp_sod'] = $saf_mvp_sod_val;
+			$emp[$c]['saf_inval_addr_sod'] = $saf_inval_addr_sod_val;
+			$emp[$c]['ash_attachments_sod'] = $ash_attachments_sod_val;
+			$emp[$c]['ash_wc_mailing_sod'] = $ash_wc_mailing_sod_val;
+			$emp[$c]['ash_wc_deleted_sod'] = $ash_wc_deleted_sod_val;
+			$emp[$c]['ash_acc_type_sod'] = $ash_acc_type_sod_val;
+			$emp[$c]['ash_last_addr_sod'] = $ash_last_addr_sod_val;
+			$emp[$c]['bailey_indep_health_sod'] = $bailey_indep_health_sod_val;
+			$emp[$c]['bailey_bcbs_sod'] = $bailey_bcbs_sod_val;
+			$emp[$c]['bailey_emails_sod'] = $bailey_emails_sod_val;
+			$emp[$c]['justin_ndc_num_sod'] = $justin_ndc_num_sod_val;
+			$emp[$c]['justin_medicare_loc_sod'] = $justin_medicare_loc_sod_val;
+			$emp[$c]['justin_medicare_sec_sod'] = $justin_medicare_sec_sod_val;
+
+
+			$c++;
+			
+		}
 		
 		echo json_encode($emp);
 	}
