@@ -13,6 +13,7 @@ import ViewDashboards from "../ViewDashboards"
 import DataList_onDateRangeAR from "./AR/DataList_onDateRangeAR"
 import DataList_onDateRangeOM from "./OM/DataList_onDateRangeOM"
 import DataList_onDateRangeOS from "./OS/DataList_onDateRangeOS"
+import DataList_onDateRangePatSup from "./PatSup/DataList_onDateRangePatSup"
 
 class PrevData extends Component
 {
@@ -89,6 +90,10 @@ class PrevData extends Component
 				else if(obj.dashboards === 3 || obj.dashboards === '3')
 				{
 					ReactDOM.render(<DataList_onDateRangeOM data = {resp.data}/>, document.getElementById('root'));
+				}
+				else if(obj.dashboards === 4 || obj.dashboards === '4')
+				{
+					ReactDOM.render(<DataList_onDateRangePatSup data = {resp.data}/>, document.getElementById('root'));
 				}
 				})
 		}
