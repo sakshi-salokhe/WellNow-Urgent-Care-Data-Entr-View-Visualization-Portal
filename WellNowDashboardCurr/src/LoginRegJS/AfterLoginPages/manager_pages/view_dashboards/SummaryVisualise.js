@@ -63,7 +63,6 @@ class SummaryVisualise extends Component
 			.then(resp => {
 				if(obj.dashboards === 1 || obj.dashboards === '1')
 				{
-					//console.log("console:",resp.data);
 					ReactDOM.render(<SummaryAR data = {resp.data}/>, document.getElementById('root'));
 				}
 				else if(obj.dashboards == 2 || obj.dashboards === '2')

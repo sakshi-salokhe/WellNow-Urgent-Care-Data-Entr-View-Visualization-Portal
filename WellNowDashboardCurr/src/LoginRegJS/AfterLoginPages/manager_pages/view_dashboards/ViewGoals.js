@@ -12,6 +12,7 @@ import ViewDashboards from "../ViewDashboards"
 import AR_Goals_headers from './AR/AR_Goals_headers'
 import OM_Goals_headers from './OM/OM_Goals_headers'
 import OS_Goals_headers from './OS/OS_Goals_headers'
+import PatSup_Goals_headers from './PatSup/PatSup_Goals_headers'
 
 class ViewGoals extends Component
 {
@@ -65,6 +66,10 @@ class ViewGoals extends Component
 			else if(obj.dashboards == 3 || obj.dashboards === '3')
 			{
 				ReactDOM.render(<OM_Goals_headers data = {resp.data}/>, document.getElementById('root'));
+			}
+			else if(obj.dashboards == 4 || obj.dashboards === '4')
+			{
+				ReactDOM.render(<PatSup_Goals_headers data = {resp.data}/>, document.getElementById('root'));
 			}
 			})
 	}
