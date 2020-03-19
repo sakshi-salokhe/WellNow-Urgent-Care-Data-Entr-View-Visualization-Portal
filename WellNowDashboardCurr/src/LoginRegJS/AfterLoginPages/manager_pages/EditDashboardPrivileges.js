@@ -14,7 +14,7 @@ import ManagerLogInPage from "../ManagerLogInPage"
 import AR_Dash from "./privileges/AR_Dash"
 import OS_Dash from "./privileges/OS_Dash"
 import OM_Dash from "./privileges/OM_Dash"
-import Pat_Support from "./privileges/Pat_Support"
+import PatSup_Dash from "./privileges/PatSup_Dash"
 
 class EditDashboardPrivileges extends Component
 {
@@ -38,7 +38,10 @@ class EditDashboardPrivileges extends Component
 		ReactDOM.render(<OM_Dash />, document.getElementById('root'));
 	}
 	
-	
+	PatSup_Dash()
+	{
+		ReactDOM.render(<PatSup_Dash />, document.getElementById('root'));
+	}
 	
 	render()
 	{
@@ -71,7 +74,7 @@ class EditDashboardPrivileges extends Component
 					</div>
 					
 					<div className = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
-						<button className="btn btn-primary" onClick={this.Pat_Support}> Patient Support Task Log </button>
+						<button className="btn btn-primary" onClick={this.PatSup_Dash}> Patient Support Task Log </button>
 					</div>
 					
 				</div>
