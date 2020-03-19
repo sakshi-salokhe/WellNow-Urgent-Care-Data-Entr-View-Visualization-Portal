@@ -51,6 +51,10 @@ class SummaryVisualise extends Component
 		{
 			alert("Choose the dashboard of you choice!")
 		}
+		else if(obj.dashboards == 4)
+		{
+			alert("Patient Support Dashboard does not have summary page. Sorry!")
+		}
 		else
 		{
 			console.log("dash:", obj.dashboards);
