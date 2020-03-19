@@ -12,6 +12,7 @@ import ViewDashboards from "../ViewDashboards"
 import ViewCurrDataAR from './AR/ViewCurrDataAR'
 import ViewCurrDataOM from './OM/ViewCurrDataOM'
 import ViewCurrDataOS from './OS/ViewCurrDataOS'
+import ViewCurrDataPatSup from './PatSup/ViewCurrDataPatSup'
 
 class CurrData extends Component
 {
@@ -65,6 +66,10 @@ class CurrData extends Component
 				else if(obj.dashboards == 3 || obj.dashboards === '3')
 				{
 					ReactDOM.render(<ViewCurrDataOM data = {resp.data}/>, document.getElementById('root'));
+				}
+				else if(obj.dashboards == 4 || obj.dashboards === '4')
+				{
+					ReactDOM.render(<ViewCurrDataPatSup data = {resp.data}/>, document.getElementById('root'));
 				}
 				})
 		}
