@@ -9,26 +9,23 @@ import {Link} from "react-router-dom"
 
 
 import IndexHeader from "../../../../IndexHeader";
-import ManagerLogInPage from "../../ManagerLogInPage"
+import ViewDashboards from "../ViewDashboards"
 
 import EnterDataAR from "./enter_data/EnterDataAR"
 import EnterDataOS from "./enter_data/EnterDataOS"
 import EnterDataOM from "./enter_data/EnterDataOM"
-//import EnterDataPat_Support from "./enter_data/EnterDataPat_Support"
+import EnterDataPatSup from "./enter_data/EnterDataPatSup"
 
 class EditDashboardPrivileges extends Component
 {
 	constructor(props)
 	{
 		super(props);
-		
-		this.EnterDataAR = this.EnterDataAR.bind(this);
-		this.EnterDataOM = this.EnterDataOM.bind(this);
 	}
 	
 	home()
 	{
-		ReactDOM.render(<ManagerLogInPage />, document.getElementById('root'));
+		ReactDOM.render(<ViewDashboards />, document.getElementById('root'));
 	}
 	
 	EnterDataAR()
@@ -88,9 +85,23 @@ class EditDashboardPrivileges extends Component
 		.catch(err => console.log(err))
 	}
 	
-	EnterDataPat_Support()
+	EnterDataPatSup()
 	{
-		//ReactDOM.render(<EnterDataPat_Support />, document.getElementById('root'));
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_data_admin.php?dashboards=4')
+		.then(
+			res => {
+				if(res.data.dashboard == 4 || res.data.dashboard == '4')
+				{
+					console.log(res.data);
+					ReactDOM.render(<EnterDataPatSup data = {res.data}/>, document.getElementById('root'));
+				}
+				else
+				{
+					alert('something wrong');
+					//put the other dashboard code here
+				}
+			})
+		.catch(err => console.log(err))
 	}
 	
 	
@@ -125,7 +136,7 @@ class EditDashboardPrivileges extends Component
 					</div>
 					
 					<div className = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
-						<button className="btn btn-primary" onClick={this.EnterDataPat_Support}> Data for Patient Support Task Log </button>
+						<button className="btn btn-primary" onClick={this.EnterDataPatSup}> Data for Patient Support Task Log </button>
 					</div>
 					
 				</div>
