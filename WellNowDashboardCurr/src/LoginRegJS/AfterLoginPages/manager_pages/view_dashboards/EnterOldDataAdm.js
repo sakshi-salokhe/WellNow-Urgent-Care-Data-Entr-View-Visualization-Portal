@@ -14,17 +14,14 @@ import ManagerLogInPage from "../../ManagerLogInPage"
 import EnterOldDataAR from "./enter_old_data/EnterOldDataAR"
 import EnterOldDataOS from "./enter_old_data/EnterOldDataOS"
 import EnterOldDataOM from "./enter_old_data/EnterOldDataOM"
-//import EnterOldDataPat_Support from "./enter_old_data/EnterOldDataPat_Support"
+import EnterOldDataPatSup from "./enter_old_data/EnterOldDataPatSup"
 
 class EnterOldDataAdm extends Component
 {
 	constructor(props)
 	{
 		super(props);
-		
-		this.EnterOldDataAR = this.EnterOldDataAR.bind(this);
-		this.EnterOldDataOM = this.EnterOldDataOM.bind(this);
-		
+	
 		this.submit_data = this.submit_data.bind(this);
 		
 		this.state = 
@@ -112,6 +109,25 @@ class EnterOldDataAdm extends Component
 					{
 						console.log(res.data);
 						ReactDOM.render(<EnterOldDataOM data = {res.data}/>, document.getElementById('root'));
+					}
+					else
+					{
+						alert('something wrong');
+						//put the other dashboard code here
+					}
+				})
+			.catch(err => console.log(err))
+		}
+		else if(obj.dashboards == 4 || obj.dashboards == '4')
+		{
+			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_old_data_admin.php?dashboards=4&olddate='+obj.olddate)
+			.then(
+				res => {
+					console.log("res:", res);
+					if(res.data.dashboard == 4 || res.data.dashboard == '4')
+					{
+						console.log(res.data);
+						ReactDOM.render(<EnterOldDataPatSup data = {res.data}/>, document.getElementById('root'));
 					}
 					else
 					{
