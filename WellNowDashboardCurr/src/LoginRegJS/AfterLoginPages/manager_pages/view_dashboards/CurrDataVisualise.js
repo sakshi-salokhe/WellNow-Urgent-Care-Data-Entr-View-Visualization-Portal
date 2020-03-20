@@ -12,6 +12,7 @@ import ViewDashboards from "../ViewDashboards"
 import CurrDataChartAR from './AR/CurrDataChartAR'
 import CurrDataChartOM from './OM/CurrDataChartOM'
 import CurrDataChartOS from './OS/CurrDataChartOS'
+import CurrDataChartPatSup from './PatSup/CurrDataChartPatSup'
 
 class CurrDataVisualise extends Component
 {
@@ -66,6 +67,10 @@ class CurrDataVisualise extends Component
 			else if(obj.dashboards == 3 || obj.dashboards === '3')
 			{
 				ReactDOM.render(<CurrDataChartOM data = {resp.data}/>, document.getElementById('root'));
+			}
+			else if(obj.dashboards == 4 || obj.dashboards === '4')
+			{
+				ReactDOM.render(<CurrDataChartPatSup data = {resp.data}/>, document.getElementById('root'));
 			}
 			})
 
