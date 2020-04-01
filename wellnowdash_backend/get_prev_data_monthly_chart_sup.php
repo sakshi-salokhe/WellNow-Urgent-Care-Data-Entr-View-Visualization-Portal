@@ -1453,7 +1453,7 @@ else if($dashboards == '4' or $dashboards == 4)
 					$c2 = isset($c1) ? $c1 : 1;
 				}
 				
-				$dets[$y]['id'] = $row['ar_id'];
+				$dets[$y]['id'] = $row['pat_sup_id'];
 				$dets[$y]['when_done'] = $cm;
 				$dets[$y]['dashboards'] = $dashboards;
 				$dets[$y]['supervisor_id'] = $sup_id;
