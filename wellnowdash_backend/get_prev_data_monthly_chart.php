@@ -63,7 +63,7 @@ while($i<$arraysize)
 if($dashboards == '1' or $dashboards == 1)
 {
 	
-	$sql = "select * from ar_data where when_done between '$startdate' and '$enddate'";
+	$sql = "select * from ar_data where when_done between '$startdate' and '$enddate' order by when_done";
 	if($res = mysqli_query($con, $sql))
 	{
 		$c = 0;
@@ -744,7 +744,7 @@ else if($dashboards == '2' or $dashboards == 2)
 else if($dashboards == '3' or $dashboards == 3)
 {
 	
-	$sql = "select * from om_data where when_done between '$startdate' and '$enddate'";
+	$sql = "select * from om_data where when_done between '$startdate' and '$enddate' order by when_done";
 	if($res = mysqli_query($con, $sql))
 	{
 		$c = 0;
@@ -1263,7 +1263,7 @@ else if($dashboards == '3' or $dashboards == 3)
 else if($dashboards == '4' or $dashboards == 4)
 {
 	
-	$sql = "select * from pat_sup_data where when_done between '$startdate' and '$enddate'";
+	$sql = "select * from pat_sup_data where when_done between '$startdate' and '$enddate' order by when_done";
 	if($res = mysqli_query($con, $sql))
 	{
 		$c = 0;
@@ -1345,25 +1345,25 @@ else if($dashboards == '4' or $dashboards == 4)
 					{
 						
 						$c1++;
-						$saf_mvp_sod = is_numeric($emp[$x]['saf_mvp_sod']) ? $emp[$x]['saf_mvp_sod'] : 0;
-						$ash_attachments_sod = is_numeric($emp[$x]['ash_attachments_sod']) ? $emp[$x]['ash_attachments_sod'] : 0;
-						$bailey_indep_health_sod = is_numeric($emp[$x]['bailey_indep_health_sod']) ? $emp[$x]['bailey_indep_health_sod'] : 0;
-						$bailey_bcbs_sod = is_numeric($emp[$x]['bailey_bcbs_sod']) ? $emp[$x]['bailey_bcbs_sod'] : 0;
-						$bailey_emails_sod = is_numeric($emp[$x]['bailey_emails_sod']) ? $emp[$x]['bailey_emails_sod'] : 0;
-						$justin_ndc_num_sod = is_numeric($emp[$x]['justin_ndc_num_sod']) ? $emp[$x]['justin_ndc_num_sod'] : 0;
-						$justin_medicare_loc_sod = is_numeric($emp[$x]['justin_medicare_loc_sod']) ? $emp[$x]['justin_medicare_loc_sod'] : 0;
-						$justin_medicare_sec_sod = is_numeric($emp[$x]['justin_medicare_sec_sod']) ? $emp[$x]['justin_medicare_sec_sod'] : 0;
+						$saf_mvp_sod = isset($emp[$x]['saf_mvp_sod']) ? $emp[$x]['saf_mvp_sod'] : 0;
+						$ash_attachments_sod = isset($emp[$x]['ash_attachments_sod']) ? $emp[$x]['ash_attachments_sod'] : 0;
+						$bailey_indep_health_sod = isset($emp[$x]['bailey_indep_health_sod']) ? $emp[$x]['bailey_indep_health_sod'] : 0;
+						$bailey_bcbs_sod = isset($emp[$x]['bailey_bcbs_sod']) ? $emp[$x]['bailey_bcbs_sod'] : 0;
+						$bailey_emails_sod = isset($emp[$x]['bailey_emails_sod']) ? $emp[$x]['bailey_emails_sod'] : 0;
+						$justin_ndc_num_sod = isset($emp[$x]['justin_ndc_num_sod']) ? $emp[$x]['justin_ndc_num_sod'] : 0;
+						$justin_medicare_loc_sod = isset($emp[$x]['justin_medicare_loc_sod']) ? $emp[$x]['justin_medicare_loc_sod'] : 0;
+						$justin_medicare_sec_sod = isset($emp[$x]['justin_medicare_sec_sod']) ? $emp[$x]['justin_medicare_sec_sod'] : 0;
 						
 						$goal_mon = isset($emp[$x]['mon']) ? $emp[$x]['mon'] : "-";
 						
-						$saf_mvp_sod_goals = is_numeric($emp[$x]['saf_mvp_sod_goals']) ? $emp[$x]['saf_mvp_sod_goals'] : 0;
-						$ash_attachments_sod_goals = is_numeric($emp[$x]['ash_attachments_sod_goals']) ? $emp[$x]['ash_attachments_sod_goals'] : 0;
-						$bailey_indep_health_sod_goals = is_numeric($emp[$x]['bailey_indep_health_sod_goals']) ? $emp[$x]['bailey_indep_health_sod_goals'] : 0;
-						$bailey_bcbs_sod_goals = is_numeric($emp[$x]['bailey_bcbs_sod_goals']) ? $emp[$x]['bailey_bcbs_sod_goals'] : 0;
-						$bailey_emails_sod_goals = is_numeric($emp[$x]['bailey_emails_sod_goals']) ? $emp[$x]['bailey_emails_sod_goals'] : 0;
-						$justin_ndc_num_sod_goals = is_numeric($emp[$x]['justin_ndc_num_sod_goals']) ? $emp[$x]['justin_ndc_num_sod_goals'] : 0;
-						$justin_medicare_loc_sod_goals = is_numeric($emp[$x]['justin_medicare_loc_sod_goals']) ? $emp[$x]['justin_medicare_loc_sod_goals'] : 0;
-						$justin_medicare_sec_sod_goals = is_numeric($emp[$x]['justin_medicare_sec_sod_goals']) ? $emp[$x]['justin_medicare_sec_sod_goals'] : 0;
+						$saf_mvp_sod_goals = isset($emp[$x]['saf_mvp_sod_goals']) ? $emp[$x]['saf_mvp_sod_goals'] : 0;
+						$ash_attachments_sod_goals = isset($emp[$x]['ash_attachments_sod_goals']) ? $emp[$x]['ash_attachments_sod_goals'] : 0;
+						$bailey_indep_health_sod_goals = isset($emp[$x]['bailey_indep_health_sod_goals']) ? $emp[$x]['bailey_indep_health_sod_goals'] : 0;
+						$bailey_bcbs_sod_goals = isset($emp[$x]['bailey_bcbs_sod_goals']) ? $emp[$x]['bailey_bcbs_sod_goals'] : 0;
+						$bailey_emails_sod_goals = isset($emp[$x]['bailey_emails_sod_goals']) ? $emp[$x]['bailey_emails_sod_goals'] : 0;
+						$justin_ndc_num_sod_goals = isset($emp[$x]['justin_ndc_num_sod_goals']) ? $emp[$x]['justin_ndc_num_sod_goals'] : 0;
+						$justin_medicare_loc_sod_goals = isset($emp[$x]['justin_medicare_loc_sod_goals']) ? $emp[$x]['justin_medicare_loc_sod_goals'] : 0;
+						$justin_medicare_sec_sod_goals = isset($emp[$x]['justin_medicare_sec_sod_goals']) ? $emp[$x]['justin_medicare_sec_sod_goals'] : 0;
 						
 						$saf_mvp_sod_count = $saf_mvp_sod_count + $saf_mvp_sod;
 						$ash_attachments_sod_count = $ash_attachments_sod_count + $ash_attachments_sod;
