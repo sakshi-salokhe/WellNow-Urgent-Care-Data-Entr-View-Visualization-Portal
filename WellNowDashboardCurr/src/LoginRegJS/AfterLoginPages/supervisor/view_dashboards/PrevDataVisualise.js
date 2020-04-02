@@ -28,7 +28,7 @@ import DailyChartwithGoalsOS from './OS/DailyChartwithGoalsOS'
 import DailyChartPatSup from './PatSup/DailyChartPatSup'
 import WeeklyChartPatSup from './PatSup/WeeklyChartPatSup'
 import MonthlyChartPatSup from './PatSup/MonthlyChartPatSup'
-//import DailyChartwithGoalsPatSup from './PatSup/DailyChartwithGoalsPatSup'
+import DailyChartwithGoalsPatSup from './PatSup/DailyChartwithGoalsPatSup'
 
 class PrevDataVisualise extends Component
 {
@@ -177,6 +177,10 @@ class PrevDataVisualise extends Component
 					else if(resp.data[0].dashboards == 3 || resp.data[0].dashboards === '3')
 					{
 						ReactDOM.render(<DailyChartwithGoalsOM data = {resp.data}/>, document.getElementById('root'));
+					}
+					else if(resp.data[0].dashboards == 4 || resp.data[0].dashboards === '4')
+					{
+						ReactDOM.render(<DailyChartwithGoalsPatSup data = {resp.data}/>, document.getElementById('root'));
 					}
 				})
 			}

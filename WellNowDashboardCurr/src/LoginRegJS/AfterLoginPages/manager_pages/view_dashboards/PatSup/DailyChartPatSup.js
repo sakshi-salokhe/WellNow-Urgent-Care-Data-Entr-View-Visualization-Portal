@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import {Bar, Line} from 'react-chartjs-2';
 
 import IndexHeader from "../../../../../IndexHeader";
+import ManagerLogInPage from "../../../ManagerLogInPage"
 import PrevDataVisualise from '../PrevDataVisualise'
 
 class DailyChartPatSup extends Component
@@ -14,9 +15,9 @@ class DailyChartPatSup extends Component
 	constructor(props)
 	{
 		super(props);
-		this.back = this.back.bind(this);
 		
 		var ds = [];
+		
 		var dlabel = [];
 		
 		var d_temp = [];
@@ -32,17 +33,16 @@ class DailyChartPatSup extends Component
 		{
 			a_name.push(key);
 		}
-		console.log("check a_name because we shud know what to pop or shift:", a_name);
+		
 		//remove id and everything since we only need the names of attributes
-		a_name.shift();
 		a_name.shift();
 		a_name.shift();
 		a_name.shift();
 		a_name.pop();
 		
-		/*for(var i = 0; i<= 26; i++) //number of attributes - 1
+		/*for(var i = 0; i<= 9; i++)
 		{
-			a_name.pop(); //remove goal names --  we do not need that here
+			a_name.pop(); //remove goal anmes --  we do not need that here
 		}		
 		*/
 		
@@ -55,6 +55,7 @@ class DailyChartPatSup extends Component
 		var a7 = [];
 		var a8 = [];
 		
+
 		var dynamicColors = function() {
 			var r = Math.floor(Math.random() * 255);
 			var g = Math.floor(Math.random() * 255);
@@ -62,21 +63,20 @@ class DailyChartPatSup extends Component
 			var opacity = 0.4;
 			return "rgb(" + r + "," + g + "," + b +  "," + opacity +")";
 		}
-		for(var i = 0; i <  num-1; i++)
+		for(var i = 0; i <  num; i++)
 		{
 			var val = this.props.data[i].when_done;
 			dlabel.push(val);
 		}
 		
 		
-		for(var i=0; i< num-1; i++)
+		for(var i=0; i< num; i++)
 		{
 			
 			for(var key in this.props.data[i])
 			{
 				d_temp.push(this.props.data[i][key]);
 			}
-			d_temp.shift();
 			d_temp.shift();
 			d_temp.shift();
 			d_temp.shift();
@@ -102,7 +102,6 @@ class DailyChartPatSup extends Component
 				}
 				else if(g == 1)
 				{
-					
 					a2.push(d1[g]);
 				}
 				else if(g == 2)
@@ -136,10 +135,9 @@ class DailyChartPatSup extends Component
 			d1 = [];
 			d2 = [];
 			d_temp = [];
-
 		}
 		
-			
+		
 		ds.push({
 			label: a_name[0],
 			fill: true,
@@ -292,7 +290,7 @@ class DailyChartPatSup extends Component
 			pointHitRadius: 10,
 			order: 1
 			});
-						
+				
 		this.state = {
 			chartData:{
 				labels : dlabel,
@@ -303,7 +301,7 @@ class DailyChartPatSup extends Component
 	
 	back()
 	{
-		ReactDOM.render(<PrevDataVisualise user_id = {this.props.data[0].supervisor_id}/>, document.getElementById('root'));
+		ReactDOM.render(<PrevDataVisualise />, document.getElementById('root'));
 	}
 	
 	render()

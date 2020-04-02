@@ -7,14 +7,14 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import {Bar, Line} from 'react-chartjs-2';
 
 import IndexHeader from "../../../../../IndexHeader";
+import ManagerLogInPage from "../../../ManagerLogInPage"
 import PrevDataVisualise from '../PrevDataVisualise'
 
-class DailyChartPatSup extends Component
+class MonthlyChartPatSup extends Component
 {
 	constructor(props)
 	{
 		super(props);
-		this.back = this.back.bind(this);
 		
 		var ds = [];
 		var dlabel = [];
@@ -32,19 +32,18 @@ class DailyChartPatSup extends Component
 		{
 			a_name.push(key);
 		}
-		console.log("check a_name because we shud know what to pop or shift:", a_name);
+		
 		//remove id and everything since we only need the names of attributes
-		a_name.shift();
 		a_name.shift();
 		a_name.shift();
 		a_name.shift();
 		a_name.pop();
 		
-		/*for(var i = 0; i<= 26; i++) //number of attributes - 1
+		/*for(var i = 0; i<= 9; i++)
 		{
-			a_name.pop(); //remove goal names --  we do not need that here
-		}		
-		*/
+			a_name.pop(); //remove goal anmes --  we do not need that here
+		}	*/	
+		
 		
 		var a1 = [];
 		var a2 = [];
@@ -62,30 +61,89 @@ class DailyChartPatSup extends Component
 			var opacity = 0.4;
 			return "rgb(" + r + "," + g + "," + b +  "," + opacity +")";
 		}
-		for(var i = 0; i <  num-1; i++)
+		
+		for(var i = 0; i <  num; i++)
 		{
-			var val = this.props.data[i].when_done;
+			var val1 = this.props.data[i].when_done;
+			
+			if(val1 == '1' || val1 == 1)
+			{
+				var val = "January";
+			}
+			else if(val1 == '2' || val1 == 2)
+			{
+				var val = "February";
+			}
+			else if(val1 == '3' || val1 == 3)
+			{
+				var val = "March";
+			}
+			else if(val1 == '4' || val1 == 4)
+			{
+				var val = "April";
+			}
+			else if(val1 == '5' || val1 == 5)
+			{
+				var val = "May";
+			}
+			else if(val1 == '6' || val1 == 6)
+			{
+				var val = "June";
+			}
+			else if(val1 == '7' || val1 == 7)
+			{
+				var val = "July";
+			}
+			else if(val1 == '8' || val1 == 8)
+			{
+				var val = "August";
+			}
+			else if(val1 == '9' || val1 == 9)
+			{
+				var val = "September";
+			}
+			else if(val1 == '10' || val1 == 10)
+			{
+				var val = "October";
+			}
+			else if(val1 == '11' || val1 == 11)
+			{
+				var val = "November";
+			}
+			else 
+			{
+				var val = "December";
+			}
+			
 			dlabel.push(val);
 		}
 		
 		
-		for(var i=0; i< num-1; i++)
+		for(var i=0; i< num; i++)
 		{
-			
 			for(var key in this.props.data[i])
 			{
+				//dlabel.push(key);
 				d_temp.push(this.props.data[i][key]);
 			}
-			d_temp.shift();
+			
+			
 			d_temp.shift();
 			d_temp.shift();
 			d_temp.shift();
 			d_temp.pop();
 			
+			/*dlabel.shift();
+			dlabel.shift();
+			dlabel.shift();
+			dlabel.pop();*/
+			
 			var len = d_temp.length;
+			
 			for(var k = 0; k < (len/2); k++)
 			{
 				d1.push(d_temp[k]);
+				//dlabel1.push(dlabel[k]);
 			}
 			
 			for(var k = (len/2); k < (len); k++)
@@ -102,7 +160,6 @@ class DailyChartPatSup extends Component
 				}
 				else if(g == 1)
 				{
-					
 					a2.push(d1[g]);
 				}
 				else if(g == 2)
@@ -136,10 +193,9 @@ class DailyChartPatSup extends Component
 			d1 = [];
 			d2 = [];
 			d_temp = [];
-
 		}
 		
-			
+		
 		ds.push({
 			label: a_name[0],
 			fill: true,
@@ -292,7 +348,7 @@ class DailyChartPatSup extends Component
 			pointHitRadius: 10,
 			order: 1
 			});
-						
+				
 		this.state = {
 			chartData:{
 				labels : dlabel,
@@ -303,11 +359,12 @@ class DailyChartPatSup extends Component
 	
 	back()
 	{
-		ReactDOM.render(<PrevDataVisualise user_id = {this.props.data[0].supervisor_id}/>, document.getElementById('root'));
+		ReactDOM.render(<PrevDataVisualise />, document.getElementById('root'));
 	}
 	
 	render()
 	{
+		//console.log("monthly data:",this.props.data);
 		
 		return(
 			<div className = "container">
@@ -325,9 +382,9 @@ class DailyChartPatSup extends Component
 				
 				<br />
 				<br />
-				<div classname = "chart">
+				<div className = "chart">
 					<Bar data = {this.state.chartData} options = {{
-						title:{ display: true, text: 'Patient Support Dashboard Data Visualisation for today'},
+						title:{ display: true, text: 'Monthly Patient Support Dashboard Data Visualisation'},
 						scales: {yAxes: [{stacked: false}]}
 					}} />
 				</div>
@@ -336,4 +393,4 @@ class DailyChartPatSup extends Component
 	}
 }
 
-export default DailyChartPatSup
+export default MonthlyChartPatSup

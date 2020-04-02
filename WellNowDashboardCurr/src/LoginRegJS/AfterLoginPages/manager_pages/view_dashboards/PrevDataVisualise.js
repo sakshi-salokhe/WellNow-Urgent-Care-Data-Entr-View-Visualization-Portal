@@ -25,6 +25,11 @@ import DailyChartOS from './OS/DailyChartOS'
 import WeeklyChartOS from './OS/WeeklyChartOS'
 import MonthlyChartOS from './OS/MonthlyChartOS'
 
+import DailyChartwithGoalsPatSup from './PatSup/DailyChartwithGoalsPatSup'
+import DailyChartPatSup from './PatSup/DailyChartPatSup'
+import WeeklyChartPatSup from './PatSup/WeeklyChartPatSup'
+import MonthlyChartPatSup from './PatSup/MonthlyChartPatSup'
+
 class PrevDataVisualise extends Component
 {
 	constructor(props) //props to be used when get method for db
@@ -112,6 +117,10 @@ class PrevDataVisualise extends Component
 					{
 						ReactDOM.render(<DailyChartOM data = {resp.data}/>, document.getElementById('root'));
 					}
+					else if(resp.data.dashboards == 4 || obj.dashboards === '4')
+					{
+						ReactDOM.render(<DailyChartPatSup data = {resp.data}/>, document.getElementById('root'));
+					}
 				})
 			}
 			else if(obj.pattern == 2 || obj.pattern == '2')
@@ -132,6 +141,10 @@ class PrevDataVisualise extends Component
 					{
 						ReactDOM.render(<WeeklyChartOM data = {resp.data}/>, document.getElementById('root'));
 					}
+					else if(obj.dashboards == 4 || obj.dashboards === '4')
+					{
+						ReactDOM.render(<WeeklyChartPatSup data = {resp.data}/>, document.getElementById('root'));
+					}
 				})
 			}
 			else if(obj.pattern == 3 || obj.pattern == '3')
@@ -150,6 +163,10 @@ class PrevDataVisualise extends Component
 					else if(obj.dashboards == 3 || obj.dashboards === '3')
 					{
 						ReactDOM.render(<MonthlyChartOM data = {resp.data}/>, document.getElementById('root'));
+					}
+					else if(obj.dashboards == 4 || obj.dashboards === '4')
+					{
+						ReactDOM.render(<MonthlyChartPatSup data = {resp.data}/>, document.getElementById('root'));
 					}
 				})
 			}
@@ -170,6 +187,11 @@ class PrevDataVisualise extends Component
 					{
 						console.log(resp.data);
 						ReactDOM.render(<DailyChartwithGoalsOM data = {resp.data}/>, document.getElementById('root'));
+					}
+					else if(obj.dashboards === 4 || obj.dashboards === '4')
+					{
+						console.log(resp.data);
+						ReactDOM.render(<DailyChartwithGoalsPatSup data = {resp.data}/>, document.getElementById('root'));
 					}
 				})
 			}

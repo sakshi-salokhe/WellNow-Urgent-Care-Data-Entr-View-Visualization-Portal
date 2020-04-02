@@ -40,10 +40,10 @@ class DailyChartOS extends Component
 		a_name.shift();
 		a_name.pop();
 		
-		for(var i = 0; i<= 26; i++) //number of attributes - 1
+		/*for(var i = 0; i<= 26; i++) //number of attributes - 1
 		{
 			a_name.pop(); //remove goal names --  we do not need that here
-		}		
+		}	*/	
 		
 		
 		var a1 = [];
