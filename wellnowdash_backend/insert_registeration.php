@@ -145,13 +145,15 @@ if(isset($postdata) && !empty($postdata))
 					$q11 = "select user_id from users where email = '$email'";
 					$res = mysqli_query($con, $q11);
 					$row11 = mysqli_fetch_assoc($res);
-					$uid = $row1['user_id'];
+					$uid = $row11['user_id'];
 					$q22 = "insert into ar_access(user_id, wb_tech_other, wb_demo_elig, wb_timely_filing, wb_coding_replies, wb_sup_reviews, wb_nf_corres, wb_wc_corres, waystar_medc_sec, waystar_oob, waystar_fidelis_tf) values ('$uid', 1,1,1,1,1,1,1,1,1,1)";
 					$q33 = "insert into os_access(user_id, RPQ_print_queue_total, RPQ_num_of_WC, IL_RCM_Ins, IL_RCM_WC, IL_NINS, IL_NNF, IL_NWC, IL_ENL, RA_WS_Prof,RA_WS_Prof_Day, RA_WS_Inst, RA_WS_Inst_Day, RA_Attachments, WBE_NF_Updates, WBE_WC_Updates, WBE_OS_Email_Inbox, Coding_FFS_Total, Coding_FFS_On_hold, Coding_Coding_Queue, Coding_Coding_Queue_Days, Coding_WS_Coding, Coding_FFS_Onhold_Report) values ('$uid', 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)";
 					$q44 = "insert into om_access(user_id,support_sp, support_enl,support_dnu, support_nyucp, support_nom, support_emails, support_deposit_pulls, support_blank_batch_corres, support_correspondence, support_acct_audits, support_inv_correct, support_phone, support_inv_addr, support_collects, suport_medical_records, coding_na, coding_on_holds, coding_coding_queue, coding_onsites, coding_ooa, ar120, ar_120percent, ar_90, ar_voicemails, ar_unapplied, ar_audit, ar_wbs) values ('$uid', 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)";
 					$q55 = "insert into pat_sup_access(user_id, saf_mvp_sod, saf_inval_addr_sod, ash_attachments_sod, ash_wc_mailing_sod, ash_wc_deleted_sod, ash_acc_type_sod, ash_last_addr_sod, bailey_indep_health_sod, bailey_bcbs_sod, bailey_emails_sod, justin_ndc_num_sod, justin_medicare_loc_sod, justin_medicare_sec_sod) values ('$uid', 1,1,1,1,1,1,1,1,1,1,1,1,1)";
+					$q771 = "insert into cm1_access(user_id, un_total, un_worked, dtr_tw, dtr_issuelog, prw_total, prw_worked, prw_left, ncoa_refund, ncoa_updates, ncoa_skiptrace) values ('$uid',1,1,1,1,1,1,1,1,1,1)";
+					$q772 = "insert into cm2_access(user_id, ilc_pages, ilc_completed, efts_num, efts_completed, sc_wcupdates, sc_wccorr, sc_nfcorr, sc_to, sc_de, sc_tf, ccp_total, ccp_completed, iar_nt, iar_completed, iar_updates, iar_completed1, wi_tnb, wi_addissue, wi_worked, wi_left) values ('$uid',1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)";
 					
-					if(mysqli_query($con, $q22) and mysqli_query($con, $q33) and mysqli_query($con, $q44) and mysqli_query($con, $q55))
+					if(mysqli_query($con, $q22) and mysqli_query($con, $q33) and mysqli_query($con, $q44) and mysqli_query($con, $q55) and mysqli_query($con, $q771) and mysqli_query($con, $q772))
 					{
 						$dets['registered'] = true;
 						$dets['email'] = $email;
@@ -161,7 +163,32 @@ if(isset($postdata) && !empty($postdata))
 					}
 					
 				}
-				
+				else if($dashboards == '7' or $dashboards == 7)
+				{
+					$q1 = "select user_id from users where email = '$email'";
+					$res = mysqli_query($con, $q1);
+					$row1 = mysqli_fetch_assoc($res);
+					$uid = $row1['user_id'];
+
+					$q2 = "insert into cm1_access(user_id, un_total, un_worked, dtr_tw, dtr_issuelog, prw_total, prw_worked, prw_left, ncoa_refund, ncoa_updates, ncoa_skiptrace) values ('$uid',0,0,0,0,0,0,0,0,0,0)";
+					$q3 = "insert into cm2_access(user_id, ilc_pages, ilc_completed, efts_num, efts_completed, sc_wcupdates, sc_wccorr, sc_nfcorr, sc_to, sc_de, sc_tf, ccp_total, ccp_completed, iar_nt, iar_completed, iar_updates, iar_completed1, wi_tnb, wi_addissue, wi_worked, wi_left) values ('$uid',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
+					
+					if(mysqli_query($con, $q2) && mysqli_query($con, $q3))
+					{
+						$dets['registered'] = true;
+						$dets['email'] = $email;
+						
+						echo json_encode($dets);
+						http_response_code(201);
+					}
+					else
+					{
+						$dets['registered'] = false;
+						$dets['email'] = $email;
+						
+						echo json_encode($dets);
+					}
+				}
 				
 				$to = $email;
 				$from = 'donotreplywellnowuc@gmail.com';
@@ -304,13 +331,15 @@ if(isset($postdata) && !empty($postdata))
 					$q11 = "select user_id from users where email = '$email'";
 					$res = mysqli_query($con, $q11);
 					$row11 = mysqli_fetch_assoc($res);
-					$uid = $row1['user_id'];
+					$uid = $row11['user_id'];
 					$q22 = "insert into ar_access(user_id, wb_tech_other, wb_demo_elig, wb_timely_filing, wb_coding_replies, wb_sup_reviews, wb_nf_corres, wb_wc_corres, waystar_medc_sec, waystar_oob, waystar_fidelis_tf) values ('$uid', 1,1,1,1,1,1,1,1,1,1)";
 					$q33 = "insert into os_access(user_id, RPQ_print_queue_total, RPQ_num_of_WC, IL_RCM_Ins, IL_RCM_WC, IL_NINS, IL_NNF, IL_NWC, IL_ENL, RA_WS_Prof,RA_WS_Prof_Day, RA_WS_Inst, RA_WS_Inst_Day, RA_Attachments, WBE_NF_Updates, WBE_WC_Updates, WBE_OS_Email_Inbox, Coding_FFS_Total, Coding_FFS_On_hold, Coding_Coding_Queue, Coding_Coding_Queue_Days, Coding_WS_Coding, Coding_FFS_Onhold_Report) values ('$uid', 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)";
 					$q44 = "insert into om_access(user_id,support_sp, support_enl,support_dnu, support_nyucp, support_nom, support_emails, support_deposit_pulls, support_blank_batch_corres, support_correspondence, support_acct_audits, support_inv_correct, support_phone, support_inv_addr, support_collects, suport_medical_records, coding_na, coding_on_holds, coding_coding_queue, coding_onsites, coding_ooa, ar120, ar_120percent, ar_90, ar_voicemails, ar_unapplied, ar_audit, ar_wbs) values ('$uid', 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)";
 					$q55 = "insert into pat_sup_access(user_id, saf_mvp_sod, saf_inval_addr_sod, ash_attachments_sod, ash_wc_mailing_sod, ash_wc_deleted_sod, ash_acc_type_sod, ash_last_addr_sod, bailey_indep_health_sod, bailey_bcbs_sod, bailey_emails_sod, justin_ndc_num_sod, justin_medicare_loc_sod, justin_medicare_sec_sod) values ('$uid', 1,1,1,1,1,1,1,1,1,1,1,1,1)";
+					$q771 = "insert into cm1_access(user_id, un_total, un_worked, dtr_tw, dtr_issuelog, prw_total, prw_worked, prw_left, ncoa_refund, ncoa_updates, ncoa_skiptrace) values ('$uid',1,1,1,1,1,1,1,1,1,1)";
+					$q772 = "insert into cm2_access(user_id, ilc_pages, ilc_completed, efts_num, efts_completed, sc_wcupdates, sc_wccorr, sc_nfcorr, sc_to, sc_de, sc_tf, ccp_total, ccp_completed, iar_nt, iar_completed, iar_updates, iar_completed1, wi_tnb, wi_addissue, wi_worked, wi_left) values ('$uid',1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)";
 					
-					if(mysqli_query($con, $q22) and mysqli_query($con, $q33) and mysqli_query($con, $q44) and mysqli_query($con, $q55))
+					if(mysqli_query($con, $q22) and mysqli_query($con, $q33) and mysqli_query($con, $q44) and mysqli_query($con, $q55) and mysqli_query($con, $q771)and mysqli_query($con, $q772))
 					{
 						$dets['registered'] = true;
 						$dets['email'] = $email;
@@ -320,7 +349,32 @@ if(isset($postdata) && !empty($postdata))
 					}
 					
 				}
-				
+				else if($dashboards == '7' or $dashboards == 7)
+				{
+					$q1 = "select user_id from users where email = '$email'";
+					$res = mysqli_query($con, $q1);
+					$row1 = mysqli_fetch_assoc($res);
+					$uid = $row1['user_id'];
+
+					$q2 = "insert into cm1_access(user_id, un_total, un_worked, dtr_tw, dtr_issuelog, prw_total, prw_worked, prw_left, ncoa_refund, ncoa_updates, ncoa_skiptrace) values ('$uid',0,0,0,0,0,0,0,0,0,0)";
+					$q3 = "insert into cm2_access(user_id, ilc_pages, ilc_completed, efts_num, efts_completed, sc_wcupdates, sc_wccorr, sc_nfcorr, sc_to, sc_de, sc_tf, ccp_total, ccp_completed, iar_nt, iar_completed, iar_updates, iar_completed1, wi_tnb, wi_addissue, wi_worked, wi_left) values ('$uid',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
+					
+					if(mysqli_query($con, $q2) && mysqli_query($con, $q3))
+					{
+						$dets['registered'] = true;
+						$dets['email'] = $email;
+						
+						echo json_encode($dets);
+						http_response_code(201);
+					}
+					else
+					{
+						$dets['registered'] = false;
+						$dets['email'] = $email;
+						
+						echo json_encode($dets);
+					}
+				}
 				
 				$to = $email;
 				$from = 'donotreplywellnowuc@gmail.com';
