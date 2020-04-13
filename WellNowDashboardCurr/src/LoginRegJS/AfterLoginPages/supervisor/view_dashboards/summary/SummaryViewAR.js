@@ -26,7 +26,6 @@ class SummaryViewAR extends Component
 		this.back = this.back.bind(this);
 	}
 	
-	
 	back(props)
 	{
 		this.user_id = this.props.user_id;
@@ -50,7 +49,6 @@ class SummaryViewAR extends Component
 	
 	userList()
 	{
-		//console.log("here here here");
 		return this.state.employees.map(function(object)
 		{
 			return <PreviousDataViewAR key={object.userid} obj={object} />;

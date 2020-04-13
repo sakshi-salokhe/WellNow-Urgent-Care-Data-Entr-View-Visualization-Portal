@@ -11,7 +11,6 @@ import ViewDashboards from "../../ViewDashboards"
 
 import PreviousDataViewOM from '../OM/PreviousDataViewOM'
 
-
 class SummaryViewOM extends Component
 {
 	constructor(props)
@@ -25,7 +24,6 @@ class SummaryViewOM extends Component
 		
 		this.back = this.back.bind(this);
 	}
-	
 	
 	back(props)
 	{
@@ -41,8 +39,6 @@ class SummaryViewOM extends Component
 				this.setState({ dash: res.data.dashboards });
 				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/summary_view_emp.php?dashboards='+res.data.dashboards+"&user_id="+this.props.user_id)
 					.then(resp => {
-							console.log("monhtly avg :", resp.data);
-							//ReactDOM.render(<ViewCurrDataAR data = {resp.data}/>, document.getElementById('root'));
 							this.setState({ employees: resp.data });
 						})
 			})
@@ -50,7 +46,6 @@ class SummaryViewOM extends Component
 	
 	userList()
 	{
-		//console.log("here here here");
 		return this.state.employees.map(function(object)
 		{
 			return <PreviousDataViewOM key={object.userid} obj={object} />;

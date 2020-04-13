@@ -7,12 +7,10 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Redirect} from "react-router"
 import {Link} from "react-router-dom"
 
-
 class PreviousDataViewAR extends Component
 {
 	render()
 	{
-		console.log("FINALLY",this.props);
 		const condition = this.props.obj.when_done === 'Total' || this.props.obj.when_done === 'Average';
 		return (
 				<tr style = {{backgroundColor : condition ? "lightgray" : "white"}}>

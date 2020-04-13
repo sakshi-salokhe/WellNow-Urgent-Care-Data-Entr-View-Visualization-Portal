@@ -41,12 +41,6 @@ class MonthlyChartOS extends Component
 		a_name.shift();
 		a_name.pop();
 		
-		/*for(var i = 0; i<= 26; i++)
-		{
-			a_name.pop(); //remove goal anmes --  we do not need that here
-		}		
-		*/
-		
 		var a1 = [];
 		var a2 = [];
 		var a3 = [];
@@ -134,12 +128,10 @@ class MonthlyChartOS extends Component
 			dlabel.push(val);
 		}
 		
-		
 		for(var i=0; i< num; i++)
 		{
 			for(var key in this.props.data[i])
 			{
-				//dlabel.push(key);
 				d_temp.push(this.props.data[i][key]);
 			}
 			
@@ -148,7 +140,6 @@ class MonthlyChartOS extends Component
 			d_temp.shift();
 			d_temp.shift();
 			d_temp.pop();
-			
 			
 			var len = d_temp.length;
 			
@@ -256,12 +247,10 @@ class MonthlyChartOS extends Component
 				}
 			}
 			
-			
 			d1 = [];
 			d2 = [];
 			d_temp = [];
 		}
-		
 		
 		ds.push({
 			label: a_name[0],
@@ -697,7 +686,6 @@ class MonthlyChartOS extends Component
 	
 	render()
 	{
-		console.log(this.props);
 		return(
 			<div className = "container">
 				<br />

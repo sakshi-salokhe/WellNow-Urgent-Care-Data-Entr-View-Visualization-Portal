@@ -39,10 +39,10 @@ class MonthlyChartOM extends Component
 		a_name.shift();
 		a_name.pop();
 		
-		for(var i = 0; i<= 26; i++)
+		/*for(var i = 0; i<= 26; i++)
 		{
 			a_name.pop(); //remove goal anmes --  we do not need that here
-		}		
+		}*/		
 		
 		
 		var a1 = [];
@@ -142,7 +142,6 @@ class MonthlyChartOM extends Component
 		{
 			for(var key in this.props.data[i])
 			{
-				//dlabel.push(key);
 				d_temp.push(this.props.data[i][key]);
 			}
 			
@@ -152,17 +151,11 @@ class MonthlyChartOM extends Component
 			d_temp.shift();
 			d_temp.pop();
 			
-			/*dlabel.shift();
-			dlabel.shift();
-			dlabel.shift();
-			dlabel.pop();*/
-			
 			var len = d_temp.length;
 			
 			for(var k = 0; k < (len/2); k++)
 			{
 				d1.push(d_temp[k]);
-				//dlabel1.push(dlabel[k]);
 			}
 			
 			for(var k = (len/2); k < (len); k++)
@@ -821,8 +814,6 @@ class MonthlyChartOM extends Component
 	
 	render()
 	{
-		//console.log("monthly data:",this.props.data);
-		
 		return(
 			<div className = "container">
 				<br />

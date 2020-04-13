@@ -36,7 +36,6 @@ class DataList_onDateRangeAR extends Component
 	
 	render()
 	{
-		console.log("check this",this.props.data);
 		return (
 			<div className="container">
 				

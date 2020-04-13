@@ -163,8 +163,7 @@ class PatSup_Access_emp extends Component
 		}
 		
 		this.onCheckChange = this.onCheckChange.bind(this)
-		
-		
+
 		this.cancel = this.cancel.bind(this);
 		this.save = this.save.bind(this)
 	}
@@ -191,12 +190,10 @@ class PatSup_Access_emp extends Component
 					justin_medicare_loc_sod : this.state.justin_medicare_loc_sod,
 					justin_medicare_sec_sod : this.state.justin_medicare_sec_sod,
 				};
-		console.log(obj);
-		
+
 		axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_patsup_access_sup.php', qs.stringify(obj))
 		.then(res => 
 		{
-			console.log(res.data);	
 			if(res.data.done == true)
 			{
 				ReactDOM.render(<SupervisorLogInPage user_id = {this.props.obj.supervisor_id}/>, document.getElementById('root'));
@@ -217,7 +214,6 @@ class PatSup_Access_emp extends Component
 		})
 	}
 
-	
 	cancel()
 	{
 		ReactDOM.render(<PatSup_Dash_Privileges user_id = {this.props.obj.supervisor_id}/>, document.getElementById('root'));
@@ -226,7 +222,7 @@ class PatSup_Access_emp extends Component
 	render()
 	{
 		const condition = this.state.isActive === -1;
-		console.log("here",this.props.obj);
+		
 		return (
 				
 				<tr style={{ backgroundColor: condition ? "#ff8080" : "white" }} >

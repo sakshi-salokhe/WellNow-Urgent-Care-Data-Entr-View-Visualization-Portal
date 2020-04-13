@@ -60,8 +60,6 @@ class DailyChartwithGoalsOM extends Component
 				d2.push(d_temp[k]);
 			}
 			
-			console.log("d1:",d1.length);
-			
 			ds.push({
 			label: this.props.data[i].when_done,
 			fill: true,

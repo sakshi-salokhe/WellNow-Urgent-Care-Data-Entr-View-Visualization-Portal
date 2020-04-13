@@ -36,7 +36,6 @@ class ViewCurrDataPatSup extends Component
 	
 	render()
 	{
-		console.log("here",this.props);
 		return (
 			<div className="container">
 				

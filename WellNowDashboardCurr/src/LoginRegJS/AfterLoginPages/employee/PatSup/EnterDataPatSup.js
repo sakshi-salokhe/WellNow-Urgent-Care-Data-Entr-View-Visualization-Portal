@@ -200,20 +200,15 @@ class EnterDataPatSup extends Component
 					justin_medicare_sec_sod_val : this.state.justin_medicare_sec_sod_val,
 					
 				};
-		console.log("obj",obj);
 		
 		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/check_patsup.php')
 		.then(
 			res => {
-				//console.log(res.data);
 				if(res.data.ans_val == 1)//data exists already , perform update
 				{
-					console.log("we will update");
-					//console.log("obj=",obj);
 					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_data_patsup.php', qs.stringify(obj))
 					.then(res => 
 						{
-							console.log("update data",res.data);
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
@@ -227,11 +222,9 @@ class EnterDataPatSup extends Component
 				}
 				else //data exists already , perform update
 				{
-					console.log("we will insert");
 					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/insert_data_patsup.php', qs.stringify(obj))
 					.then(res => 
 						{
-							console.log("insert data",res.data);
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")

@@ -47,11 +47,8 @@ class CurrDataChartOM extends Component
 		
 		for(var key in this.props.data[0])
 		{
-			//dlabel.push(key);
 			d_temp.push(this.props.data[0][key]);
 		}
-		
-		console.log("dtemp before: ", d_temp);
 		
 		d_temp.shift();
 		d_temp.shift();
@@ -59,15 +56,11 @@ class CurrDataChartOM extends Component
 		
 		d_temp.pop();
 		
-		console.log("dtemp after: ", d_temp);
-		
-		
 		var len = d_temp.length;
 			
 		for(var k = 0; k < (len/2); k++)
 		{
 			d1.push(d_temp[k]);
-			//dlabel1.push(dlabel[k]);
 		}
 		
 		for(var k = (len/2); k < (len); k++)
@@ -128,8 +121,6 @@ class CurrDataChartOM extends Component
 	render()
 	{
 		const data = this.props.data;
-		console.log("here todays data in manager",data);
-		
 		
 		return(
 			<div className = "container">

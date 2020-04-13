@@ -42,13 +42,10 @@ class ActiveEmpList extends Component
 
 	}
 	
-	
-	
-	
 	render()
 	{
 		const { redirect } = this.state;
-		console.log("redirecting to delete existing user suppervisor:", this.props.obj.$supervisor_id);
+		
 		if(redirect)
 		{
 			return (

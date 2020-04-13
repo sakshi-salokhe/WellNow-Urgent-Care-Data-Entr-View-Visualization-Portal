@@ -41,12 +41,6 @@ class MonthlyChartPatSup extends Component
 		a_name.shift();
 		a_name.pop();
 		
-		/*for(var i = 0; i<= 9; i++)
-		{
-			a_name.pop(); //remove goal anmes --  we do not need that here
-		}		
-		*/
-		
 		var a1 = [];
 		var a2 = [];
 		var a3 = [];
@@ -55,7 +49,6 @@ class MonthlyChartPatSup extends Component
 		var a6 = [];
 		var a7 = [];
 		var a8 = [];
-
 		
 		var dynamicColors = function() {
 			var r = Math.floor(Math.random() * 255);
@@ -136,29 +129,17 @@ class MonthlyChartPatSup extends Component
 			d_temp.shift();
 			d_temp.pop();
 			
-			/*dlabel.shift();
-			dlabel.shift();
-			dlabel.shift();
-			dlabel.shift();
-			dlabel.pop();*/
-			
 			var len = d_temp.length;
 			
 			for(var k = 0; k < (len/2); k++)
 			{
 				d1.push(d_temp[k]);
-				//dlabel1.push(dlabel[k]);
 			}
 			
 			for(var k = (len/2); k < (len); k++)
 			{
 				d2.push(d_temp[k]);
 			}
-			
-			/*console.log("dlabel1", dlabel1);
-			console.log("d_temp", d_temp);
-			console.log("d1", d1);
-			console.log("d2", d2);*/
 			
 			for(var g = 0; g < d1.length; g++)
 			{
@@ -194,15 +175,12 @@ class MonthlyChartPatSup extends Component
 				{
 					a8.push(d1[g]);
 				}
-				
 			}
-			
 			
 			d1 = [];
 			d2 = [];
 			d_temp = [];
 		}
-		
 		
 		ds.push({
 			label: a_name[0],
@@ -372,7 +350,6 @@ class MonthlyChartPatSup extends Component
 	
 	render()
 	{
-		console.log(this.props);
 		return(
 			<div className = "container">
 				<br />

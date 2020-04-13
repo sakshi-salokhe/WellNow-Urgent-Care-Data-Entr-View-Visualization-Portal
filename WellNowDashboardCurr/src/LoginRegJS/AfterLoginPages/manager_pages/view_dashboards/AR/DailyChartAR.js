@@ -40,10 +40,10 @@ class DailyChartAR extends Component
 		a_name.shift();
 		a_name.pop();
 		
-		for(var i = 0; i<= 9; i++)
+		/*for(var i = 0; i<= 9; i++)
 		{
 			a_name.pop(); //remove goal anmes --  we do not need that here
-		}		
+		}	*/	
 		
 		
 		var a1 = [];

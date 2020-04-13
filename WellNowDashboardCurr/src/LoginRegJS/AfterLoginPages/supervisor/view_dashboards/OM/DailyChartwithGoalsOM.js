@@ -37,7 +37,6 @@ class DailyChartwithGoalsOM extends Component
 		{
 			for(var key in this.props.data[i])
 			{
-				//dlabel.push(key);
 				d_temp.push(this.props.data[i][key]);
 			}
 			d_temp.shift();
@@ -46,29 +45,17 @@ class DailyChartwithGoalsOM extends Component
 			d_temp.shift();
 			d_temp.pop();
 			
-			/*dlabel.shift();
-			dlabel.shift();
-			dlabel.shift();
-			dlabel.shift();
-			dlabel.pop();*/
-			
-			console.log("new array for data:",d_temp);
-			
 			var len = d_temp.length;
 			
 			for(var k = 0; k < (len/2); k++)
 			{
 				d1.push(d_temp[k]);
-				//dlabel1.push(dlabel[k]);
 			}
 			
 			for(var k = (len/2); k < (len); k++)
 			{
 				d2.push(d_temp[k]);
 			}
-			
-			console.log("d1", d1);
-			console.log("d2", d2);
 			
 			ds.push({
 			label: this.props.data[i].when_done,
@@ -129,8 +116,7 @@ class DailyChartwithGoalsOM extends Component
 		{
 			dlabel1.push(dlabel[k]);
 		}
-			
-				
+		
 		this.state = {
 			chartData:{
 				labels : dlabel1,

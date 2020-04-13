@@ -39,12 +39,6 @@ class WeeklyChartPatSup extends Component
 		a_name.shift();
 		a_name.pop();
 		
-		/*for(var i = 0; i<= 9; i++)
-		{
-			a_name.pop(); //remove goal anmes --  we do not need that here
-		}	*/	
-		
-		
 		var a1 = [];
 		var a2 = [];
 		var a3 = [];
@@ -73,7 +67,6 @@ class WeeklyChartPatSup extends Component
 		{
 			for(var key in this.props.data[i])
 			{
-				//dlabel.push(key);
 				d_temp.push(this.props.data[i][key]);
 			}
 			
@@ -82,17 +75,11 @@ class WeeklyChartPatSup extends Component
 			d_temp.shift();
 			
 			d_temp.pop();
-			
-			/*dlabel.shift();
-			dlabel.shift();
-			dlabel.shift();
-			dlabel.pop();*/
-			
+		
 			var len = d_temp.length;
 			
 			for(var k = 0; k < (len/2); k++)
 			{
-				//dlabel1.push(dlabel[k]);
 				d1.push(d_temp[k]);
 			}
 			
@@ -100,7 +87,6 @@ class WeeklyChartPatSup extends Component
 			{
 				d2.push(d_temp[k]);
 			}
-			
 			
 			for(var g = 0; g < d1.length; g++)
 			{
@@ -136,15 +122,12 @@ class WeeklyChartPatSup extends Component
 				{
 					a8.push(d1[g]);
 				}
-				
 			}
-			
 			
 			d1 = [];
 			d2 = [];
 			d_temp = [];
 		}
-		
 		
 		ds.push({
 			label: a_name[0],
@@ -314,7 +297,6 @@ class WeeklyChartPatSup extends Component
 	
 	render()
 	{
-		
 		return(
 			<div className = "container">
 				<br />

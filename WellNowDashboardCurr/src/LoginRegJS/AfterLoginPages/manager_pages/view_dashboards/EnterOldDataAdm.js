@@ -29,8 +29,7 @@ class EnterOldDataAdm extends Component
 			olddate : "",
 			dashboards: "",
 		}
-		this.onchangeOldDate = this.onchangeOldDate.bind(this);
-		this.onchangedashboards = this.onchangedashboards.bind(this);
+		this.onchange = this.onchange.bind(this);
 	}
 	
 	home()
@@ -38,17 +37,10 @@ class EnterOldDataAdm extends Component
 		ReactDOM.render(<ManagerLogInPage />, document.getElementById('root'));
 	}
 	
-	onchangeOldDate(e)
+	onchange(e)
 	{
 		this.setState({
-			olddate: e.target.value
-		});
-	}
-	
-	onchangedashboards(e)
-	{
-		this.setState({
-			dashboards: e.target.value
+			[e.target.name]: e.target.value
 		});
 	}
 	
@@ -69,13 +61,11 @@ class EnterOldDataAdm extends Component
 				res => {
 					if(res.data.dashboard == 1 || res.data.dashboard == '1')
 					{
-						console.log(res.data);
 						ReactDOM.render(<EnterOldDataAR data = {res.data}/>, document.getElementById('root'));
 					}
 					else
 					{
 						alert('something wrong');
-						//put the other dashboard code here
 					}
 				})
 			.catch(err => console.log(err))
@@ -85,16 +75,13 @@ class EnterOldDataAdm extends Component
 			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_old_data_admin.php?dashboards=2&olddate='+obj.olddate)
 			.then(
 				res => {
-					console.log("res:", res);
 					if(res.data.dashboard == 2 || res.data.dashboard == '2')
 					{
-						console.log(res.data);
 						ReactDOM.render(<EnterOldDataOS data = {res.data}/>, document.getElementById('root'));
 					}
 					else
 					{
 						alert('something wrong');
-						//put the other dashboard code here
 					}
 				})
 			.catch(err => console.log(err))
@@ -104,16 +91,13 @@ class EnterOldDataAdm extends Component
 			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_old_data_admin.php?dashboards=3&olddate='+obj.olddate)
 			.then(
 				res => {
-					console.log("res:", res);
 					if(res.data.dashboard == 3 || res.data.dashboard == '3')
 					{
-						console.log(res.data);
 						ReactDOM.render(<EnterOldDataOM data = {res.data}/>, document.getElementById('root'));
 					}
 					else
 					{
 						alert('something wrong');
-						//put the other dashboard code here
 					}
 				})
 			.catch(err => console.log(err))
@@ -123,16 +107,13 @@ class EnterOldDataAdm extends Component
 			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_old_data_admin.php?dashboards=4&olddate='+obj.olddate)
 			.then(
 				res => {
-					console.log("res:", res);
 					if(res.data.dashboard == 4 || res.data.dashboard == '4')
 					{
-						console.log(res.data);
 						ReactDOM.render(<EnterOldDataPatSup data = {res.data}/>, document.getElementById('root'));
 					}
 					else
 					{
 						alert('something wrong');
-						//put the other dashboard code here
 					}
 				})
 			.catch(err => console.log(err))
@@ -142,55 +123,6 @@ class EnterOldDataAdm extends Component
 		}
 		
 	}
-	
-	EnterOldDataAR()
-	{
-		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_data_admin.php?dashboards=')
-		.then(
-			res => {
-				if(res.data.dashboard == 1 || res.data.dashboard == '1')
-				{
-					console.log(res.data);
-					ReactDOM.render(<EnterOldDataAR data = {res.data}/>, document.getElementById('root'));
-				}
-				else
-				{
-					alert('something wrong');
-					//put the other dashboard code here
-				}
-			})
-		.catch(err => console.log(err))
-	}
-	
-	EnterOldDataOS()
-	{
-		//ReactDOM.render(<EnterOldDataOS />, document.getElementById('root'));
-	}
-	
-	EnterOldDataOM()
-	{
-		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_data_admin.php?dashboards=')
-		.then(
-			res => {
-				if(res.data.dashboard == 3 || res.data.dashboard == '3')
-				{
-					console.log(res.data);
-					ReactDOM.render(<EnterOldDataOM data = {res.data}/>, document.getElementById('root'));
-				}
-				else
-				{
-					alert('something wrong');
-					//put the other dashboard code here
-				}
-			})
-		.catch(err => console.log(err))
-	}
-	
-	EnterOldDataPat_Support()
-	{
-		//ReactDOM.render(<EnterOldDataPat_Support />, document.getElementById('root'));
-	}
-	
 	
 	render()
 	{
@@ -214,7 +146,7 @@ class EnterOldDataAdm extends Component
 						<div className="col-lg-3 col-sm-3 col-md-3 col-xs-3"><b> Choose your dashboard: </b></div>
 						
 						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<select className = "form-control" value = {this.state.dashboards} name = "dashboards" onChange = {this.onchangedashboards}>
+							<select className = "form-control" value = {this.state.dashboards} name = "dashboards" onChange = {this.onchange}>
 								<option value="">--Please Choose your dashboard -- </option>
 								<option value="1"> AR Dashboard </option>
 								<option value="2"> OS Dashboard </option>
@@ -230,7 +162,7 @@ class EnterOldDataAdm extends Component
 						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Choose the date : </b></label>
 						
 						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "date" max={moment().format("YYYY-MM-DD")} value = {this.state.olddate} name = "olddate" onChange = {this.onchangeOldDate} /> 
+							<input className = "form-control" type = "date" max={moment().format("YYYY-MM-DD")} value = {this.state.olddate} name = "olddate" onChange = {this.onchange} /> 
 						</div>
 						
 						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>

@@ -268,7 +268,6 @@ class EnterEditOldDataOS extends Component
 		
 		this.onChange = this.onChange.bind(this)
 		
-		
 		this.save = this.save.bind(this)
 		this.cancel = this.cancel.bind(this)
 	
@@ -317,7 +316,6 @@ class EnterEditOldDataOS extends Component
 		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/check_old_os.php?date='+obj.date)
 		.then(
 			res => {
-				//console.log(res.data);
 				if(res.data.ans_val == 1)//data exists already , perform update
 				{
 					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_old_data_os.php', qs.stringify(obj))
@@ -367,7 +365,7 @@ class EnterEditOldDataOS extends Component
 	{
 		var data = this.props.data;
 		var user_id = this.props.data.userid;
-		console.log("uid:",user_id);
+		
 		return (
 			<div className = "container-fluid">
 				<h3> Enter Data {this.props.data.when_done} </h3>

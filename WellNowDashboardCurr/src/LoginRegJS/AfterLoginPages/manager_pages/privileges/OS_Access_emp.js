@@ -254,7 +254,6 @@ class OS_Access_emp extends Component
 		
 		this.onCheckChange = this.onCheckChange.bind(this)
 		
-		
 		this.save = this.save.bind(this)
 	}
 	
@@ -288,12 +287,10 @@ class OS_Access_emp extends Component
 					Coding_WS_Coding : this.state.Coding_WS_Coding,
 					Coding_FFS_Onhold_Report : this.state.Coding_FFS_Onhold_Report
 				};
-		console.log(obj);
 		
 		axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_os_access.php', qs.stringify(obj))
 		.then(res => 
 		{
-			console.log("this: ",res.data);	
 			if(res.data.done == true)
 			{
 				ReactDOM.render(<EditDashboardPrivileges />, document.getElementById('root'));
@@ -322,8 +319,6 @@ class OS_Access_emp extends Component
 	render()
 	{
 		const condition = this.state.isActive === -1;
-		console.log("here",this.state.isActive);
-		console.log("checking the user id :", this.props.obj);
 		
 		return (
 				

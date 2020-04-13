@@ -136,7 +136,6 @@ class DailyChartwithGoalsPatSup extends Component
 	
 	render()
 	{
-		
 		return(
 			<div className = "container">
 				<br />

@@ -26,7 +26,6 @@ class EmpList extends Component
 		
 	}
 
-	
 	delete_user()
 	{
 		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/delete_user.php?userid='+this.props.obj.userid)
@@ -42,7 +41,6 @@ class EmpList extends Component
 		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/approve_finally.php?userid='+this.props.obj.userid)
 		.then(
 			res => {
-				console.log(res.data);
 				this.setState({ redirect: true });
 		})
 		.catch(err => console.log(err))

@@ -37,7 +37,6 @@ class DataList_OM extends Component
 	back(props)
 	{
 		this.user_id = this.props.user_id;
-		console.log("data list ar:",this.props.user_id);
 		ReactDOM.render(<PrevData user_id = {this.user_id} />, document.getElementById('root'));
 	}
 	
@@ -46,7 +45,6 @@ class DataList_OM extends Component
 	
 	render()
 	{
-		console.log("here",this.props.data);
 		return (
 			<div className="container-fluid">
 				

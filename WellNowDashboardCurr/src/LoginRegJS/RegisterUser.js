@@ -37,12 +37,10 @@ class RegisterUser extends Component
 		});
 	}
 	
-	
 	handleLogin()
 	{
 		ReactDOM.render(<Login />, document.getElementById('root'));
 	}
-	
 	
 	handleSubmit(event)
 	{
@@ -57,7 +55,7 @@ class RegisterUser extends Component
 					isManager: this.state.isManager
 				};
 		
-		//console.log("reg:", obj);
+		
 		var domain = obj.email.substring(obj.email.lastIndexOf("@") +1);
 		
 		if(obj.fullname.length === 0 || obj.dashboards.length === 0 || obj.email.length === 0 || obj.password1.length === 0 || obj.conf_password.length === 0 || obj.isManager.length == 0)
@@ -80,7 +78,7 @@ class RegisterUser extends Component
 				axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/insert_registeration.php', qs.stringify(obj))
 				.then(res => 
 				{
-					console.log(res.data.registered);	
+
 					if(res.data.registered == false || res.data.registered == 'false')
 					{
 						alert("The email id already exists!");
@@ -162,6 +160,8 @@ class RegisterUser extends Component
 									<option value="3"> OM Dashboard </option>
 									<option value="4"> Patient Support Task Log </option>
 									<option value="5"> All </option>
+									<option value="6"> Posting </option>
+									<option value="7"> Cash Mail Management </option>
 								</select>
 							</div>
 							

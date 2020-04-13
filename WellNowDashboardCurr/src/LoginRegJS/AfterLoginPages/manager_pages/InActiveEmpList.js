@@ -32,9 +32,6 @@ class InActiveEmpList extends Component
 
 	}
 	
-	
-	
-	
 	render()
 	{
 		const { redirect } = this.state;

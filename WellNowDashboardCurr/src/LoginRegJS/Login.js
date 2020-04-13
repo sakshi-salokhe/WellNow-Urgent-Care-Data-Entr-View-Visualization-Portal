@@ -25,28 +25,18 @@ class Login extends Component
 			email : "",
 			password1 : "",
 		}
-		this.onchangeemail = this.onchangeemail.bind(this);
-		this.onchangepassword1 = this.onchangepassword1.bind(this);
+		this.onchange = this.onchange.bind(this);
 		
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleNewUser = this.handleNewUser.bind(this)
 	}
 	
-	
-	onchangeemail(e)
+	onchange(e)
 	{
 		this.setState({
-			email: e.target.value
+			[e.target.name]: e.target.value
 		});
 	}
-	onchangepassword1(e)
-	{
-		this.setState({
-			password1: e.target.value
-		});
-	}
-	
-	
 	
 	handleNewUser()
 	{
@@ -87,8 +77,6 @@ class Login extends Component
 			axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/insert_login.php', qs.stringify(obj))
 			.then(res => 
 				{
-					console.log(res.data);
-					
 					if(res.data.logged == true && res.data.dash === "5" && res.data.isManager == "1")
 					{
 						ReactDOM.render(<ManagerLogInPage user_id = {res.data.user_id} />, document.getElementById('root'));
@@ -128,7 +116,7 @@ class Login extends Component
 						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Email: </b></label>
 						
 						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "email" value = {this.state.email} name = "email" placeholder = "username@wellnow.com" onChange = {this.onchangeemail} />
+							<input className = "form-control" type = "email" value = {this.state.email} name = "email" placeholder = "username@wellnow.com" onChange = {this.onchange} />
 						</div>
 						
 						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
@@ -139,7 +127,7 @@ class Login extends Component
 						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Password: </b></label>
 						
 						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "password" value = {this.state.password1} name = "password1" placeholder = "******" onChange = {this.onchangepassword1} />
+							<input className = "form-control" type = "password" value = {this.state.password1} name = "password1" placeholder = "******" onChange = {this.onchange} />
 						</div>
 						
 						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>

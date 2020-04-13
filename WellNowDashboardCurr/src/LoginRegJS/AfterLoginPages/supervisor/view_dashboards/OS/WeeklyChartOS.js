@@ -39,13 +39,6 @@ class WeeklyChartOS extends Component
 		a_name.shift();
 		a_name.pop();
 		
-		/*
-		for(var i = 0; i<= 26; i++)
-		{
-			a_name.pop(); //remove goal anmes --  we do not need that here
-		}		
-		*/
-		
 		var a1 = [];
 		var a2 = [];
 		var a3 = [];
@@ -89,28 +82,18 @@ class WeeklyChartOS extends Component
 		{
 			for(var key in this.props.data[i])
 			{
-				//dlabel.push(key);
 				d_temp.push(this.props.data[i][key]);
 			}
 			
 			d_temp.shift();
 			d_temp.shift();
 			d_temp.shift();
-			
-			
 			d_temp.pop();
-			
-			console.log("dtemp:", d_temp);
-			/*dlabel.shift();
-			dlabel.shift();
-			dlabel.shift();
-			dlabel.pop();*/
 			
 			var len = d_temp.length;
 			
 			for(var k = 0; k < (len/2); k++)
 			{
-				//dlabel1.push(dlabel[k]);
 				d1.push(d_temp[k]);
 			}
 			
@@ -215,13 +198,11 @@ class WeeklyChartOS extends Component
 				
 			}
 			
-			
 			d1 = [];
 			d2 = [];
 			d_temp = [];
 		}
-		
-		
+
 		ds.push({
 			label: a_name[0],
 			fill: true,
@@ -656,7 +637,6 @@ class WeeklyChartOS extends Component
 	
 	render()
 	{
-		
 		return(
 			<div className = "container">
 				<br />

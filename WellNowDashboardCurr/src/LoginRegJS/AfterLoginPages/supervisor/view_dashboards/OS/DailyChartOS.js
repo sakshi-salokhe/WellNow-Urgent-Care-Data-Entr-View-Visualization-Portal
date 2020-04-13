@@ -25,26 +25,19 @@ class DailyChartOS extends Component
 		var d1 = [];
 		var d2 = [];
 		
-		
 		var num = Object.keys(this.props.data).length;
 		
 		for(var key in this.props.data[0])
 		{
 			a_name.push(key);
 		}
-		console.log("check a_name because we shud know what to pop or shift:", a_name);
+		
 		//remove id and everything since we only need the names of attributes
 		a_name.shift();
 		a_name.shift();
 		a_name.shift();
 		a_name.shift();
 		a_name.pop();
-		
-		/*for(var i = 0; i<= 26; i++) //number of attributes - 1
-		{
-			a_name.pop(); //remove goal names --  we do not need that here
-		}	*/	
-		
 		
 		var a1 = [];
 		var a2 = [];
@@ -69,7 +62,6 @@ class DailyChartOS extends Component
 		var a21 = [];
 		var a22 = [];
 		
-		
 		var dynamicColors = function() {
 			var r = Math.floor(Math.random() * 255);
 			var g = Math.floor(Math.random() * 255);
@@ -77,16 +69,15 @@ class DailyChartOS extends Component
 			var opacity = 0.4;
 			return "rgb(" + r + "," + g + "," + b +  "," + opacity +")";
 		}
+		
 		for(var i = 0; i <  num-1; i++)
 		{
 			var val = this.props.data[i].when_done;
 			dlabel.push(val);
 		}
 		
-		
 		for(var i=0; i< num-1; i++)
 		{
-			
 			for(var key in this.props.data[i])
 			{
 				d_temp.push(this.props.data[i][key]);
@@ -202,17 +193,12 @@ class DailyChartOS extends Component
 					
 					a22.push(d1[g]);
 				}
-				
-				
 			}
-			
 			
 			d1 = [];
 			d2 = [];
 			d_temp = [];
-
 		}
-		
 			
 		ds.push({
 			label: a_name[0],
@@ -648,7 +634,6 @@ class DailyChartOS extends Component
 	
 	render()
 	{
-		
 		return(
 			<div className = "container">
 				<br />

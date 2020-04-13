@@ -19,7 +19,6 @@ class PrevDataChartAR extends Component
 	
 	render()
 	{
-		console.log(this.props.data);
 		return(
 			<div className = "container">
 				<br />

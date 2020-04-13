@@ -38,7 +38,6 @@ class CurrDataChartPatSup extends Component
 		dlabel.shift();
 		dlabel.shift();
 		dlabel.pop();
-		console.log(this.props.data);	
 		
 		for(var k = 0; k < (dlabel.length/2); k++)
 		{

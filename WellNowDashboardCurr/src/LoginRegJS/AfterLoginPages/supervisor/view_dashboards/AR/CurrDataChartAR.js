@@ -76,7 +76,6 @@ class CurrDataChartAR extends Component
 	render()
 	{
 		const data = this.props.data;
-		console.log("here todays data in supervisor",data);
 		
 		const labels = ['wb_tech_other', 'wb_demo_elig','wb_timely_filing','wb_coding_replies','wb_sup_reviews','wb_nf_corres','wb_wc_corres','waystar_medc_sec','waystar_oob','waystar_fidelis_tf'];
 		

@@ -131,16 +131,7 @@ class AR_Access_emp extends Component
 			this.state.waystar_fidelis_tf = true
 		}
 		
-		this.onCheckChangecheck_wb_tech_other = this.onCheckChangecheck_wb_tech_other.bind(this)
-		this.onCheckChangewb_demo_elig = this.onCheckChangewb_demo_elig.bind(this)
-		this.onCheckChangewb_timely_filing = this.onCheckChangewb_timely_filing.bind(this)
-		this.onCheckChangewb_coding_replies = this.onCheckChangewb_coding_replies.bind(this)
-		this.onCheckChangewb_sup_reviews = this.onCheckChangewb_sup_reviews.bind(this)
-		this.onCheckChangewb_nf_corres = this.onCheckChangewb_nf_corres.bind(this)
-		this.onCheckChangewb_wc_corres = this.onCheckChangewb_wc_corres.bind(this)
-		this.onCheckChangewaystar_medc_sec = this.onCheckChangewaystar_medc_sec.bind(this)
-		this.onCheckChangewaystar_oob = this.onCheckChangewaystar_oob.bind(this)
-		this.onCheckChangewaystar_fidelis_tf = this.onCheckChangewaystar_fidelis_tf.bind(this)
+		this.onCheckChange = this.onCheckChange.bind(this)
 		
 		this.cancel = this.cancel.bind(this);
 		this.save = this.save.bind(this)
@@ -164,12 +155,10 @@ class AR_Access_emp extends Component
 					waystar_oob : this.state.waystar_oob,
 					waystar_fidelis_tf : this.state.waystar_fidelis_tf,
 				};
-		console.log(obj);
 		
 		axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_ar_access_sup.php', qs.stringify(obj))
 		.then(res => 
 		{
-			console.log(res.data);	
 			if(res.data.done == true)
 			{
 				ReactDOM.render(<SupervisorLogInPage user_id = {this.props.obj.supervisor_id}/>, document.getElementById('root'));
@@ -182,76 +171,11 @@ class AR_Access_emp extends Component
 		});
 	}
 	
-	onCheckChangecheck_wb_tech_other(e)
+	onCheckChange(e)
 	{
 		this.setState(
 		{
-			check_wb_tech_other: e.target.checked
-		})
-	}
-	onCheckChangewb_demo_elig(e)
-	{
-		this.setState(
-		{
-			wb_demo_elig: e.target.checked
-		})
-	}
-	onCheckChangewb_timely_filing(e)
-	{
-		this.setState(
-		{
-			wb_timely_filing: e.target.checked
-		})
-	}
-	onCheckChangewb_coding_replies(e)
-	{
-		this.setState(
-		{
-			wb_coding_replies: e.target.checked
-		})
-	}
-	onCheckChangewb_sup_reviews(e)
-	{
-		this.setState(
-		{
-			wb_sup_reviews: e.target.checked
-		})
-	}
-	onCheckChangewb_nf_corres(e)
-	{
-		this.setState(
-		{
-			wb_nf_corres: e.target.checked
-		})
-	}
-	onCheckChangewb_wc_corres(e)
-	{
-		this.setState(
-		{
-			wb_wc_corres: e.target.checked
-		})
-	}
-	onCheckChangewaystar_medc_sec(e)
-	{
-		this.setState(
-		{
-			waystar_medc_sec: e.target.checked
-		})
-	}
-	onCheckChangewaystar_oob(e)
-	{
-		this.setState(
-		{
-			waystar_oob: e.target.checked
-		})
-	}
-	
-	onCheckChangewaystar_fidelis_tf(e)
-	{
-		console.log(e.target.checked);
-		this.setState(
-		{
-			waystar_fidelis_tf: e.target.checked
+			[e.target.name]: e.target.checked
 		})
 	}
 	
@@ -263,7 +187,7 @@ class AR_Access_emp extends Component
 	render()
 	{
 		const condition = this.state.isActive === -1;
-		console.log("here",this.props.obj);
+		
 		return (
 				
 				<tr style={{ backgroundColor: condition ? "#ff8080" : "white" }} >
@@ -272,43 +196,43 @@ class AR_Access_emp extends Component
 					</td>
 					
 					<td>
-						<input type = "checkbox" name = "check_wb_tech_other" checked = {this.state.check_wb_tech_other} onChange = {this.onCheckChangecheck_wb_tech_other} />
+						<input type = "checkbox" name = "check_wb_tech_other" checked = {this.state.check_wb_tech_other} onChange = {this.onCheckChange} />
 					</td>
 					
 					<td>
-						<input type = "checkbox" name = "wb_demo_elig" checked = {this.state.wb_demo_elig} onChange = {this.onCheckChangewb_demo_elig} />
+						<input type = "checkbox" name = "wb_demo_elig" checked = {this.state.wb_demo_elig} onChange = {this.onCheckChange} />
 					</td>
 					
 					<td>
-						<input type = "checkbox" name = "wb_timely_filing" checked = {this.state.wb_timely_filing} onChange = {this.onCheckChangewb_timely_filing} />
+						<input type = "checkbox" name = "wb_timely_filing" checked = {this.state.wb_timely_filing} onChange = {this.onCheckChange} />
 					</td>
 					
 					<td>
-						<input type = "checkbox" name = "wb_coding_replies" checked = {this.state.wb_coding_replies} onChange = {this.onCheckChangewb_coding_replies} />
+						<input type = "checkbox" name = "wb_coding_replies" checked = {this.state.wb_coding_replies} onChange = {this.onCheckChange} />
 					</td>
 					
 					<td>
-						<input type = "checkbox" name = "wb_sup_reviews" checked = {this.state.wb_sup_reviews} onChange = {this.onCheckChangewb_sup_reviews} />
+						<input type = "checkbox" name = "wb_sup_reviews" checked = {this.state.wb_sup_reviews} onChange = {this.onCheckChange} />
 					</td>
 					
 					<td>
-						<input type = "checkbox" name = "wb_nf_corres" checked = {this.state.wb_nf_corres} onChange = {this.onCheckChangewb_nf_corres} />
+						<input type = "checkbox" name = "wb_nf_corres" checked = {this.state.wb_nf_corres} onChange = {this.onCheckChange} />
 					</td>
 					
 					<td>
-						<input type = "checkbox" name = "wb_wc_corres" checked = {this.state.wb_wc_corres} onChange = {this.onCheckChangewb_wc_corres} />
+						<input type = "checkbox" name = "wb_wc_corres" checked = {this.state.wb_wc_corres} onChange = {this.onCheckChange} />
 					</td>
 					
 					<td>
-						<input type = "checkbox" name = "waystar_medc_sec" checked = {this.state.waystar_medc_sec} onChange = {this.onCheckChangewaystar_medc_sec} />
+						<input type = "checkbox" name = "waystar_medc_sec" checked = {this.state.waystar_medc_sec} onChange = {this.onCheckChange} />
 					</td>
 					
 					<td>
-						<input type = "checkbox" name = "waystar_oob" checked = {this.state.waystar_oob} onChange = {this.onCheckChangewaystar_oob} />
+						<input type = "checkbox" name = "waystar_oob" checked = {this.state.waystar_oob} onChange = {this.onCheckChange} />
 					</td>
 					
 					<td>
-						<input type = "checkbox" name = "waystar_fidelis_tf" checked = {this.state.waystar_fidelis_tf} onChange = {this.onCheckChangewaystar_fidelis_tf} />
+						<input type = "checkbox" name = "waystar_fidelis_tf" checked = {this.state.waystar_fidelis_tf} onChange = {this.onCheckChange} />
 					</td>
 					
 					<td>

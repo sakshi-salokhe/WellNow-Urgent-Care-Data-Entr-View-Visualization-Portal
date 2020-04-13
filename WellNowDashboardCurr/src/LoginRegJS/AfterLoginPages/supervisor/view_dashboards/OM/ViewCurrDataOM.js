@@ -21,6 +21,7 @@ class ViewCurrDataOM extends Component
 		};
 		this.back = this.back.bind(this);
 	}
+	
 	userList()
 	{
 		return this.props.data.map(function(object)
@@ -36,7 +37,6 @@ class ViewCurrDataOM extends Component
 	
 	render()
 	{
-		console.log("here",this.props);
 		return (
 			<div className="container-fluid">
 				

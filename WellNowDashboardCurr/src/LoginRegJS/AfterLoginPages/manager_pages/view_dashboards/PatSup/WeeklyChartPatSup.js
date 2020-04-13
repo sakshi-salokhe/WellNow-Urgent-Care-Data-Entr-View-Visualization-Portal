@@ -75,7 +75,6 @@ class WeeklyChartPatSup extends Component
 		{
 			for(var key in this.props.data[i])
 			{
-				//dlabel.push(key);
 				d_temp.push(this.props.data[i][key]);
 			}
 			
@@ -84,17 +83,10 @@ class WeeklyChartPatSup extends Component
 			d_temp.shift();
 			d_temp.pop();
 			
-			/*dlabel.shift();
-			dlabel.shift();
-			dlabel.shift();
-			dlabel.pop();*/
-			
-			
 			var len = d_temp.length;
 			
 			for(var k = 0; k < (len/2); k++)
 			{
-				//dlabel1.push(dlabel[k]);
 				d1.push(d_temp[k]);
 			}
 			

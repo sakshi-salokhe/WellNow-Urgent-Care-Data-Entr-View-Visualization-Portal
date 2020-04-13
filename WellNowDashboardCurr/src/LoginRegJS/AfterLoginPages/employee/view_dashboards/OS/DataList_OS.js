@@ -40,12 +40,8 @@ class DataList_OS extends Component
 		ReactDOM.render(<PrevData user_id = {this.user_id} />, document.getElementById('root'));
 	}
 	
-	
-	
-	
 	render()
 	{
-		console.log("here",this.props.data);
 		return (
 			<div className="container">
 				

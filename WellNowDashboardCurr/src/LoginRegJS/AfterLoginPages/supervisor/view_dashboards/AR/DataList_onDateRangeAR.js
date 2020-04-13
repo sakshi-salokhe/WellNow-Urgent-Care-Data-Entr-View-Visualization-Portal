@@ -21,6 +21,7 @@ class DataList_onDateRangeAR extends Component
 		};
 		this.back = this.back.bind(this);
 	}
+	
 	userList()
 	{
 		return this.props.data.map(function(object)
@@ -36,7 +37,6 @@ class DataList_onDateRangeAR extends Component
 	
 	render()
 	{
-		console.log("check this",this.props.data[0]);
 		return (
 			<div className="container">
 				

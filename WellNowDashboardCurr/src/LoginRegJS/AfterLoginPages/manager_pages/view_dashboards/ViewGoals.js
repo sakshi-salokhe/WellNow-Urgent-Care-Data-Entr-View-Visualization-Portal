@@ -52,7 +52,7 @@ class ViewGoals extends Component
 		{
 			alert("Choose the dashboard of you choice!")
 		}
-		//console.log(obj);
+		
 		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_goals_manager.php?dashboards='+obj.dashboards)
 		.then(resp => {
 			if(obj.dashboards === 1 || obj.dashboards === '1')

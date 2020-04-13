@@ -45,7 +45,6 @@ class OM_Access_emp extends Component
 			ar_audit : false,
 			ar_wbs : false,
 			
-			//waystar_fidelis_tf : false,
 			isActive : 0	
 		}
 		
@@ -305,9 +304,7 @@ class OM_Access_emp extends Component
 			this.state.ar_wbs = true
 		}
 		
-		
 		this.onCheckChange = this.onCheckChange.bind(this)
-		
 		
 		this.cancel = this.cancel.bind(this);
 		this.save = this.save.bind(this)
@@ -351,12 +348,10 @@ class OM_Access_emp extends Component
 					ar_audit : this.state.ar_audit,	
 					ar_wbs : this.state.ar_wbs,
 				};
-		console.log(obj);
 		
 		axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_om_access_sup.php', qs.stringify(obj))
 		.then(res => 
 		{
-			console.log(res.data);	
 			if(res.data.done == true)
 			{
 				ReactDOM.render(<SupervisorLogInPage user_id = {this.props.obj.supervisor_id}/>, document.getElementById('root'));
@@ -377,7 +372,6 @@ class OM_Access_emp extends Component
 		})
 	}
 
-	
 	cancel()
 	{
 		ReactDOM.render(<OM_Dash_Privileges user_id = {this.props.obj.supervisor_id}/>, document.getElementById('root'));
@@ -386,7 +380,7 @@ class OM_Access_emp extends Component
 	render()
 	{
 		const condition = this.state.isActive === -1;
-		console.log("here",this.props.obj);
+		
 		return (
 				
 				<tr style={{ backgroundColor: condition ? "#ff8080" : "white" }} >

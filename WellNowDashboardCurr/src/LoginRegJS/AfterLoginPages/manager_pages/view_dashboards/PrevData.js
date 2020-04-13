@@ -27,31 +27,15 @@ class PrevData extends Component
 			enddate : "",
 			dashboards: "",
 		}
-		this.onchangeStartDate = this.onchangeStartDate.bind(this);
-		this.onchangeEndDate = this.onchangeEndDate.bind(this);
-		this.onchangedashboards = this.onchangedashboards.bind(this);
+		this.onchange = this.onchange.bind(this);
 		
 		this.submit_data = this.submit_data.bind(this);
 	}
 	
-	onchangeStartDate(e)
+	onchange(e)
 	{
 		this.setState({
-			startdate: e.target.value
-		});
-	}
-	
-	onchangeEndDate(e)
-	{
-		this.setState({
-			enddate: e.target.value
-		});
-	}
-	
-	onchangedashboards(e)
-	{
-		this.setState({
-			dashboards: e.target.value
+			[e.target.name]: e.target.value
 		});
 	}
 	
@@ -59,7 +43,6 @@ class PrevData extends Component
 	{
 		ReactDOM.render(<ViewDashboards />, document.getElementById('root'));
 	}
-	
 	
 	submit_data(event)
 	{
@@ -78,7 +61,6 @@ class PrevData extends Component
 		{
 			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&dashboards='+obj.dashboards)
 			.then(resp => {
-				console.log(resp.data);
 				if(obj.dashboards === 1 || obj.dashboards === '1')
 				{
 					ReactDOM.render(<DataList_onDateRangeAR data = {resp.data}/>, document.getElementById('root'));
@@ -102,7 +84,7 @@ class PrevData extends Component
 	render()
 	{
 		return(
-			//take input date range
+			
 			<div className = "container">
 				<div>
 					<IndexHeader />
@@ -113,7 +95,7 @@ class PrevData extends Component
 						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Start Date: </b></label>
 						
 						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "date" max={moment().format("YYYY-MM-DD")} value = {this.state.startdate} name = "startdate" onChange = {this.onchangeStartDate} /> 
+							<input className = "form-control" type = "date" max={moment().format("YYYY-MM-DD")} value = {this.state.startdate} name = "startdate" onChange = {this.onchange} /> 
 						</div>
 						
 						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
@@ -124,7 +106,7 @@ class PrevData extends Component
 						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> End Date: </b></label>
 						
 						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "date" min={this.state.startdate} max={moment().format("YYYY-MM-DD")} value = {this.state.enddate} name = "enddate" onChange = {this.onchangeEndDate} /> 
+							<input className = "form-control" type = "date" min={this.state.startdate} max={moment().format("YYYY-MM-DD")} value = {this.state.enddate} name = "enddate" onChange = {this.onchange} /> 
 						</div>
 						
 						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
@@ -134,7 +116,7 @@ class PrevData extends Component
 							<div className="col-lg-3 col-sm-3 col-md-3 col-xs-3"><b> Choose your dashboard: </b></div>
 							
 							<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-								<select className = "form-control" value = {this.state.dashboards} name = "dashboards" onChange = {this.onchangedashboards}>
+								<select className = "form-control" value = {this.state.dashboards} name = "dashboards" onChange = {this.onchange}>
 									<option value="">--Please Choose your dashboard -- </option>
 									<option value="1"> AR Dashboard </option>
 									<option value="2"> OS Dashboard </option>

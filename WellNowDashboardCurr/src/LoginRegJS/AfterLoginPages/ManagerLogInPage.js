@@ -76,7 +76,6 @@ class ManagerLogInPage extends Component
 	
 	render()
 	{
-		console.log(this.props.user_id);
 		return (
 			<div className = "container">
 				<IndexHeader />

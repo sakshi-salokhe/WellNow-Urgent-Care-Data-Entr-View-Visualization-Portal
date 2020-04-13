@@ -12,7 +12,6 @@ class GoalsViewPatSup extends Component
 {
 	render()
 	{
-		console.log("FINALLY",this.props);
 		return (
 				<tr>
 					<td>

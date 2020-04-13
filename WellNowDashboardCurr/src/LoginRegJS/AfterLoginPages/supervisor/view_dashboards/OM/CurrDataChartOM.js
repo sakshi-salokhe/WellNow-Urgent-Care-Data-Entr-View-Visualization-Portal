@@ -46,7 +46,6 @@ class CurrDataChartOM extends Component
 		
 		for(var key in this.props.data[0])
 		{
-			//dlabel.push(key);
 			d_temp.push(this.props.data[0][key]);
 		}
 		d_temp.shift();
@@ -60,17 +59,12 @@ class CurrDataChartOM extends Component
 		for(var k = 0; k < (len/2); k++)
 		{
 			d1.push(d_temp[k]);
-			//dlabel1.push(dlabel[k]);
 		}
 		
 		for(var k = (len/2); k < (len); k++)
 		{
 			d2.push(d_temp[k]);
 		}
-			
-		console.log("d_temp: ", d_temp);
-		console.log("d1: ",d1);
-		console.log("d2: ",d2);
 		
 		this.state = {
 			chartData:{
@@ -125,8 +119,6 @@ class CurrDataChartOM extends Component
 	render()
 	{
 		const data = this.props.data;
-		console.log("here todays data in supervisor",data);
-		
 		
 		return(
 			<div className = "container">

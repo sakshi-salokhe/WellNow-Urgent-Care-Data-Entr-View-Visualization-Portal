@@ -43,39 +43,15 @@ class PrevDataVisualise extends Component
 			dashboards: "",
 			pattern: ""
 		}
-		this.onchangeStartDate = this.onchangeStartDate.bind(this);
-		this.onchangeEndDate = this.onchangeEndDate.bind(this);
-		this.onchangedashboards = this.onchangedashboards.bind(this);
-		this.onchangepattern = this.onchangepattern.bind(this);
+		this.onchange = this.onchange.bind(this);
 		
 		this.submit_data = this.submit_data.bind(this);
 	}
 	
-	onchangedashboards(e)
+	onchange(e)
 	{
 		this.setState({
-			dashboards: e.target.value
-		});
-	}
-	
-	onchangeStartDate(e)
-	{
-		this.setState({
-			startdate: e.target.value
-		});
-	}
-	
-	onchangeEndDate(e)
-	{
-		this.setState({
-			enddate: e.target.value
-		});
-	}
-	
-	onchangepattern(e)
-	{
-		this.setState({
-			pattern: e.target.value
+			[e.target.name] : e.target.value
 		});
 	}
 	
@@ -93,7 +69,7 @@ class PrevDataVisualise extends Component
 					dashboards: this.state.dashboards,
 					pattern: this.state.pattern
 				};
-		//console.log(obj);
+		
 		if(obj.startdate.length == 0 || obj.enddate.length == 0 || obj.dashboards.length == 0 || obj.pattern.length == 0)
 		{
 			alert("Please fill out all the fields!")
@@ -104,7 +80,7 @@ class PrevDataVisualise extends Component
 			{
 				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data_daily_chart.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&dashboards='+obj.dashboards)
 				.then(resp => {
-					console.log("before going to chart file",resp.data);
+					
 					if(obj.dashboards === 1 || obj.dashboards === '1')
 					{
 						ReactDOM.render(<DailyChartAR data = {resp.data}/>, document.getElementById('root'));
@@ -127,10 +103,9 @@ class PrevDataVisualise extends Component
 			{
 				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data_weekly_chart.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&dashboards='+obj.dashboards)
 				.then(resp => {
-					console.log("before going to chart file",resp.data);
+					
 					if(obj.dashboards === 1 || obj.dashboards === '1')
 					{
-						console.log(resp.data);
 						ReactDOM.render(<WeeklyChartAR data = {resp.data}/>, document.getElementById('root'));
 					}
 					else if(obj.dashboards == 2 || obj.dashboards === '2')
@@ -153,7 +128,6 @@ class PrevDataVisualise extends Component
 				.then(resp => {
 					if(obj.dashboards === 1 || obj.dashboards === '1')
 					{
-						console.log(resp.data);
 						ReactDOM.render(<MonthlyChartAR data = {resp.data}/>, document.getElementById('root'));
 					}
 					else if(obj.dashboards == 2 || obj.dashboards === '2')
@@ -176,7 +150,6 @@ class PrevDataVisualise extends Component
 				.then(resp => {
 					if(obj.dashboards === 1 || obj.dashboards === '1')
 					{
-						console.log(resp.data);
 						ReactDOM.render(<DailyChartwithGoalsAR data = {resp.data}/>, document.getElementById('root'));
 					}
 					else if(obj.dashboards === 2 || obj.dashboards === '2')
@@ -185,12 +158,10 @@ class PrevDataVisualise extends Component
 					}
 					else if(obj.dashboards === 3 || obj.dashboards === '3')
 					{
-						console.log(resp.data);
 						ReactDOM.render(<DailyChartwithGoalsOM data = {resp.data}/>, document.getElementById('root'));
 					}
 					else if(obj.dashboards === 4 || obj.dashboards === '4')
 					{
-						console.log(resp.data);
 						ReactDOM.render(<DailyChartwithGoalsPatSup data = {resp.data}/>, document.getElementById('root'));
 					}
 				})
@@ -211,7 +182,7 @@ class PrevDataVisualise extends Component
 						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Start Date: </b></label>
 						
 						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "date" max={moment().format("YYYY-MM-DD")} value = {this.state.startdate} name = "startdate" onChange = {this.onchangeStartDate} /> 
+							<input className = "form-control" type = "date" max={moment().format("YYYY-MM-DD")} value = {this.state.startdate} name = "startdate" onChange = {this.onchange} /> 
 						</div>
 						
 						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
@@ -222,7 +193,7 @@ class PrevDataVisualise extends Component
 						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> End Date: </b></label>
 						
 						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "date" min={this.state.startdate} max={moment().format("YYYY-MM-DD")} value = {this.state.enddate} name = "enddate" onChange = {this.onchangeEndDate} /> 
+							<input className = "form-control" type = "date" min={this.state.startdate} max={moment().format("YYYY-MM-DD")} value = {this.state.enddate} name = "enddate" onChange = {this.onchange} /> 
 						</div>
 						
 						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
@@ -232,7 +203,7 @@ class PrevDataVisualise extends Component
 							<div className="col-lg-3 col-sm-3 col-md-3 col-xs-3"><b> Choose your dashboard: </b></div>
 							
 							<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-								<select className = "form-control" value = {this.state.dashboards} name = "dashboards" onChange = {this.onchangedashboards}>
+								<select className = "form-control" value = {this.state.dashboards} name = "dashboards" onChange = {this.onchange}>
 									<option value="">--Please Choose your dashboard -- </option>
 									<option value="1"> AR Dashboard </option>
 									<option value="2"> OS Dashboard </option>
@@ -248,7 +219,7 @@ class PrevDataVisualise extends Component
 							<div className="col-lg-3 col-sm-3 col-md-3 col-xs-3"><b> How do you want to visualise? : </b></div>
 							
 							<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-								<select className = "form-control" value = {this.state.pattern} name = "pattern" onChange = {this.onchangepattern}>
+								<select className = "form-control" value = {this.state.pattern} name = "pattern" onChange = {this.onchange}>
 									<option value="">--Please Choose your pattern -- </option>
 									<option value="1"> Daily </option>
 									<option value="2"> Weekly </option>

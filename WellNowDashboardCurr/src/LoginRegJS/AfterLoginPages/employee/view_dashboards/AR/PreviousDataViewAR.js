@@ -12,7 +12,6 @@ class PreviousDataViewAR extends Component
 {
 	render()
 	{
-		console.log("FINALLY",this.props);
 		const condition = this.props.obj.when_done === 'Total' || this.props.obj.when_done === 'Average';
 		
 		return (

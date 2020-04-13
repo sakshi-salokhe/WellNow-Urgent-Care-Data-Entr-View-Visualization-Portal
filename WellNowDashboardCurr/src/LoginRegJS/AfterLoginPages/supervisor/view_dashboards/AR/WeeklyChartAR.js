@@ -39,12 +39,10 @@ class WeeklyChartAR extends Component
 		a_name.shift();
 		a_name.pop();
 		
-		for(var i = 0; i<= 9; i++)
+		/*for(var i = 0; i<= 9; i++)
 		{
 			a_name.pop(); //remove goal anmes --  we do not need that here
-		}		
-		
-		
+		}	*/	
 		var a1 = [];
 		var a2 = [];
 		var a3 = [];
@@ -55,7 +53,6 @@ class WeeklyChartAR extends Component
 		var a8 = [];
 		var a9 = [];
 		var a10 = [];
-		
 		
 		var dynamicColors = function() {
 			var r = Math.floor(Math.random() * 255);
@@ -71,12 +68,10 @@ class WeeklyChartAR extends Component
 			dlabel.push(val);
 		}
 		
-		
 		for(var i=0; i< num; i++)
 		{
 			for(var key in this.props.data[i])
 			{
-				//dlabel.push(key);
 				d_temp.push(this.props.data[i][key]);
 			}
 			
@@ -86,16 +81,10 @@ class WeeklyChartAR extends Component
 			
 			d_temp.pop();
 			
-			/*dlabel.shift();
-			dlabel.shift();
-			dlabel.shift();
-			dlabel.pop();*/
-			
 			var len = d_temp.length;
 			
 			for(var k = 0; k < (len/2); k++)
 			{
-				//dlabel1.push(dlabel[k]);
 				d1.push(d_temp[k]);
 			}
 			
@@ -103,7 +92,6 @@ class WeeklyChartAR extends Component
 			{
 				d2.push(d_temp[k]);
 			}
-			
 			
 			for(var g = 0; g < d1.length; g++)
 			{
@@ -149,12 +137,10 @@ class WeeklyChartAR extends Component
 				}
 			}
 			
-			
 			d1 = [];
 			d2 = [];
 			d_temp = [];
 		}
-		
 		
 		ds.push({
 			label: a_name[0],

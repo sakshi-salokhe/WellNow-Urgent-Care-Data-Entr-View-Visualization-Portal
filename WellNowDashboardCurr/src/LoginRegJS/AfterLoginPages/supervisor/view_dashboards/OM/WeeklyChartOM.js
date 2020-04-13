@@ -39,12 +39,6 @@ class WeeklyChartOM extends Component
 		a_name.shift();
 		a_name.pop();
 		
-		for(var i = 0; i<= 26; i++)
-		{
-			a_name.pop(); //remove goal anmes --  we do not need that here
-		}		
-		
-		
 		var a1 = [];
 		var a2 = [];
 		var a3 = [];
@@ -87,12 +81,10 @@ class WeeklyChartOM extends Component
 			dlabel.push(val);
 		}
 		
-		
 		for(var i=0; i< num; i++)
 		{
 			for(var key in this.props.data[i])
 			{
-				//dlabel.push(key);
 				d_temp.push(this.props.data[i][key]);
 			}
 			
@@ -100,20 +92,12 @@ class WeeklyChartOM extends Component
 			d_temp.shift();
 			d_temp.shift();
 			
-			
 			d_temp.pop();
-			
-			console.log("dtemp:", d_temp);
-			/*dlabel.shift();
-			dlabel.shift();
-			dlabel.shift();
-			dlabel.pop();*/
 			
 			var len = d_temp.length;
 			
 			for(var k = 0; k < (len/2); k++)
 			{
-				//dlabel1.push(dlabel[k]);
 				d1.push(d_temp[k]);
 			}
 			
@@ -236,7 +220,6 @@ class WeeklyChartOM extends Component
 					a27.push(d1[g]);
 				}
 			}
-			
 			
 			d1 = [];
 			d2 = [];
@@ -773,7 +756,6 @@ class WeeklyChartOM extends Component
 	
 	render()
 	{
-		
 		return(
 			<div className = "container">
 				<br />

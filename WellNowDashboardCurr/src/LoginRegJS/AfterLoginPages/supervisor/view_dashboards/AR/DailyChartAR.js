@@ -25,7 +25,6 @@ class DailyChartAR extends Component
 		var d1 = [];
 		var d2 = [];
 		
-		
 		var num = Object.keys(this.props.data).length;
 		
 		for(var key in this.props.data[0])
@@ -40,11 +39,10 @@ class DailyChartAR extends Component
 		a_name.shift();
 		a_name.pop();
 		
-		for(var i = 0; i<= 9; i++)
+		/*for(var i = 0; i<= 9; i++)
 		{
 			a_name.pop(); //remove goal anmes --  we do not need that here
-		}		
-		
+		}*/		
 		
 		var a1 = [];
 		var a2 = [];
@@ -141,13 +139,11 @@ class DailyChartAR extends Component
 				}
 			}
 			
-			
 			d1 = [];
 			d2 = [];
 			d_temp = [];
 
 		}
-		
 			
 		ds.push({
 			label: a_name[0],

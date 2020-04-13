@@ -57,10 +57,8 @@ class EnterOldData extends Component
 			ReactDOM.render(<EnterOldData user_id = {this.props.data.user_id}/>, document.getElementById('root'));
 		}
 		else{
-			//console.log(obj);
 			axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_old_data_sup.php?olddate='+obj.olddate+'&userid='+this.props.data.user_id)
 			.then(resp => {
-				console.log("resp.data", resp.data);
 				if(resp.data.dashboard === 1 || resp.data.dashboard === '1')
 				{
 					ReactDOM.render(<EnterEditOldDataAR data = {resp.data}/>, document.getElementById('root'));
@@ -85,8 +83,6 @@ class EnterOldData extends Component
 	
 	render()
 	{
-		console.log("data",this.props.data.user_id);
-			
 		return(
 			//take input date range
 			<div className = "container">

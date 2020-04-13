@@ -24,7 +24,6 @@ class OS_Dash extends Component
 		axios.get("http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_os_access.php")
 		.then(resp => {
 			this.setState({ employees: resp.data });
-			console.log("get om access data",resp.dta);
 		})
 		.catch(function(error){
 			console.log(error);

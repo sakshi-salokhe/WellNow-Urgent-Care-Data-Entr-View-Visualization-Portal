@@ -100,10 +100,8 @@ class ViewDashboards extends Component
 	
 	currData(event)
 	{
-		//ReactDOM.render(<CurrData user_id = {this.props.user_id} />, document.getElementById('root'));
 		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_curr_data_sup.php?user_id='+this.props.user_id)
 		.then(resp => {
-			console.log("data",resp.data);
 			if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')
 			{
 				ReactDOM.render(<ViewCurrDataAR data = {resp.data}/>, document.getElementById('root'));
@@ -130,7 +128,6 @@ class ViewDashboards extends Component
 	
 	currDataChart(event)
 	{
-		//ReactDOM.render(<CurrDataVisualise user_id = {this.props.user_id} />, document.getElementById('root'));
 		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_curr_data_chart_sup.php?user_id='+this.props.user_id)
 		.then(resp => {
 			if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')
@@ -177,7 +174,6 @@ class ViewDashboards extends Component
 				else
 				{
 					alert('something wrong');
-					//put the other dashboard code here
 				}
 			})
 		.catch(err => console.log(err))
@@ -219,14 +215,12 @@ class ViewDashboards extends Component
 				else
 				{
 					alert('something wrong');
-					//put the other dashboard code here
 				}
 			})
 		.catch(err => console.log(err))
 	}
 	
 	viewGoals(){
-		//ReactDOM.render(<CurrData user_id = {this.props.user_id} />, document.getElementById('root'));
 		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/view_all_goals_sup.php?user_id='+this.props.user_id)
 		.then(resp => {
 			
@@ -251,7 +245,6 @@ class ViewDashboards extends Component
 	
 	render()
 	{
-		console.log(this.props.user_id);
 		return (
 			<div className="container">
 				

@@ -26,7 +26,6 @@ class ApproveNewUsers extends Component
 		axios.get("http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/approve_new_users.php?user_id="+this.props.user_id)
 		.then(resp => {
 			this.setState({ employees: resp.data });
-			//console.log(resp);
 		})
 		.catch(function(error){
 			console.log(error);
@@ -35,7 +34,6 @@ class ApproveNewUsers extends Component
 	
 	userList()
 	{
-		//console.log("here here here");
 		return this.state.employees.map(function(object)
 		{
 			return <EmpList key={object.userid} obj={object} />;

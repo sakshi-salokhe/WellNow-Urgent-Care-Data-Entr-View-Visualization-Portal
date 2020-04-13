@@ -306,20 +306,15 @@ class EnterDataOS extends Component
 					Coding_WS_Coding_val : this.state.Coding_WS_Coding_val,
 					Coding_FFS_Onhold_Report_val : this.state.Coding_FFS_Onhold_Report_val
 				};
-		console.log(obj);
 		
 		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/check_os.php')
 		.then(
 			res => {
-				//console.log(res.data);
 				if(res.data.ans_val == 1)//data exists already , perform update
 				{
-					console.log("we will update");
-					//console.log("obj=",obj);
 					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_data_os.php', qs.stringify(obj))
 					.then(res => 
 						{
-							console.log(res.data);
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
@@ -333,11 +328,9 @@ class EnterDataOS extends Component
 				}
 				else //data exists already , perform update
 				{
-					console.log("we will insert");
 					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/insert_data_os.php', qs.stringify(obj))
 					.then(res => 
 						{
-							console.log(res.data);
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")

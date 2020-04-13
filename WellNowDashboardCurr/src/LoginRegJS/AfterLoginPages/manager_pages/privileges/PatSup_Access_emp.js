@@ -186,12 +186,10 @@ class PatSup_Access_emp extends Component
 					justin_medicare_loc_sod : this.state.justin_medicare_loc_sod,
 					justin_medicare_sec_sod : this.state.justin_medicare_sec_sod,
 				};
-		console.log(obj);
 		
 		axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_patsup_access.php', qs.stringify(obj))
 		.then(res => 
 		{
-			console.log(res.data);	
 			if(res.data.done == true)
 			{
 				ReactDOM.render(<EditDashboardPrivileges />, document.getElementById('root'));
@@ -220,7 +218,7 @@ class PatSup_Access_emp extends Component
 	render()
 	{
 		const condition = this.state.isActive === -1;
-		console.log("here",this.state.isActive);
+		
 		return (
 				
 				<tr style={{ backgroundColor: condition ? "#ff8080" : "white" }} >

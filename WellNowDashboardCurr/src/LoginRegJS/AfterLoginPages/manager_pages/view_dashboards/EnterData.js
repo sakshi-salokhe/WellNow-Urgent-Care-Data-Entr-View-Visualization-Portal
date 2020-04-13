@@ -35,13 +35,11 @@ class EditDashboardPrivileges extends Component
 			res => {
 				if(res.data.dashboard == 1 || res.data.dashboard == '1')
 				{
-					console.log(res.data);
 					ReactDOM.render(<EnterDataAR data = {res.data}/>, document.getElementById('root'));
 				}
 				else
 				{
 					alert('something wrong');
-					//put the other dashboard code here
 				}
 			})
 		.catch(err => console.log(err))
@@ -54,13 +52,11 @@ class EditDashboardPrivileges extends Component
 			res => {
 				if(res.data.dashboard == 2 || res.data.dashboard == '2')
 				{
-					console.log(res.data);
 					ReactDOM.render(<EnterDataOS data = {res.data}/>, document.getElementById('root'));
 				}
 				else
 				{
 					alert('something wrong');
-					//put the other dashboard code here
 				}
 			})
 		.catch(err => console.log(err))
@@ -73,13 +69,11 @@ class EditDashboardPrivileges extends Component
 			res => {
 				if(res.data.dashboard == 3 || res.data.dashboard == '3')
 				{
-					console.log(res.data);
 					ReactDOM.render(<EnterDataOM data = {res.data}/>, document.getElementById('root'));
 				}
 				else
 				{
 					alert('something wrong');
-					//put the other dashboard code here
 				}
 			})
 		.catch(err => console.log(err))
@@ -92,13 +86,11 @@ class EditDashboardPrivileges extends Component
 			res => {
 				if(res.data.dashboard == 4 || res.data.dashboard == '4')
 				{
-					console.log(res.data);
 					ReactDOM.render(<EnterDataPatSup data = {res.data}/>, document.getElementById('root'));
 				}
 				else
 				{
 					alert('something wrong');
-					//put the other dashboard code here
 				}
 			})
 		.catch(err => console.log(err))

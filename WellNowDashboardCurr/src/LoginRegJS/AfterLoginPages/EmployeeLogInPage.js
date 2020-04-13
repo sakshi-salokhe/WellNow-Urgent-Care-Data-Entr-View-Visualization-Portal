@@ -12,7 +12,6 @@ import Logout from "../../Logout"
 import IndexHeader from "../../IndexHeader";
 
 import ViewData from "./employee/ViewData"
-import EnterData from "./employee/EnterData"
 
 import EnterDataAR from "./employee/AR/EnterDataAR"
 import EnterDataOM from "./employee/OM/EnterDataOM"
@@ -64,23 +63,19 @@ class EmployeeLogInPage extends Component
 				}
 				else if(res.data.dashboard == 2 || res.data.dashboard == '2')
 				{
-					console.log("Data :", res.data);
 					ReactDOM.render(<EnterDataOS data = {res.data} />, document.getElementById('root'));
 				}
 				else if(res.data.dashboard == 3 || res.data.dashboard == '3')
 				{
-					console.log("Data :", res.data);
 					ReactDOM.render(<EnterDataOM data = {res.data} />, document.getElementById('root'));
 				}
 				else if(res.data.dashboard == 4 || res.data.dashboard == '4')
 				{
-					console.log("Data :", res.data);
 					ReactDOM.render(<EnterDataPatSup data = {res.data} />, document.getElementById('root'));
 				}
 				else
 				{
 					alert('something wrong');
-					//put the other dashboard code here
 				}
 			})
 		.catch(err => console.log(err))

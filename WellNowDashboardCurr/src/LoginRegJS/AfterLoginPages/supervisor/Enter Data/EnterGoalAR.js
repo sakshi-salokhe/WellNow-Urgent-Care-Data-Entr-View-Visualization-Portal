@@ -132,94 +132,18 @@ class EnterGoalAR extends Component
 			this.state.waystar_fidelis_tf = true
 		}
 		
-		console.log("this",this.state.waystar_fidelis_tf);
-		
-		this.onChangewb_tech_other = this.onChangewb_tech_other.bind(this)
-		this.onChangewb_demo_elig = this.onChangewb_demo_elig.bind(this)
-		this.onChangewb_timely_filing = this.onChangewb_timely_filing.bind(this)
-		this.onChangewb_coding_replies = this.onChangewb_coding_replies.bind(this)
-		this.onChangewb_sup_reviews = this.onChangewb_sup_reviews.bind(this)
-		this.onChangewb_nf_corres = this.onChangewb_nf_corres.bind(this)
-		this.onChangewb_wc_corres = this.onChangewb_wc_corres.bind(this)
-		this.onChangewaystar_medc_sec = this.onChangewaystar_medc_sec.bind(this)
-		this.onChangewaystar_oob = this.onChangewaystar_oob.bind(this)
-		this.onChangewaystar_fidelis_tf = this.onChangewaystar_fidelis_tf.bind(this)
+		this.onChange = this.onChange.bind(this)
 		
 		this.save = this.save.bind(this)
 		this.cancel = this.cancel.bind(this)
 	
 	}
 	
-	onChangewb_tech_other(e)
+	onChange(e)
 	{
 		this.setState(
 		{
-			wb_tech_other_val: e.target.value
-		})
-	}
-	
-	onChangewb_demo_elig(e)
-	{
-		this.setState(
-		{
-			wb_demo_elig_val: e.target.value
-		})
-	}
-	onChangewb_timely_filing(e)
-	{
-		this.setState(
-		{
-			wb_timely_filing_val: e.target.value
-		})
-	}
-	onChangewb_coding_replies(e)
-	{
-		this.setState(
-		{
-			wb_coding_replies_val: e.target.value
-		})
-	}
-	onChangewb_sup_reviews(e)
-	{
-		this.setState(
-		{
-			wb_sup_reviews_val: e.target.value
-		})
-	}
-	onChangewb_nf_corres(e)
-	{
-		this.setState(
-		{
-			wb_nf_corres_val: e.target.value
-		})
-	}
-	onChangewb_wc_corres(e)
-	{
-		this.setState(
-		{
-			wb_wc_corres_val: e.target.value
-		})
-	}
-	onChangewaystar_medc_sec(e)
-	{
-		this.setState(
-		{
-			waystar_medc_sec_val: e.target.value
-		})
-	}
-	onChangewaystar_oob(e)
-	{
-		this.setState(
-		{
-			waystar_oob_val: e.target.value
-		})
-	}
-	
-	onChangewaystar_fidelis_tf(e)
-	{
-		this.setState(
-		{
-			waystar_fidelis_tf_val: e.target.value
+			[e.target.name]: e.target.value
 		})
 	}
 	
@@ -239,20 +163,15 @@ class EnterGoalAR extends Component
 					waystar_oob_val : this.state.waystar_oob_val,
 					waystar_fidelis_tf_val : this.state.waystar_fidelis_tf_val
 				};
-		console.log(obj);
 		
 		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/check_ar_goals.php')
 		.then(
 			res => {
-				//console.log(res.data);
 				if(res.data.ans_val == 1)//data exists already , perform update
 				{
-					console.log("we will update");
-					//console.log("obj=",obj);
 					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_goals_ar.php', qs.stringify(obj))
 					.then(res => 
 						{
-							console.log(res.data);
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
@@ -266,11 +185,9 @@ class EnterGoalAR extends Component
 				}
 				else //data exists already , perform update
 				{
-					console.log("we will insert");
 					axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/insert_goals_ar.php', qs.stringify(obj))
 					.then(res => 
 						{
-							console.log(res.data);
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
@@ -332,34 +249,34 @@ class EnterGoalAR extends Component
 									{this.props.data.when_done}
 								</td>
 								<td> 
-									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_tech_other_PH} value = {this.state.wb_tech_other_val == null ? null : this.state.wb_tech_other_val} name = "wb_tech_other_val" onChange = {this.onChangewb_tech_other} disabled={this.state.wb_tech_other === true ? false : true} />
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_tech_other_PH} value = {this.state.wb_tech_other_val == null ? null : this.state.wb_tech_other_val} name = "wb_tech_other_val" onChange = {this.onChange} disabled={this.state.wb_tech_other === true ? false : true} />
 								</td>
 								<td> 
-									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_demo_elig_PH} value = {this.state.wb_demo_elig_val} name = "wb_demo_elig_val" onChange = {this.onChangewb_demo_elig} disabled={this.state.wb_demo_elig === true ? false : true}/>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_demo_elig_PH} value = {this.state.wb_demo_elig_val} name = "wb_demo_elig_val" onChange = {this.onChange} disabled={this.state.wb_demo_elig === true ? false : true}/>
 								</td>
 								<td> 
-									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_timely_filing_PH} value = {this.state.wb_timely_filing_val} name = "wb_timely_filing_val" onChange = {this.onChangewb_timely_filing} disabled={this.state.wb_timely_filing === true ? false : true}/>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_timely_filing_PH} value = {this.state.wb_timely_filing_val} name = "wb_timely_filing_val" onChange = {this.onChange} disabled={this.state.wb_timely_filing === true ? false : true}/>
 								</td>
 								<td> 
-									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_coding_replies_PH} value = {this.state.wb_coding_replies_val} name = "wb_coding_replies_val" onChange = {this.onChangewb_coding_replies} disabled={this.state.wb_coding_replies === true ? false : true}/>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_coding_replies_PH} value = {this.state.wb_coding_replies_val} name = "wb_coding_replies_val" onChange = {this.onChange} disabled={this.state.wb_coding_replies === true ? false : true}/>
 								</td>
 								<td> 
-									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_sup_reviews_PH} value = {this.state.wb_sup_reviews_val} name = "wb_sup_reviews_val" onChange = {this.onChangewb_sup_reviews} disabled={this.state.wb_sup_reviews === true ? false : true}/>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_sup_reviews_PH} value = {this.state.wb_sup_reviews_val} name = "wb_sup_reviews_val" onChange = {this.onChange} disabled={this.state.wb_sup_reviews === true ? false : true}/>
 								</td>
 								<td> 
-									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_nf_corres_PH} value = {this.state.wb_nf_corres_val} name = "wb_nf_corres_val" onChange = {this.onChangewb_nf_corres} disabled={this.state.wb_nf_corres === true ? false : true}/>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_nf_corres_PH} value = {this.state.wb_nf_corres_val} name = "wb_nf_corres_val" onChange = {this.onChange} disabled={this.state.wb_nf_corres === true ? false : true}/>
 								</td>
 								<td> 
-									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_wc_corres_PH} value = {this.state.wb_wc_corres_val} name = "wb_wc_corres_val" onChange = {this.onChangewb_wc_corres} disabled={this.state.wb_wc_corres === true ? false : true}/>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.wb_wc_corres_PH} value = {this.state.wb_wc_corres_val} name = "wb_wc_corres_val" onChange = {this.onChange} disabled={this.state.wb_wc_corres === true ? false : true}/>
 								</td>
 								<td> 
-									<input className = "form-control" type = "number" placeholder = {this.props.data.waystar_medc_sec_PH} value = {this.state.waystar_medc_sec_val} name = "waystar_medc_sec_val" onChange = {this.onChangewaystar_medc_sec} disabled={this.state.waystar_medc_sec === true ? false : true}/>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.waystar_medc_sec_PH} value = {this.state.waystar_medc_sec_val} name = "waystar_medc_sec_val" onChange = {this.onChange} disabled={this.state.waystar_medc_sec === true ? false : true}/>
 								</td>
 								<td> 
-									<input className = "form-control" type = "number" placeholder = {this.props.data.waystar_oob_PH} value = {this.state.waystar_oob_val} name = "waystar_oob_val" onChange = {this.onChangewaystar_oob} disabled={this.state.waystar_oob === true ? false : true}/>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.waystar_oob_PH} value = {this.state.waystar_oob_val} name = "waystar_oob_val" onChange = {this.onChange} disabled={this.state.waystar_oob === true ? false : true}/>
 								</td>
 								<td> 
-									<input className = "form-control" type = "number" placeholder = {this.props.data.waystar_fidelis_tf_PH} value = {this.state.waystar_fidelis_tf_val} name = "waystar_fidelis_tf_val" onChange = {this.onChangewaystar_fidelis_tf} disabled={this.state.waystar_fidelis_tf === true ? false : true}/>
+									<input className = "form-control" type = "number" placeholder = {this.props.data.waystar_fidelis_tf_PH} value = {this.state.waystar_fidelis_tf_val} name = "waystar_fidelis_tf_val" onChange = {this.onChange} disabled={this.state.waystar_fidelis_tf === true ? false : true}/>
 								</td>
 							</tr>
 						</tbody>

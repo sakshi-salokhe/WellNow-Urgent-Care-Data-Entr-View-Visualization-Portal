@@ -27,8 +27,7 @@ class PrevData extends Component
 			enddate : "",
 			dash_id : ""
 		}
-		this.onchangeStartDate = this.onchangeStartDate.bind(this);
-		this.onchangeEndDate = this.onchangeEndDate.bind(this);
+		this.onchange = this.onchange.bind(this);
 		
 		this.submit_data = this.submit_data.bind(this);
 		this.back = this.back.bind(this);
@@ -37,20 +36,12 @@ class PrevData extends Component
 	back(props)
 	{
 		this.user_id = this.props.user_id;
-		console.log("prev data:",this.user_id);
 		ReactDOM.render(<ViewData user_id = {this.user_id} />, document.getElementById('root'));
 	}
-	onchangeStartDate(e)
+	onchange(e)
 	{
 		this.setState({
-			startdate: e.target.value
-		});
-	}
-	
-	onchangeEndDate(e)
-	{
-		this.setState({
-			enddate: e.target.value
+			[e.target.name]: e.target.value
 		});
 	}
 	
@@ -73,7 +64,7 @@ class PrevData extends Component
 			.then(resp => {
 				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_prev_data_emp.php?startdate='+obj.startdate+'&enddate='+obj.enddate+'&user_id='+obj.user_id)
 				.then(resp1 => {
-					console.log("check here:", resp1.data);
+					
 					if(resp.data.dashboards === 1 || resp.data.dashboards === '1')
 					{
 						ReactDOM.render(<DataList_AR data = {resp1.data} user_id = {obj.user_id}/>, document.getElementById('root'));
@@ -111,7 +102,7 @@ class PrevData extends Component
 						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Start Date: </b></label>
 						
 						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "date" max={moment().format("YYYY-MM-DD")} value = {this.state.startdate} name = "startdate" onChange = {this.onchangeStartDate} /> 
+							<input className = "form-control" type = "date" max={moment().format("YYYY-MM-DD")} value = {this.state.startdate} name = "startdate" onChange = {this.onchange} /> 
 						</div>
 						
 						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
@@ -122,7 +113,7 @@ class PrevData extends Component
 						<label className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> End Date: </b></label>
 						
 						<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-							<input className = "form-control" type = "date" min={this.state.startdate} max={moment().format("YYYY-MM-DD")} value = {this.state.enddate} name = "enddate" onChange = {this.onchangeEndDate} /> 
+							<input className = "form-control" type = "date" min={this.state.startdate} max={moment().format("YYYY-MM-DD")} value = {this.state.enddate} name = "enddate" onChange = {this.onchange} /> 
 						</div>
 						
 						<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>

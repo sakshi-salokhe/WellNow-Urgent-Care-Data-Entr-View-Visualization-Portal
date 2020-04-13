@@ -32,19 +32,13 @@ class DailyChartOM extends Component
 		{
 			a_name.push(key);
 		}
-		console.log("check a_name because we shud know what to pop or shift:", a_name);
+		
 		//remove id and everything since we only need the names of attributes
 		a_name.shift();
 		a_name.shift();
 		a_name.shift();
 		a_name.shift();
 		a_name.pop();
-		
-		for(var i = 0; i<= 26; i++) //number of attributes - 1
-		{
-			a_name.pop(); //remove goal names --  we do not need that here
-		}		
-		
 		
 		var a1 = [];
 		var a2 = [];
@@ -87,10 +81,8 @@ class DailyChartOM extends Component
 			dlabel.push(val);
 		}
 		
-		
 		for(var i=0; i< num-1; i++)
 		{
-			
 			for(var key in this.props.data[i])
 			{
 				d_temp.push(this.props.data[i][key]);
@@ -228,13 +220,11 @@ class DailyChartOM extends Component
 				}
 			}
 			
-			
 			d1 = [];
 			d2 = [];
 			d_temp = [];
 
 		}
-		
 			
 		ds.push({
 			label: a_name[0],

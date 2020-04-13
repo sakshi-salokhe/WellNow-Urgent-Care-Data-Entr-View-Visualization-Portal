@@ -21,6 +21,7 @@ class PatSup_Goals_headers extends Component
 		};
 		this.back = this.back.bind(this);
 	}
+	
 	userList()
 	{
 		return this.props.data.map(function(object)
@@ -31,7 +32,6 @@ class PatSup_Goals_headers extends Component
 	
 	back()
 	{
-		console.log("here:back: ",this.props.data[0].userid);
 		ReactDOM.render(<ViewDashboards user_id = {this.props.data[0].userid}/>, document.getElementById('root'));
 	}
 	

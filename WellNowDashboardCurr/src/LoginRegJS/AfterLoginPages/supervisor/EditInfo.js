@@ -22,9 +22,7 @@ class EditInfo extends Component
 			dashboards : "",
 		}
 		
-		this.onchangeemail = this.onchangeemail.bind(this);
-		this.onchangefullname = this.onchangefullname.bind(this);
-		this.onchangedashboards = this.onchangedashboards.bind(this);
+		this.onchange = this.onchange.bind(this);
 		
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.cancel = this.cancel.bind(this);
@@ -39,24 +37,10 @@ class EditInfo extends Component
 	})
 	}
 	
-	onchangeemail(e)
+	onchange(e)
 	{
 		this.setState({
-			email: e.target.value
-		});
-	}
-	
-	onchangefullname(e)
-	{
-		this.setState({
-			fullname: e.target.value
-		});
-	}
-	
-	onchangedashboards(e)
-	{
-		this.setState({
-			dashboards: e.target.value
+			[e.target.name]: e.target.value
 		});
 	}
 	
@@ -78,7 +62,6 @@ class EditInfo extends Component
 			axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_after_editing_sup.php', qs.stringify(obj))
 			.then(res => 
 			{
-				console.log(res.data);	
 				if(res.data.done === 1)
 				{
 					alert("Successfully updated user information.");
@@ -100,7 +83,6 @@ class EditInfo extends Component
 	
 	render()
 	{
-		console.log("editing",this.props);
 		return (
 			<div className = "container">
 					<div>
@@ -113,7 +95,7 @@ class EditInfo extends Component
 							<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Email: </b></div>
 							
 							<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-								<input className = "form-control" type = "email" value = {this.state.email} name = "email" placeholder = {this.props.userid.email} onChange = {this.onchangeemail} />
+								<input className = "form-control" type = "email" value = {this.state.email} name = "email" placeholder = {this.props.userid.email} onChange = {this.onchange} />
 							</div>
 							
 							<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
@@ -124,7 +106,7 @@ class EditInfo extends Component
 							<div className="control-label col-lg-2 col-sm-2 col-md-2 col-xs-2"><b> Full Name: </b></div>
 							
 							<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-								<input className = "form-control" type = "text" value = {this.state.fullname} name = "fullname" placeholder = {this.props.userid.fullname} onChange = {this.onchangefullname} />
+								<input className = "form-control" type = "text" value = {this.state.fullname} name = "fullname" placeholder = {this.props.userid.fullname} onChange = {this.onchange} />
 							</div>
 							
 							<div className="col-lg-2 col-sm-2 col-md-2 col-xs-2"> </div>
@@ -135,7 +117,7 @@ class EditInfo extends Component
 							<div className="col-lg-3 col-sm-3 col-md-3 col-xs-3"><b> Choose your dashboard: </b></div>
 							
 							<div className="col-lg-8 col-sm-8 col-md-8 col-xs-8">
-								<select className = "form-control" value = {this.state.dashboards} name = "dashboards" onChange = {this.onchangedashboards} placeholder = {this.props.userid.dash_name}>
+								<select className = "form-control" value = {this.state.dashboards} name = "dashboards" onChange = {this.onchange} placeholder = {this.props.userid.dash_name}>
 									<option value="">--Please Choose your dashboard -- </option>
 									<option value="1"> AR Dashboard </option>
 									<option value="2"> OS Dashboard </option>

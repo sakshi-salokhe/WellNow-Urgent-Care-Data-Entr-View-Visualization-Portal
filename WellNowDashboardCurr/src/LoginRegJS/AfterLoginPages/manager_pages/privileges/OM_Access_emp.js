@@ -347,12 +347,10 @@ class OM_Access_emp extends Component
 					ar_audit : this.state.ar_audit,	
 					ar_wbs : this.state.ar_wbs,
 				};
-		console.log(obj);
 		
 		axios.post('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/update_om_access.php', qs.stringify(obj))
 		.then(res => 
 		{
-			console.log("this: ",res.data);	
 			if(res.data.done == true)
 			{
 				ReactDOM.render(<EditDashboardPrivileges />, document.getElementById('root'));
@@ -381,8 +379,6 @@ class OM_Access_emp extends Component
 	render()
 	{
 		const condition = this.state.isActive === -1;
-		console.log("here",this.state.isActive);
-		console.log("checking the user id :", this.props.obj);
 		
 		return (
 				
