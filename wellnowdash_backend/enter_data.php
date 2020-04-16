@@ -334,6 +334,13 @@ else if($dashboard == 4 or $dashboard == '4')
 	
 	echo json_encode($emp);
 }
+else if($dashboard == 7 or $dashboard == '7')
+{
+	$emp['userid'] = $userid;
+	$emp['dashboard'] = $dashboard;
+	
+	echo json_encode($emp);
+}
 else
 {
 	http_response_code(422);
