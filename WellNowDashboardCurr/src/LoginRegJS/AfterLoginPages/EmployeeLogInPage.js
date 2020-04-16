@@ -17,6 +17,7 @@ import EnterDataAR from "./employee/AR/EnterDataAR"
 import EnterDataOM from "./employee/OM/EnterDataOM"
 import EnterDataOS from "./employee/OS/EnterDataOS"
 import EnterDataPatSup from "./employee/PatSup/EnterDataPatSup"
+import EnterDataCM from "./employee/CashMan/EnterDataCM"
 
 
 function logout()
@@ -72,6 +73,10 @@ class EmployeeLogInPage extends Component
 				else if(res.data.dashboard == 4 || res.data.dashboard == '4')
 				{
 					ReactDOM.render(<EnterDataPatSup data = {res.data} />, document.getElementById('root'));
+				}
+				else if(res.data.dashboard == 7 || res.data.dashboard == '7')
+				{
+					ReactDOM.render(<EnterDataCM data = {res.data} />, document.getElementById('root'));
 				}
 				else
 				{
