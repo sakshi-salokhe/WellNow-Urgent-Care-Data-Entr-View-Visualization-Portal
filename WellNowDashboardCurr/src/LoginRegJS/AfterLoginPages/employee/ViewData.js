@@ -16,6 +16,7 @@ import CurrDataAR from "./view_dashboards/CurrDataAR.js"
 import CurrDataOM from "./view_dashboards/CurrDataOM.js"
 import CurrDataOS from "./view_dashboards/CurrDataOS.js"
 import CurrDataPatSup from "./view_dashboards/CurrDataPatSup"
+import CMM_curr_data from "./view_dashboards/CashMan/CMM_curr_data"
 
 import SummaryViewAR from "./view_dashboards/SummaryViewAR.js"
 import SummaryViewOS from "./view_dashboards/SummaryViewOS.js"
@@ -72,6 +73,10 @@ class ViewData extends Component
 			{
 				ReactDOM.render(<CurrDataPatSup user_id = {this.user_id} />, document.getElementById('root'));
 			}
+			else if(res.data.dashboards == 7 || res.data.dashboards == '7')
+			{
+				ReactDOM.render(<CMM_curr_data user_id = {this.user_id} />, document.getElementById('root'));
+			}
 		})
 		
 	}
@@ -97,6 +102,10 @@ class ViewData extends Component
 			else if(res.data.dashboards == 4 || res.data.dashboards == '4')
 			{
 				alert("There is no Summary page for Patient Support Dashboard");
+			}
+			else if(res.data.dashboards == 7 || res.data.dashboards == '7')
+			{
+				alert("There is no Summary page for Cash Mail Management Dashboard");
 			}
 		})
 	}

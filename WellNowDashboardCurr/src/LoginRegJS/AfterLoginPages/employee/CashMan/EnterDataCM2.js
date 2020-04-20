@@ -296,7 +296,7 @@ class EnterDataCM2 extends Component
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
-								ReactDOM.render(<EnterDataCM user_id = {obj.userid} />, document.getElementById('root'));
+								ReactDOM.render(<EnterDataCM data = {{"userid":obj.userid}} />, document.getElementById('root'));
 							}
 							else
 							{
@@ -312,7 +312,7 @@ class EnterDataCM2 extends Component
 							if(res.data.entered == 1)
 							{
 								alert("Successfully entered your data.")
-								ReactDOM.render(<EnterDataCM user_id = {obj.userid} />, document.getElementById('root'));
+								ReactDOM.render(<EnterDataCM data = {{"userid":obj.userid}} />, document.getElementById('root'));
 							}
 							else{
 								alert("There was some error. Please try again later.")
@@ -330,7 +330,7 @@ class EnterDataCM2 extends Component
 		const obj = {
 					userid : this.props.data.userid
 		}
-		ReactDOM.render(<EnterDataCM user_id = {obj.userid} />, document.getElementById('root'));
+		ReactDOM.render(<EnterDataCM data = {{"userid":obj.userid}} />, document.getElementById('root'));
 	}
 	
 	render()
