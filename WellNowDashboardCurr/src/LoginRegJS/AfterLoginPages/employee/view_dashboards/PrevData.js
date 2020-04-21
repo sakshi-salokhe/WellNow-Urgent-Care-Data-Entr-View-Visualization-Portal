@@ -14,6 +14,7 @@ import DataList_AR from "./AR/DataList_AR"
 import DataList_OM from "./OM/DataList_OM"
 import DataList_OS from "./OS/DataList_OS"
 import DataList_PatSup from "./PatSup/DataList_PatSup"
+import CMM_prev_data from "./CashMan/CMM_prev_data"
 
 class PrevData extends Component
 {

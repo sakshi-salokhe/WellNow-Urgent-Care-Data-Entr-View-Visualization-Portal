@@ -17,6 +17,7 @@ import CurrDataOM from "./view_dashboards/CurrDataOM.js"
 import CurrDataOS from "./view_dashboards/CurrDataOS.js"
 import CurrDataPatSup from "./view_dashboards/CurrDataPatSup"
 import CMM_curr_data from "./view_dashboards/CashMan/CMM_curr_data"
+import CMM_prev_data from "./view_dashboards/CashMan/CMM_prev_data"
 
 import SummaryViewAR from "./view_dashboards/SummaryViewAR.js"
 import SummaryViewOS from "./view_dashboards/SummaryViewOS.js"
@@ -48,7 +49,18 @@ class ViewData extends Component
 	prevData(props)
 	{
 		this.user_id = this.props.user_id;
-		ReactDOM.render(<PrevData user_id = {this.user_id} />, document.getElementById('root'));
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_dash_id.php?user_id='+this.user_id)
+		.then(
+		res => {
+			if(res.data.dashboards == 7 || res.data.dashboards == '7')
+			{
+				ReactDOM.render(<CMM_prev_data user_id = {this.user_id} />, document.getElementById('root'));
+			}
+			else
+			{
+				ReactDOM.render(<PrevData user_id = {this.user_id} />, document.getElementById('root'));
+			}
+		})
 	}
 	
 	currData(props)

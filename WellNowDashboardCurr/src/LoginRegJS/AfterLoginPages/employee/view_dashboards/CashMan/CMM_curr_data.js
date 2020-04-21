@@ -36,23 +36,13 @@ class CMM_curr_data extends Component
 	cm_refund_dash(props)
 	{
 		this.user_id = this.props.user_id;
-		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_data_cm1_emp.php?userid='+this.user_id)
-		.then(
-			res => {
-				ReactDOM.render(<CM1_curr user_id = {this.user_id} />, document.getElementById('root'));
-			})
-		.catch(err => console.log(err))
+		ReactDOM.render(<CM1_curr user_id = {this.user_id} />, document.getElementById('root'));
 	}
 	
 	judy_dash(props)
 	{
 		this.user_id = this.props.user_id;
-		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/enter_data_cm2_emp.php?userid='+this.user_id)
-		.then(
-			res => {
-				ReactDOM.render(<CM2_curr user_id = {this.user_id} />, document.getElementById('root'));
-			})
-		.catch(err => console.log(err))
+		ReactDOM.render(<CM2_curr user_id = {this.user_id} />, document.getElementById('root'));
 	}
 	
 	
