@@ -38,6 +38,10 @@ if($res = mysqli_query($con, $sql))
 		{
 			$row_dash = 'Patient Support Dashboard';
 		}
+		else if($dash == 6 or $dash == '6')
+		{
+			$row_dash = 'Posting Dashboard';
+		}
 		else if($dash == 7 or $dash == '7')
 		{
 			$row_dash = 'Cash Mail Management Dashboard';
