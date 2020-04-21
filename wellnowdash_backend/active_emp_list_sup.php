@@ -38,7 +38,10 @@ if($res = mysqli_query($con, $sql))
 		{
 			$row_dash = 'Patient Support Dashboard';
 		}
-		
+		else if($dash == 7 or $dash == '7')
+		{
+			$row_dash = 'Cash Mail Management Dashboard';
+		}
 		
 		$dashboardname = $row_dash;
 		$emp[$c]['userid'] = $row['user_id'];
