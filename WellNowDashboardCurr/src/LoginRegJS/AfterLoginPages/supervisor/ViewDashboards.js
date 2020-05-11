@@ -16,6 +16,7 @@ import ViewCurrDataAR from "./view_dashboards/AR/ViewCurrDataAR"
 import ViewCurrDataOM from "./view_dashboards/OM/ViewCurrDataOM"
 import ViewCurrDataOS from "./view_dashboards/OS/ViewCurrDataOS"
 import ViewCurrDataPatSup from "./view_dashboards/PatSup/ViewCurrDataPatSup"
+import ViewCurrDataCM from "./view_dashboards/CashMan/ViewCurrDataCM"
 
 import PrevDataVisualise from "./view_dashboards/PrevDataVisualise"
 
@@ -95,30 +96,44 @@ class ViewDashboards extends Component
 			{
 				alert("Summary page not for Patient Support Dashboard.");
 			}
+			else if(res.data.dashboards == 7 || res.data.dashboards == '7')
+			{
+				alert("Summary page not for Cash Mail Management Dashboard.");
+			}
 		})
 	}
 	
 	currData(event)
 	{
-		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_curr_data_sup.php?user_id='+this.props.user_id)
+		axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_dash_id.php?user_id='+this.props.user_id)
 		.then(resp => {
-			if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')
+			if(resp.data.dashboards === 7 || resp.data.dashboards === '7')
 			{
-				ReactDOM.render(<ViewCurrDataAR data = {resp.data}/>, document.getElementById('root'));
+				ReactDOM.render(<ViewCurrDataCM user_id = {this.props.user_id}/>, document.getElementById('root'));
 			}
-			else if(resp.data[0].dashboards == 2 || resp.data[0].dashboards === '2')
-			{
-				ReactDOM.render(<ViewCurrDataOS data = {resp.data}/>, document.getElementById('root'));
+			else{
+				axios.get('http://localhost:81/WellNow-Urgent-Care-Data-Entr-View-Visualization-Portal/wellnowdash_backend/get_curr_data_sup.php?user_id='+this.props.user_id)
+				.then(resp => {
+					if(resp.data[0].dashboards === 1 || resp.data[0].dashboards === '1')
+					{
+						ReactDOM.render(<ViewCurrDataAR data = {resp.data}/>, document.getElementById('root'));
+					}
+					else if(resp.data[0].dashboards == 2 || resp.data[0].dashboards === '2')
+					{
+						ReactDOM.render(<ViewCurrDataOS data = {resp.data}/>, document.getElementById('root'));
+					}
+					else if(resp.data[0].dashboards == 3 || resp.data[0].dashboards === '3')
+					{
+						ReactDOM.render(<ViewCurrDataOM data = {resp.data}/>, document.getElementById('root'));
+					}
+					else if(resp.data[0].dashboards == 4 || resp.data[0].dashboards === '4')
+					{
+						ReactDOM.render(<ViewCurrDataPatSup data = {resp.data}/>, document.getElementById('root'));
+					}
+					})
 			}
-			else if(resp.data[0].dashboards == 3 || resp.data[0].dashboards === '3')
-			{
-				ReactDOM.render(<ViewCurrDataOM data = {resp.data}/>, document.getElementById('root'));
-			}
-			else if(resp.data[0].dashboards == 4 || resp.data[0].dashboards === '4')
-			{
-				ReactDOM.render(<ViewCurrDataPatSup data = {resp.data}/>, document.getElementById('root'));
-			}
-			})
+		})
+		
 	}
 	
 	prevDataChart()
